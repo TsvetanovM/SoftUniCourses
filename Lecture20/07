@@ -14,21 +14,22 @@ public class Lab07OrderByAge {
             people.add(new Person(person[0], person[1], Integer.parseInt(person[2])));
             person = scan.nextLine().split(" ");
         }
-        people.sort(new Comparator<Person>() {
-            @Override
-            public int compare(Person o1, Person o2) {
-                if (o1.getAge()>o2.getAge()){
-                    return 1;
-                }
-                else if (o1.getAge()==o2.getAge()){
-                    return 0;
-                }
-                return -1;
-            }
-        });
-        for (Person person1 : people) {
-            System.out.println(person1);
-        }
+        people.stream().sorted((p1, p2) -> Integer.compare(p1.getAge(), p2.getAge())).forEach(System.out::println);
+//        people.sort(new Comparator<Person>() {
+//            @Override
+//            public int compare(Person o1, Person o2) {
+//                if (o1.getAge()>o2.getAge()){
+//                    return 1;
+//                }
+//                else if (o1.getAge()==o2.getAge()){
+//                    return 0;
+//                }
+//                return -1;
+//            }
+//        });
+//        for (Person person1 : people) {
+//            System.out.println(person1);
+//        }
     }
 }
 
@@ -52,3 +53,4 @@ class Person {
         return String.format("%s with ID: %s is %d years old.", this.name, this.ID, this.age);
     }
 }
+
