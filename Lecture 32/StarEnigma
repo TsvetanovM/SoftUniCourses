@@ -16,12 +16,10 @@ public class Lab04StarEnigma {
         for (int i = 0; i < n; i++) {
             String encryptedMessage = scan.nextLine();
             int keyLetters = 0;
-            for (int j = 0; j < encryptedMessage.length(); j++) {
-                char current = encryptedMessage.charAt(j);
-                if (current == 's' || current == 't' || current == 'a' || current == 'r' ||
-                        current == 'S' || current == 'T' || current == 'A' || current == 'R') {
-                    keyLetters++;
-                }
+            Pattern pat = Pattern.compile("[sStTaArR]");
+            Matcher matcher = pat.matcher(encryptedMessage);
+            while (matcher.find()){
+                keyLetters++;
             }
 
             StringBuilder decryptedMessage = new StringBuilder();
@@ -56,3 +54,4 @@ public class Lab04StarEnigma {
         destroyedPlanets.forEach(p -> System.out.println("-> " + p));
     }
 }
+
