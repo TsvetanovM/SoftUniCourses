@@ -16,7 +16,7 @@ public class Lab04StarEnigma {
         for (int i = 0; i < n; i++) {
             String encryptedMessage = scan.nextLine();
             int keyLetters = 0;
-            Pattern pat = Pattern.compile("[sStTaArR]");
+            Pattern pat = Pattern.compile("[star]", Pattern.CASE_INSENSITIVE);
             Matcher matcher = pat.matcher(encryptedMessage);
             while (matcher.find()){
                 keyLetters++;
