@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a3564652-c7f9-4a9b-ba76-b39c357f64ce" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1a4O8eVix7zu8V76Ia997msAfdB" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="RunManager" selected="Application.Lab10Hard">
+    <configuration name="Lab10Hard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Lab10Hard" />
+      <module name="04.04.2020 - 6 - More Exercises ch. 1 &amp; 2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Lab6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Lab6" />
+      <module name="04.04.2020 - 6 - More Exercises ch. 1 &amp; 2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Lab7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Lab7" />
+      <module name="04.04.2020 - 6 - More Exercises ch. 1 &amp; 2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Lab8" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Lab8" />
+      <module name="04.04.2020 - 6 - More Exercises ch. 1 &amp; 2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Lab9Hard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Lab9Hard" />
+      <module name="04.04.2020 - 6 - More Exercises ch. 1 &amp; 2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Lab10Hard" />
+      <item itemvalue="Application.Lab6" />
+      <item itemvalue="Application.Lab7" />
+      <item itemvalue="Application.Lab8" />
+      <item itemvalue="Application.Lab9Hard" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Lab10Hard" />
+        <item itemvalue="Application.Lab9Hard" />
+        <item itemvalue="Application.Lab8" />
+        <item itemvalue="Application.Lab7" />
+        <item itemvalue="Application.Lab6" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a3564652-c7f9-4a9b-ba76-b39c357f64ce" name="Default Changelist" comment="" />
+      <created>1585991241575</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585991241575</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1860" height="285" key="GridCell.Tab.0.bottom" timestamp="1585995903741">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1860" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585995903741" />
+    <state width="1860" height="285" key="GridCell.Tab.0.center" timestamp="1585995903741">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1860" height="285" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585995903741" />
+    <state width="1860" height="285" key="GridCell.Tab.0.left" timestamp="1585995903741">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1860" height="285" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585995903741" />
+    <state width="1860" height="285" key="GridCell.Tab.0.right" timestamp="1585995903741">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1860" height="285" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585995903741" />
+    <state x="659" y="362" key="com.intellij.ide.util.TipDialog" timestamp="1586161051624">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="659" y="362" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586161051624" />
+    <state x="346" y="159" key="new project wizard" timestamp="1586161138969">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="346" y="159" key="new project wizard/0.0.1920.1080@0.0.1920.1080" timestamp="1586161138969" />
+  </component>
+</project>

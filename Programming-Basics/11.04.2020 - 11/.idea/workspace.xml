@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="90aecba7-2e87-48d0-9ef0-50dddeee8325" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1aOnfcLjVxl6UPgCvTTE3qxz1XX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunManager" selected="Application.Lab6">
+    <configuration name="Lab2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Lab2" />
+      <module name="11.04.2020 - day 11/lecture12" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Lab3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Lab3" />
+      <module name="11.04.2020 - day 11/lecture12" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Lab4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Lab4" />
+      <module name="11.04.2020 - day 11/lecture12" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Lab5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Lab5" />
+      <module name="11.04.2020 - day 11/lecture12" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Lab6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Lab6" />
+      <module name="11.04.2020 - day 11/lecture12" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="11.04.2020 - day 11/lecture12" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="11.04.2020 - day 11/lecture12" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Lab2" />
+      <item itemvalue="Application.Lab3" />
+      <item itemvalue="Application.Lab4" />
+      <item itemvalue="Application.Lab5" />
+      <item itemvalue="Application.Lab6" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Lab6" />
+        <item itemvalue="Application.Lab5" />
+        <item itemvalue="Application.Lab4" />
+        <item itemvalue="Application.Lab3" />
+        <item itemvalue="Application.Lab2" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="90aecba7-2e87-48d0-9ef0-50dddeee8325" name="Default Changelist" comment="" />
+      <created>1586615611996</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586615611996</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1876" height="358" key="GridCell.Tab.0.bottom" timestamp="1586623989642">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="358" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1586623989642" />
+    <state width="1876" height="358" key="GridCell.Tab.0.center" timestamp="1586623989642">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="358" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1586623989642" />
+    <state width="1876" height="358" key="GridCell.Tab.0.left" timestamp="1586623989642">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="358" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1586623989642" />
+    <state width="1876" height="358" key="GridCell.Tab.0.right" timestamp="1586623989642">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="358" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1586623989642" />
+    <state width="1876" height="358" key="GridCell.Tab.1.bottom" timestamp="1586623989643">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="358" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1586623989643" />
+    <state width="1876" height="358" key="GridCell.Tab.1.center" timestamp="1586623989642">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="358" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1586623989642" />
+    <state width="1876" height="358" key="GridCell.Tab.1.left" timestamp="1586623989642">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="358" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1586623989642" />
+    <state width="1876" height="358" key="GridCell.Tab.1.right" timestamp="1586623989642">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="358" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1586623989642" />
+    <state x="461" y="171" key="SettingsEditor" timestamp="1586615805657">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="461" y="171" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1586615805657" />
+    <state x="655" y="362" key="com.intellij.ide.util.TipDialog" timestamp="1586767013129">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="655" y="362" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586767013129" />
+    <state x="342" y="159" key="new project wizard" timestamp="1586767067912">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="342" y="159" key="new project wizard/0.0.1920.1080@0.0.1920.1080" timestamp="1586767067912" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/Lab3.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
