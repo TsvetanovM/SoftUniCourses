@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6a1277b1-1681-49df-823e-98b8b40a0544" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1j3z4Ung1LnKczhYK9wtuCHA0dY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RunManager" selected="Application.Lab11ArrayManipulator">
+    <configuration name="Lab07NxNMatrix" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="softuni.fundamentals.java.Lab07NxNMatrix" />
+      <module name="Lecture 14 - 09.10.2020" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="softuni.fundamentals.java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Lab08FactorialDivision" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="softuni.fundamentals.java.Lab08FactorialDivision" />
+      <module name="Lecture 14 - 09.10.2020" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="softuni.fundamentals.java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Lab09Palindrome" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="softuni.fundamentals.java.Lab09Palindrome" />
+      <module name="Lecture 14 - 09.10.2020" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="softuni.fundamentals.java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Lab10TopNumber" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="softuni.fundamentals.java.Lab10TopNumber" />
+      <module name="Lecture 14 - 09.10.2020" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="softuni.fundamentals.java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Lab11ArrayManipulator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="softuni.fundamentals.java.Lab11ArrayManipulator" />
+      <module name="Lecture 14 - 09.10.2020" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="softuni.fundamentals.java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Lab11ArrayManipulator" />
+        <item itemvalue="Application.Lab10TopNumber" />
+        <item itemvalue="Application.Lab08FactorialDivision" />
+        <item itemvalue="Application.Lab09Palindrome" />
+        <item itemvalue="Application.Lab07NxNMatrix" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6a1277b1-1681-49df-823e-98b8b40a0544" name="Default Changelist" comment="" />
+      <created>1603047371572</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603047371572</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1876" height="290" key="GridCell.Tab.0.bottom" timestamp="1603139831565">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="290" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1858.0.1858.1080@0.0.1920.1080" timestamp="1603139831565" />
+    <state width="1876" height="290" key="GridCell.Tab.0.center" timestamp="1603139831565">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="290" key="GridCell.Tab.0.center/0.0.1920.1080/-1858.0.1858.1080@0.0.1920.1080" timestamp="1603139831565" />
+    <state width="1876" height="290" key="GridCell.Tab.0.left" timestamp="1603139831565">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="290" key="GridCell.Tab.0.left/0.0.1920.1080/-1858.0.1858.1080@0.0.1920.1080" timestamp="1603139831565" />
+    <state width="1876" height="290" key="GridCell.Tab.0.right" timestamp="1603139831565">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="290" key="GridCell.Tab.0.right/0.0.1920.1080/-1858.0.1858.1080@0.0.1920.1080" timestamp="1603139831565" />
+    <state width="1876" height="358" key="GridCell.Tab.1.bottom" timestamp="1603069916159">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="358" key="GridCell.Tab.1.bottom/0.0.1920.1080/-1858.0.1858.1080@0.0.1920.1080" timestamp="1603069916159" />
+    <state width="1876" height="358" key="GridCell.Tab.1.center" timestamp="1603069916159">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="358" key="GridCell.Tab.1.center/0.0.1920.1080/-1858.0.1858.1080@0.0.1920.1080" timestamp="1603069916159" />
+    <state width="1876" height="358" key="GridCell.Tab.1.left" timestamp="1603069916159">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="358" key="GridCell.Tab.1.left/0.0.1920.1080/-1858.0.1858.1080@0.0.1920.1080" timestamp="1603069916159" />
+    <state width="1876" height="358" key="GridCell.Tab.1.right" timestamp="1603069916159">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="358" key="GridCell.Tab.1.right/0.0.1920.1080/-1858.0.1858.1080@0.0.1920.1080" timestamp="1603069916159" />
+    <state x="655" y="362" key="com.intellij.ide.util.TipDialog" timestamp="1603203425356">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="655" y="362" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/-1858.0.1858.1080@0.0.1920.1080" timestamp="1603203425356" />
+    <state x="616" y="245" key="run.anything.popup" timestamp="1603048066327">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="616" y="245" key="run.anything.popup/0.0.1920.1080/-1858.0.1858.1080@0.0.1920.1080" timestamp="1603048066327" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/softuni/fundamentals/java/Lab11ArrayManipulator.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/softuni/fundamentals/java/Lab11ArrayManipulator.java</url>
+          <line>39</line>
+          <properties class="softuni.fundamentals.java.Lab11ArrayManipulator" method="exchange">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/softuni/fundamentals/java/Lab11ArrayManipulator.java</url>
+          <line>53</line>
+          <properties class="softuni.fundamentals.java.Lab11ArrayManipulator" method="maxNumber">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/softuni/fundamentals/java/Lab11ArrayManipulator.java</url>
+          <line>83</line>
+          <properties class="softuni.fundamentals.java.Lab11ArrayManipulator" method="minNumber">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/softuni/fundamentals/java/Lab11ArrayManipulator.java</url>
+          <line>113</line>
+          <properties class="softuni.fundamentals.java.Lab11ArrayManipulator" method="firstNumbers">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/softuni/fundamentals/java/Lab11ArrayManipulator.java</url>
+          <line>165</line>
+          <properties class="softuni.fundamentals.java.Lab11ArrayManipulator" method="lastNumbers">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

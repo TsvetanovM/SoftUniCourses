@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="38e65f5c-a50d-46e1-a4ba-c30350d67c01" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="241" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1i5rk2ze0zAFAy6MQ5ngH1tyIBc" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RunManager" selected="Application.E05Messages">
+    <configuration name="E01SortNumbers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="softuni.fundamentals.java.E01SortNumbers" />
+      <module name="Lecture 6 - 18.09.2020" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="softuni.fundamentals.java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="E02NameLastDigit" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="softuni.fundamentals.java.E02NameLastDigit" />
+      <module name="Lecture 6 - 18.09.2020" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="softuni.fundamentals.java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="E03GameStore" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="softuni.fundamentals.java.E03GameStore" />
+      <module name="Lecture 6 - 18.09.2020" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="softuni.fundamentals.java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="E04ReverseString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="softuni.fundamentals.java.E04ReverseString" />
+      <module name="Lecture 6 - 18.09.2020" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="softuni.fundamentals.java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="E05Messages" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="softuni.fundamentals.java.E05Messages" />
+      <module name="Lecture 6 - 18.09.2020" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="softuni.fundamentals.java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.E05Messages" />
+        <item itemvalue="Application.E04ReverseString" />
+        <item itemvalue="Application.E03GameStore" />
+        <item itemvalue="Application.E02NameLastDigit" />
+        <item itemvalue="Application.E01SortNumbers" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="38e65f5c-a50d-46e1-a4ba-c30350d67c01" name="Default Changelist" comment="" />
+      <created>1601208433624</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601208433624</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="690" y="286" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1601294706388">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="690" y="286" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1080/-1858.0.1858.1080@0.0.1920.1080" timestamp="1601294706388" />
+    <state width="1876" height="290" key="GridCell.Tab.0.bottom" timestamp="1601302232775">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="290" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1858.0.1858.1080@0.0.1920.1080" timestamp="1601302232775" />
+    <state width="1876" height="290" key="GridCell.Tab.0.center" timestamp="1601302232775">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="290" key="GridCell.Tab.0.center/0.0.1920.1080/-1858.0.1858.1080@0.0.1920.1080" timestamp="1601302232775" />
+    <state width="1876" height="290" key="GridCell.Tab.0.left" timestamp="1601302232775">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="290" key="GridCell.Tab.0.left/0.0.1920.1080/-1858.0.1858.1080@0.0.1920.1080" timestamp="1601302232775" />
+    <state width="1876" height="290" key="GridCell.Tab.0.right" timestamp="1601302232775">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="290" key="GridCell.Tab.0.right/0.0.1920.1080/-1858.0.1858.1080@0.0.1920.1080" timestamp="1601302232775" />
+    <state width="1876" height="358" key="GridCell.Tab.1.bottom" timestamp="1601295972309">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="358" key="GridCell.Tab.1.bottom/0.0.1920.1080/-1858.0.1858.1080@0.0.1920.1080" timestamp="1601295972309" />
+    <state width="1876" height="358" key="GridCell.Tab.1.center" timestamp="1601295972309">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="358" key="GridCell.Tab.1.center/0.0.1920.1080/-1858.0.1858.1080@0.0.1920.1080" timestamp="1601295972309" />
+    <state width="1876" height="358" key="GridCell.Tab.1.left" timestamp="1601295972309">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="358" key="GridCell.Tab.1.left/0.0.1920.1080/-1858.0.1858.1080@0.0.1920.1080" timestamp="1601295972309" />
+    <state width="1876" height="358" key="GridCell.Tab.1.right" timestamp="1601295972309">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="358" key="GridCell.Tab.1.right/0.0.1920.1080/-1858.0.1858.1080@0.0.1920.1080" timestamp="1601295972309" />
+    <state x="655" y="362" key="com.intellij.ide.util.TipDialog" timestamp="1601289463144">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="655" y="362" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/-1858.0.1858.1080@0.0.1920.1080" timestamp="1601289463144" />
+    <state x="342" y="159" key="new project wizard" timestamp="1601295970095">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="342" y="159" key="new project wizard/0.0.1920.1080/-1858.0.1858.1080@0.0.1920.1080" timestamp="1601295970095" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Lecture_6___18_09_2020$Lab6.ic" NAME="Lab6 Coverage Results" MODIFIED="1601295135525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>softuni.fundamentals.java.*</FILTER>
+    </SUITE>
+  </component>
+</project>
