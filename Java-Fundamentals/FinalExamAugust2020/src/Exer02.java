@@ -8,7 +8,7 @@ public class Exer02 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String allLocations = scan.nextLine();
-        String regex = "/([=/])(?<destination>[A-Z][A-Za-z]{2,})\\1";
+        String regex = "([=/])(?<destination>[A-Z][A-Za-z]{2,})\\1";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(allLocations);
 
