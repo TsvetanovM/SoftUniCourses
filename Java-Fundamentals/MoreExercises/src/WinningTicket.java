@@ -20,7 +20,7 @@ public class WinningTicket {
 
             String firstHalf = ticket.substring(0, 10);
             String secondHalf = ticket.substring(10);
-            String winnerCheck = "[@#$^]{6,}";
+            String winnerCheck = "([@#$^])\\1{5,}";
             Pattern pattern1 = Pattern.compile(winnerCheck);
             Matcher matcher1 = pattern1.matcher(firstHalf);
 
