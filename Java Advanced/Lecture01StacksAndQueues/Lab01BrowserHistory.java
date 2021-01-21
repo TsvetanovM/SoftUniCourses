@@ -11,7 +11,7 @@ public class Lab01BrowserHistory {
         ArrayDeque<String> history = new ArrayDeque<>();
 
         while (!input.equals("Home")) {
-            if (!input.equals("back"))
+            if (!input.equals("back")) {
                 history.push(input);
             }
             else {
