@@ -3,7 +3,7 @@ package softuni.advanced.java;
 import java.util.ArrayDeque;
 import java.util.Scanner;
 
-public class Lab06 {
+public class Lab06BalancedParentheses {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
