@@ -44,30 +44,32 @@ public class Lab07FindTheRealQueen {
             }
         }
 
-        int col1 = cols;
-        int col2 = cols;
-        for (int row = rows-1; row >= 0; row--) {
-            col1--;
-            col2++;
-            if (col1>=0 && matrix[row][col1].equals("q")){
+        int col1 = cols-1;
+        int col2 = cols+1;
+
+            for (int row = rows - 1; row >= 0; row--) {
+                if (col1 >= 0 && matrix[row][col1].equals("q")) {
                     return false;
+                }
+                col1--;
+                if (col2 < matrix[row].length && matrix[row][col2].equals("q")) {
+                    return false;
+                }
+                col2++;
             }
 
-            if (col2<matrix[row].length && matrix[row][col2].equals("q")) {
-                    return false;
-            }
 
-        }
-
-        col1 = cols;
-        col2 = cols;
+        col1 = cols-1;
+        col2 = cols+1;
         for (int row = rows+1; row < matrix.length; row++) {
-            col1--;
-            col2++;
-
-            if (matrix[row][col1].equals("q")||matrix[row][col2].equals("q")) {
+            if (col1 >= 0 && matrix[row][col1].equals("q")) {
                 return false;
             }
+            col1--;
+            if (col2 < matrix[row].length && matrix[row][col2].equals("q")) {
+                return false;
+            }
+            col2++;
         }
         return true;
     }
