@@ -58,4 +58,27 @@ public class Lab06PrintDiagonals {
                 .split(pattern))
                 .mapToInt(Integer::parseInt).toArray();
     }
+
+    private static void printDiagonals(int[][] matrix, String size) {
+
+        int n = Integer.parseInt(size);
+        int row = 0, col = n-1;
+
+        while (row < n) {
+
+            int innerRow = row;
+            int innerCol = col;
+
+            while (innerRow < n && innerCol < n) {
+                System.out.print(matrix[innerRow++][innerCol++] + " ");
+            }
+            System.out.println();
+
+            col--;
+            if (col<0) {
+                col = 0;
+                row++;
+            }
+        }
+    }
 }

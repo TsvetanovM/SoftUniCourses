@@ -30,8 +30,8 @@ public class Lab05MaxSumOf2x2Submatrix {
 
     }
 
-    private static void printMatrix(int[][] subMatrix) {
-        for (int[] ints : subMatrix) {
+    private static void printMatrix(int[][] matrix) {
+        for (int[] ints : matrix) {
             for (int j = 0; j < ints.length; j++) { // printing out the matrix.
                 System.out.print(ints[j] + " ");
             }
