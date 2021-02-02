@@ -9,6 +9,7 @@ public class Lab02SetsOfElements {
         int secondLength = scanner.nextInt();
 
         Set<Integer> numbers = new LinkedHashSet<>();
+        Set<Integer> numbers2 = new LinkedHashSet<>();
         Set<Integer> repeatingElements = new LinkedHashSet<>();
 
         while (firstLength-- > 0) {
@@ -16,14 +17,17 @@ public class Lab02SetsOfElements {
         }
 
         while (secondLength-- > 0) {
-            int currentNum = scanner.nextInt();
-            if (numbers.contains(currentNum)) {
-                repeatingElements.add(currentNum);
+            numbers2.add(scanner.nextInt());
+        }
+
+        for (Integer number : numbers) {
+            if (numbers2.contains(number)) {
+                repeatingElements.add(number);
             }
         }
 
-        for (Integer e : repeatingElements) {
-            System.out.print(e + " ");
+        for (Integer num : repeatingElements) {
+            System.out.print(num + " ");
         }
     }
 }
