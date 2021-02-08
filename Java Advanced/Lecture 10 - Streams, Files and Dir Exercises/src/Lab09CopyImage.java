@@ -10,7 +10,7 @@ public class Lab09CopyImage {
             FileOutputStream fos = new FileOutputStream(outputImage);
 
             int oneByte = fis.read();
-            
+
             while (oneByte != -1) {
                 fos.write(oneByte);
                 oneByte = fis.read();
