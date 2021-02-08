@@ -34,10 +34,7 @@ public class Lab06WordCount {
         PrintWriter writer = new PrintWriter("results.txt");
         wordCounter.entrySet().stream()
                 .sorted((e1, e2) -> e2.getValue().compareTo(e1.getValue()))
-                .forEach(e -> {
-                    writer.write(e.getKey() + " - " + e.getValue());
-                    writer.println();
-                });
+                .forEach(e -> writer.println(e.getKey() + " - " + e.getValue()));
 
         writer.close();
         reader.close();

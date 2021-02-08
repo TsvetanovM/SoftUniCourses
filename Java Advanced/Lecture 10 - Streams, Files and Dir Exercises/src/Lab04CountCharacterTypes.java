@@ -31,10 +31,8 @@ public class Lab04CountCharacterTypes {
         }
 
         PrintWriter writer = new PrintWriter("output.txt");
-        writer.write("Vowels: " + vowelCount);
-        writer.println();
-        writer.write("Consonants: " + consonantCount);
-        writer.println();
+        writer.println("Vowels: " + vowelCount);
+        writer.println("Consonants: " + consonantCount);
         writer.write("Punctuation: " + punctuationCount);
 
         writer.close();

@@ -17,8 +17,7 @@ public class Lab05LineNumbers {
 
         for (String line : lines) {
             writer.write(counter++ + ". ");
-            writer.write(line);
-            writer.println();
+            writer.println(line);
         }
 
         reader.close();
