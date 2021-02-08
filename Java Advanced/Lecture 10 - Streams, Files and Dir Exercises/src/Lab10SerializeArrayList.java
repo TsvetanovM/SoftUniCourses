@@ -16,9 +16,7 @@ public class Lab10SerializeArrayList {
         try (FileInputStream fileInputStream = new FileInputStream(PATH);
              ObjectInputStream oos = new ObjectInputStream(fileInputStream)) {
             List<Double> result = (List<Double>) oos.readObject();
-            for (Double d : result) {
-                System.out.println(d);
-            }
+            result.forEach(System.out::println);
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
