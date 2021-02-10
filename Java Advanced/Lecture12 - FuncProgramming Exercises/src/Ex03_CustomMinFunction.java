@@ -9,15 +9,8 @@ public class Ex03_CustomMinFunction {
                 .mapToInt(Integer::parseInt)
                 .toArray();
 
-        Function<int[], Integer> findMin = arr -> {
-            int min = Integer.MAX_VALUE;
-            for (Integer integer : arr) {
-                if (integer<min) {
-                    min = integer;
-                }
-            }
-            return min;
-        };
+        Function<int[], Integer> findMin = arr ->
+            Arrays.stream(arr).min().orElseThrow(NumberFormatException::new);
 
         System.out.println(findMin.apply(numbers));
     }
