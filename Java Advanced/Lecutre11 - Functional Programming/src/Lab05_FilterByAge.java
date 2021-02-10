@@ -32,7 +32,7 @@ public class Lab05_FilterByAge {
     }
 
     private  static Function<Person, String> getFormatterFunction(String format) {
-        switch (format) {
+         switch (format) {
             case "name":
                 return p -> p.name;
             case "age":
