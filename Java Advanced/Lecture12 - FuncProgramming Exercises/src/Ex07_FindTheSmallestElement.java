@@ -20,11 +20,16 @@ public class Ex07_FindTheSmallestElement {
             return index;
         };
 
-        List<Integer> numbers = Arrays.stream(scanner.nextLine()
+        List<Integer> numbers = getIntegerList(scanner);
+
+        System.out.println(findMin.apply(numbers));
+    }
+
+
+    private static List<Integer> getIntegerList(Scanner scanner) {
+        return Arrays.stream(scanner.nextLine()
                 .split("\\s+"))
                 .map(Integer::parseInt)
                 .collect(Collectors.toList());
-
-        System.out.println(findMin.apply(numbers));
     }
 }
