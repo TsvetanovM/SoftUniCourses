@@ -35,7 +35,7 @@ public class Car {
 
     public String carInfo() {
         return String.format(
-                "The car is: %s %s - %d HP",
+                "The car is: %s %s - %d HP.",
                 this.getBrand(), this.getModel(),
                 this.getHp());
     }
