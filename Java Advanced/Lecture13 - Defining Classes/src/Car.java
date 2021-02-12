@@ -1,12 +1,18 @@
 public class Car {
-    private String brand;
-    private String model;
-    private int hp;
+    protected String brand;
+    protected String model;
+    protected int hp;
 
     public Car(String brand, String model, int hp) {
         this.brand = brand;
         this.model = model;
         this.hp = hp;
+    }
+
+    public Car(String brand) {
+        this.brand = brand;
+        this.model = "unknown";
+        this.hp = -1;
     }
 
     public String getBrand() {
