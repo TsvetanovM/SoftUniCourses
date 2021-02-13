@@ -1,10 +1,9 @@
 public class Main {
     public static void main(String[] args) {
-        Jar<Integer> jar = new Jar<>();
+        Scale<String> stringScale = new Scale<>("a", "c");
+        System.out.println(stringScale.getHeaver());
 
-        jar.add(22);
-        jar.add(25);
-
-        jar.remove(25);
+        Scale<Integer> integerScale = new Scale<>(1, 2);
+        System.out.println(integerScale.getHeaver());
     }
 }
