@@ -8,10 +8,10 @@ public class Jar<T> {
     }
 
     public void add(T t) {
-        this.elements.add(t);
+        this.elements.push(t);
     }
 
-    public void remove(T t) {
-        this.elements.pop();
+    public T remove(T t) {
+       return this.elements.pop();
     }
 }
