@@ -1,7 +1,7 @@
 public class BankAccount {
     private static double interestRate = 0.02;
     private static int idCounter = 1;
-    private int id;
+    private final int id;
     private double balance;
 
     public BankAccount() {
