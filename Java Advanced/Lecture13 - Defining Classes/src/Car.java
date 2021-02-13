@@ -10,9 +10,7 @@ public class Car {
     }
 
     public Car(String brand) {
-        this.brand = brand;
-        this.model = "unknown";
-        this.hp = -1;
+        this(brand, "unknown", -1);
     }
 
     public String getBrand() {
