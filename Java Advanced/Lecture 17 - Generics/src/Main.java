@@ -1,9 +1,21 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        Scale<String> stringScale = new Scale<>("a", "c");
-        System.out.println(stringScale.getHeaver());
+        List<Integer> integers = new ArrayList<>();
+        Collections.addAll(integers, 1, 2, 18, 2, -1);
 
-        Scale<Integer> integerScale = new Scale<>(1, 2);
-        System.out.println(integerScale.getHeaver());
+        Integer maxInteger = ListUtils.getMax(integers);
+
+
+        List<String> strings = new ArrayList<>();
+//        Collections.addAll(strings, "a", "b", "c");
+
+        String minString = ListUtils.getMin(strings);
+
+        System.out.println(maxInteger);
+        System.out.println(minString);
     }
 }
