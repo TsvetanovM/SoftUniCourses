@@ -21,6 +21,12 @@ public class Box<T> {
         list.add(secondIndex, t1);
     }
 
+    public static <T extends Comparable<T>> long elementsGreaterThanCount(List<T> list, T comparator) {
+        return list.stream()
+                .filter(e -> e.compareTo(comparator)>0)
+                .count();
+    }
+
     @Override
     public String toString() {
         String output = this.t.getClass() + ": " + this.t;
