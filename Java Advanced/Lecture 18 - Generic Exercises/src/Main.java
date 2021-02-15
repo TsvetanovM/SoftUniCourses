@@ -6,7 +6,7 @@ public class Main {
         int n = Integer.parseInt(scanner.nextLine());
 
         while (n-- > 0) {
-            String input = scanner.nextLine();
+            int input = Integer.parseInt(scanner.nextLine());
             Box box = new Box(input);
             System.out.println(box.toString());
         }

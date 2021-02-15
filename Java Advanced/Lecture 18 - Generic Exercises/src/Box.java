@@ -7,7 +7,7 @@ public class Box<T> {
 
     @Override
     public String toString() {
-        String output = t.getClass() + ": " + t.toString();
+        String output = this.t.getClass() + ": " + this.t;
         return output.replace("class ", "");
     }
 }
