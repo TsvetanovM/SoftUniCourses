@@ -10,7 +10,7 @@ public class Main {
         List<Box> boxes = new ArrayList<>();
 
         while (n-- > 0) {
-            String input = scanner.nextLine();
+            int input = Integer.parseInt(scanner.nextLine());
             Box box = new Box(input);
             boxes.add(box);
         }
