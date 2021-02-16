@@ -23,7 +23,7 @@ public class Book {
 
     private void setAuthors(String... authors) {
         if (authors.length > 0) {
-            this.authors = new ArrayList<>(Arrays.asList(authors));
+            this.authors = (Arrays.asList(authors));
         } else {
             this.authors = new ArrayList<>();
         }
