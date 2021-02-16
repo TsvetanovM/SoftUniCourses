@@ -17,6 +17,18 @@ public class Book implements Comparable<Book> {
         this.title = title;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public List<String> getAuthors() {
+        return authors;
+    }
+
     private void setYear(int year) {
         this.year = year;
     }
