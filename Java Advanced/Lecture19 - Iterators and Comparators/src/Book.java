@@ -13,15 +13,15 @@ public class Book {
         this.setAuthors(authors);
     }
 
-    public void setTitle(String title) {
+    private void setTitle(String title) {
         this.title = title;
     }
 
-    public void setYear(int year) {
+    private void setYear(int year) {
         this.year = year;
     }
 
-    public void setAuthors(String... authors) {
+    private void setAuthors(String... authors) {
         if (authors.length > 0) {
             this.authors = new ArrayList<>(Arrays.asList(authors));
         } else {
