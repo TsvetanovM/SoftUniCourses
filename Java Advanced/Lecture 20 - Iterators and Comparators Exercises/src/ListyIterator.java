@@ -3,7 +3,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-public abstract class ListyIterator implements Iterator<String> {
+public class ListyIterator implements Iterator<String> {
     private List<String> listy;
     private int index = 0;
 
@@ -16,13 +16,13 @@ public abstract class ListyIterator implements Iterator<String> {
 
     @Override
     public boolean hasNext() {
-        return index < listy.size();
+        return index+1 < listy.size();
     }
 
-//    @Override
-//    public String next() {
-//        return listy.get(index++);
-//    }
+    @Override
+    public String next() {
+        return listy.get(index++);
+    }
 
     public boolean move() {
         index++;
@@ -33,7 +33,7 @@ public abstract class ListyIterator implements Iterator<String> {
         if (listy.size() > 0) {
             System.out.println(listy.get(index));
         } else {
-            throw new NullPointerException("Invalid Operation!");
+            System.out.println("Invalid Operation!");
         }
     }
 }
