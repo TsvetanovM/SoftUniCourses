@@ -45,8 +45,12 @@ public class Bakery {
         return employees.size();
     }
 
+    public String getName() {
+        return name;
+    }
+
     public String report() {
-       String output = String.format("Employees working at Bakery %s:%n", this.name);
+       String output = String.format("Employees working at Bakery %s:%n", getName());
         for (Employee employee : employees) {
             output += employee.toString();
         }

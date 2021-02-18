@@ -20,11 +20,11 @@ public class Employee {
     }
 
     public String getCountry() {
-        return country;
+        return this.country;
     }
 
     @Override
     public String toString() {
-        return String.format("Employee: %s, %d (%s)%n", this.name, this.age, this.country);
+        return String.format("Employee: %s, %d (%s)%n", getName(), getAge(), getCountry());
     }
 }
