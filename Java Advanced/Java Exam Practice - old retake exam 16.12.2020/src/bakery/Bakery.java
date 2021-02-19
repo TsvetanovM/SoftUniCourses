@@ -16,14 +16,18 @@ public class Bakery {
     }
 
     public void add(Employee employee) {
-        if (this.employees.size() < capacity){
+        if (capacity > 0){
             this.employees.add(employee);
-            capacity++;
+            capacity--;
         }
     }
 
     public boolean remove(String name) {
-        return employees.remove(name);
+        boolean isPresent =  employees.remove(name);
+        if (isPresent) {
+            capacity++;
+        }
+        return isPresent;
     }
 
     public Employee getOldestEmployee() {
