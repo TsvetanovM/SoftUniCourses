@@ -18,6 +18,7 @@ public class Bakery {
     public void add(Employee employee) {
         if (this.employees.size() < capacity){
             this.employees.add(employee);
+            capacity++;
         }
     }
 
