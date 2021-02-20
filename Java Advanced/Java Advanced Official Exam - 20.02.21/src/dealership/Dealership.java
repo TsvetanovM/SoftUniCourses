@@ -1,19 +1,17 @@
 package dealership;
 
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Set;
 
 public class Dealership {
     public String name;
     public int capacity;
-    private Set<Car> data;
+    private List<Car> data;
 
     public Dealership(String name, int capacity) {
         this.name = name;
         this.capacity = capacity;
-        data = new LinkedHashSet<>();
+        data = new ArrayList<>();
     }
 
     public void add(Car car) {
