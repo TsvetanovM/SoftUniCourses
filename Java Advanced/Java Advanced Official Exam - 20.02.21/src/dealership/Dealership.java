@@ -1,56 +1,47 @@
 package dealership;
 
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
+import java.util.Set;
 
 public class Dealership {
     public String name;
     public int capacity;
-    public List<Car> data;
+    private Set<Car> data;
 
     public Dealership(String name, int capacity) {
         this.name = name;
         this.capacity = capacity;
-        data = new ArrayList<>();
+        data = new LinkedHashSet<>();
     }
 
     public void add(Car car) {
-        if (this.capacity > 0) {
+        if (this.capacity > data.size()) {
             this.data.add(car);
-            this.capacity--;
         }
     }
 
     public boolean buy(String manufacturer, String model) {
-        boolean carExists = this.data.removeIf(car -> car.getManufacturer().equals(manufacturer)
+        return this.data.removeIf(car -> car.getManufacturer().equals(manufacturer)
                 && car.getModel().equals(model));
-        if (carExists) {
-            capacity++;
-        }
-        return carExists;
     }
 
     public Car getLatestCar() {
-        if (data.isEmpty()) {
-            return null;
+        Car outputCar = null;
+        for (Car car : data) {
+            if (outputCar == null || outputCar.getYear() < car.getYear()) {
+                outputCar = car;
+            }
         }
-        List<Car> collect = this.data.stream()
-                .sorted((c1, c2) -> Integer.compare(c2.getYear(), c1.getYear()))
-                .limit(1)
-                .collect(Collectors.toList());
-        return collect.get(0);
+        return outputCar;
     }
 
     public Car getCar(String manufacturer, String model) {
-        Predicate<Car> carExists = c -> c.getManufacturer().equals(manufacturer) &&
-                c.getModel().equals(model);
-
-        if (this.data.stream().anyMatch(carExists)) {
-            List<Car> collect = this.data.stream()
-                    .filter(carExists).collect(Collectors.toList());
-            return collect.get(0);
+        for (Car car : data) {
+            if (car.getManufacturer().equals(manufacturer) && car.getModel().equals(model)) {
+                return car;
+            }
         }
         return null;
     }
@@ -62,10 +53,9 @@ public class Dealership {
     public String getStatistics() {
         StringBuilder sb = new StringBuilder();
         sb.append("The cars in a car dealership ").append(this.name).append(":");
-        sb.append(System.lineSeparator());
         for (Car car : data) {
-            sb.append(car.toString());
             sb.append(System.lineSeparator());
+            sb.append(car.toString());
         }
         return sb.toString();
     }
