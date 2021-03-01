@@ -1,8 +1,5 @@
-import Geometry.GeometryFactory;
-import Geometry.Point;
-import Geometry.Rectangle;
-import IOUtils.ConsoleReader;
-import IOUtils.InputParser;
+import Geometry.*;
+import IOUtils.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,9 +13,8 @@ public class Main {
 
         while (N-- > 0) {
             int[] currentCoordinates = InputParser.parseArray(reader.readLine(), "\\s+");
-            int x = currentCoordinates[0];
-            int y = currentCoordinates[1];
-            System.out.println(rectangle.contains(new Point(x, y)));
+            Point point = GeometryFactory.createPoint(currentCoordinates);
+            System.out.println(rectangle.contains(point));
         }
     }
 }

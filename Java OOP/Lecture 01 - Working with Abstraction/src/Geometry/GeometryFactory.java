@@ -7,7 +7,14 @@ public class GeometryFactory {
                 createPoint(pointsInfo[2], pointsInfo[3]));
     }
 
-    private static Point createPoint(int x, int y) {
+    public static Point createPoint(int x, int y) {
         return new Point(x, y);
+    }
+
+    public static Point createPoint(int[] coordinates) {
+        if (coordinates.length!=2) {
+            throw new IllegalStateException("Invalid number of coordinates!");
+        }
+        return createPoint(coordinates[0], coordinates[1]);
     }
 }
