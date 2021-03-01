@@ -8,4 +8,8 @@ public class InputParser {
         return Arrays.stream(input.split(pattern))
                 .mapToInt(Integer::parseInt).toArray();
     }
+
+    public static String[] readArray(String input, String pattern) {
+        return input.split(pattern);
+    }
 }

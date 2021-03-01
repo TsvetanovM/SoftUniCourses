@@ -1,20 +1,32 @@
+import Calendar.WeekDay;
 import Geometry.*;
 import IOUtils.*;
 
 public class Main {
     public static void main(String[] args) {
-        ConsoleReader reader = new ConsoleReader();
 
-        int[] coordinates = InputParser.parseArray(reader.readLine(), "\\s+");
+        WeekDay monday = WeekDay.MONDAY;
 
-        Rectangle rectangle = GeometryFactory.createRectangle(coordinates);
+        System.out.println(monday.getNumericRepresentation());
+        System.out.println(monday.ordinal());
 
-        int N = Integer.parseInt(reader.readLine());
+        WeekDay[] values = WeekDay.values();
 
-        while (N-- > 0) {
-            int[] currentCoordinates = InputParser.parseArray(reader.readLine(), "\\s+");
-            Point point = GeometryFactory.createPoint(currentCoordinates);
-            System.out.println(rectangle.contains(point));
+        for (WeekDay value : values) {
+            System.out.println(value.getName());
         }
+//        ConsoleReader reader = new ConsoleReader();
+//
+//        int[] coordinates = InputParser.parseArray(reader.readLine(), "\\s+");
+//
+//        Rectangle rectangle = GeometryFactory.createRectangle(coordinates);
+//
+//        int N = Integer.parseInt(reader.readLine());
+//
+//        while (N-- > 0) {
+//            int[] currentCoordinates = InputParser.parseArray(reader.readLine(), "\\s+");
+//            Point point = GeometryFactory.createPoint(currentCoordinates);
+//            System.out.println(rectangle.contains(point));
+//        }
     }
 }
