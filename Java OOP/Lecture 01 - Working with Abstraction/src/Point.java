@@ -1,17 +1,17 @@
 public class Point {
-    private final int x;
-    private final int y;
+    private final int X;
+    private final int Y;
 
     public Point(int x, int y) {
-        this.x = x;
-        this.y = y;
+        this.X = x;
+        this.Y = y;
     }
 
     public int getX() {
-        return x;
+        return X;
     }
 
     public int getY() {
-        return y;
+        return Y;
     }
 }
