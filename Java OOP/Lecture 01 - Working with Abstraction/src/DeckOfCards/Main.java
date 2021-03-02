@@ -1,12 +1,15 @@
 package DeckOfCards;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        CardSuits[] suits = CardSuits.values();
-        System.out.println("Card Suits:");
+        Scanner scanner = new Scanner(System.in);
+        String cardRank = scanner.nextLine();
+        String cardSuit = scanner.nextLine();
 
-        for (CardSuits suit : suits) {
-            System.out.println("Ordinal value: " + suit.ordinal() + "; Name value: " + suit);
-        }
+        Card card = new Card(cardRank, cardSuit);
+
+        System.out.println(card.toString());
     }
 }
