@@ -30,14 +30,14 @@ public class Person {
     }
 
     public void setFirstName(String firstName) {
-        if (firstName.length() < 3) {
+        if (firstName == null || firstName.trim().length() < 3) {
             throw new IllegalArgumentException("First name must be at least 3 characters long");
         }
         this.firstName = firstName;
     }
 
     public void setLastName(String lastName) {
-        if (lastName.length() < 3) {
+        if (lastName == null || lastName.trim().length() < 3) {
             throw new IllegalArgumentException("Last name must be at least 3 characters long");
         }
         this.lastName = lastName;
