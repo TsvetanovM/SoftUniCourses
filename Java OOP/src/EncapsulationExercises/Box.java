@@ -1,4 +1,4 @@
-package Encapsulation;
+package EncapsulationExercises;
 
 public class Box {
     private double length;

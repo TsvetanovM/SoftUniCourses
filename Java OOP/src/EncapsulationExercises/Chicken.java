@@ -1,4 +1,4 @@
-package Encapsulation;
+package EncapsulationExercises;
 
 public class Chicken {
     private String name;
@@ -14,7 +14,7 @@ public class Chicken {
     }
 
     private void setName(String name) {
-        if (name == null || name.length()<1 || name.isBlank()) {
+        if (name == null || name.length()<1 || name.matches("\\s+")) {
             throw new IllegalArgumentException("Name cannot be empty.");
         }
         this.name = name;
