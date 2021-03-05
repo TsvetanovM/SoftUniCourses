@@ -9,20 +9,22 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        Team team = new Team("Black Eagles");
+
         int n = Integer.parseInt(reader.readLine());
+        List<Person> players = new ArrayList<>();
 
-        List<Person> people = new ArrayList<>();
-
-        for (int i = 0; i < n; i++) {
+        while (n-- > 0) {
             String[] input = reader.readLine().split("\\s+");
-            people.add(new Person(input[0], input[1], Integer.parseInt(input[2]), Double.parseDouble(input[3])));
+            Person person = new Person(input[0], input[1], Integer.parseInt(input[2]), Double.parseDouble(input[3]));
+            players.add(person);
         }
 
-        double bonus = Double.parseDouble(reader.readLine());
-
-        for (Person person : people) {
-            person.increaseSalary(bonus);
-            System.out.println(person.toString());
+        for (Person player : players) {
+            team.addPerson(player);
         }
+
+        System.out.println("First team have " + team.getFirstTeam().size() + " players");
+        System.out.println("Reserve team have " + team.getReserveTeam().size() + " players");
     }
 }
