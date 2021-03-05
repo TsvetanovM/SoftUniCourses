@@ -9,14 +9,11 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        double length = Double.parseDouble(reader.readLine());
-        double width = Double.parseDouble(reader.readLine());
-        double height = Double.parseDouble(reader.readLine());
+        String name = reader.readLine();
+        int age = Integer.parseInt(reader.readLine());
 
-        Box box = new Box(length, width, height);
+        Chicken pile = new Chicken(name, age);
 
-        System.out.printf("Surface Area - %.2f%n", box.calculateSurfaceArea());
-        System.out.printf("Lateral Surface Area - %.2f%n", box.calculateLateralSurfaceArea());
-        System.out.printf("Volume - %.2f", box.calculateVolume());
+        System.out.println(pile.toString());
     }
 }
