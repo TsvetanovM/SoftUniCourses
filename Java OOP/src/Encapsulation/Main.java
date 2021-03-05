@@ -21,7 +21,7 @@ public class Main {
         }
 
         for (Person player : players) {
-            team.addPerson(player);
+            team.addPlayer(player);
         }
 
         System.out.println("First team have " + team.getFirstTeam().size() + " players");

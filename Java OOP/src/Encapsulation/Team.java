@@ -31,7 +31,7 @@ public class Team {
         return Collections.unmodifiableList(this.reserveTeam);
     }
 
-    public void addPerson(Person person) {
+    public void addPlayer(Person person) {
         if (person.getAge() < 40) {
             firstTeam.add(person);
         } else {
