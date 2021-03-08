@@ -5,46 +5,30 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Map<String, Person> allPeople = new LinkedHashMap<>();
+        String[] pizzaInput = scanner.nextLine().split("\\s+");
+        String pizzaName = pizzaInput[1];
+        int numberOfToppings = Integer.parseInt(pizzaInput[2]);
 
-        String[] people = getStringArray(scanner.nextLine(), ";");
-        for (String person : people) {
-            createPerson(allPeople, person);
+        Pizza pizza = new Pizza(pizzaName, numberOfToppings);
+
+        String[] doughInput = scanner.nextLine().split("\\s+");
+        String flourType = doughInput[1];
+        String bakingTechnique = doughInput[2];
+        double doughWeight = Double.parseDouble(doughInput[3]);
+
+        Dough dough = new Dough(flourType, bakingTechnique, doughWeight);
+        pizza.setDough(dough);
+
+        String toppingInput = scanner.nextLine();
+        while (!toppingInput.equals("END")) {
+            String[] tokens = toppingInput.split("\\s+");
+            String toppingType = tokens[1];
+            double toppingWeight = Double.parseDouble(tokens[2]);
+            Topping topping = new Topping(toppingType, toppingWeight);
+            pizza.addTopping(topping);
+            toppingInput = scanner.nextLine();
         }
 
-        Map<String, Product> allProducts = new LinkedHashMap<>();
-        String[] products = getStringArray(scanner.nextLine(), ";");
-        for (String product : products) {
-            createProduct(allProducts, product);
-        }
-
-        String command = scanner.nextLine();
-        while (!command.equals("END")) {
-            String[] tokens = getStringArray(command, "\\s+");
-            String personName = tokens[0];
-            String productName = tokens[1];
-            allPeople.get(personName).buyProduct(allProducts.get(productName));
-            command = scanner.nextLine();
-        }
-
-        for (Person person : allPeople.values()) {
-            System.out.println(person.toString());
-        }
-    }
-
-    private static void createPerson(Map<String, Person> map, String person) {
-        String[] personDetails = getStringArray(person, "=");
-        String name = personDetails[0];
-        map.put(name, new Person(name, Double.parseDouble(personDetails[1])));
-    }
-
-    private static String[] getStringArray(String s, String pattern) {
-        return s.split(pattern);
-    }
-
-    private static void createProduct(Map<String, Product> map, String person) {
-        String[] personDetails = getStringArray(person, "=");
-        String name = personDetails[0];
-        map.put(name, new Product(name, Double.parseDouble(personDetails[1])));
+        System.out.printf("%s - %.2f", pizza.getName(), pizza.getOverallCalories());
     }
 }
