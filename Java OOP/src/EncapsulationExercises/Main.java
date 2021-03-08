@@ -5,30 +5,45 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String[] pizzaInput = scanner.nextLine().split("\\s+");
-        String pizzaName = pizzaInput[1];
-        int numberOfToppings = Integer.parseInt(pizzaInput[2]);
+        String input = scanner.nextLine();
+        Map<String, FootballTeam> teams = new LinkedHashMap<>();
 
-        Pizza pizza = new Pizza(pizzaName, numberOfToppings);
-
-        String[] doughInput = scanner.nextLine().split("\\s+");
-        String flourType = doughInput[1];
-        String bakingTechnique = doughInput[2];
-        double doughWeight = Double.parseDouble(doughInput[3]);
-
-        Dough dough = new Dough(flourType, bakingTechnique, doughWeight);
-        pizza.setDough(dough);
-
-        String toppingInput = scanner.nextLine();
-        while (!toppingInput.equals("END")) {
-            String[] tokens = toppingInput.split("\\s+");
-            String toppingType = tokens[1];
-            double toppingWeight = Double.parseDouble(tokens[2]);
-            Topping topping = new Topping(toppingType, toppingWeight);
-            pizza.addTopping(topping);
-            toppingInput = scanner.nextLine();
+        while (!input.equals("END")) {
+            String[] tokens = input.split(";");
+            String command = tokens[0];
+            String teamName = tokens[1];
+            switch (command) {
+                case "Team":
+                    teams.put(teamName, new FootballTeam(teamName));
+                    break;
+                case "Add":
+                    if (validTeam(teams, teamName)) {
+                        String playerName = tokens[2];
+                        String[] stats = {tokens[3], tokens[4], tokens[5], tokens[6], tokens[7]};
+                        teams.get(teamName).addPlayer(new Player(tokens[2], Integer.parseInt(tokens[3]),
+                                Integer.parseInt(tokens[4]), Integer.parseInt(tokens[5]),
+                                Integer.parseInt(tokens[6]), Integer.parseInt(tokens[7])));
+                    }
+                    break;
+                case "Remove":
+                    teams.get(teamName).removePlayer(tokens[2]);
+                    break;
+                case "Rating":
+                    if (validTeam(teams, teamName)) {
+                        System.out.println(teams.get(teamName).toString());
+                    }
+                    break;
+            }
+            input = scanner.nextLine();
         }
-
-        System.out.printf("%s - %.2f", pizza.getName(), pizza.getOverallCalories());
     }
+
+    private static boolean validTeam(Map<String, FootballTeam> teams, String teamName) {
+        if (!teams.containsKey(teamName)) {
+            System.out.println("Team " + teamName + " does not exist.");
+            return false;
+        }
+        return true;
+    }
+
 }
