@@ -2,9 +2,12 @@ package Inheritance;
 
 public class Main {
     public static void main(String[] args) {
-        Puppy puppy = new Puppy();
-        puppy.eat();
-        puppy.bark();
-        puppy.weep();
+        Dog dog = new Puppy();
+        dog.eat();
+        dog.bark();
+
+        Cat cat = new Cat();
+        cat.eat();
+        cat.meow();
     }
 }
