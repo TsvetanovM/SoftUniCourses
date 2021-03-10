@@ -1,6 +1,7 @@
 package InheritanceExercises;
 
 import InheritanceExercises.person.Child;
+import InheritanceExercises.zoo.*;
 
 import java.util.Scanner;
 
@@ -8,12 +9,12 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        String name = scanner.nextLine();
-        int age = Integer.parseInt(scanner.nextLine());
+        Animal animal = new Animal("Marto");
+        Mammal mammal = new Mammal("Acho");
+        Snake snake = new Snake("Ivanina");
 
-        Child child = new Child(name, age);
-
-        System.out.println(child.getName());
-        System.out.println(child.getAge());
-    }
+        System.out.println(animal.getName());
+        System.out.println(mammal.getName());
+        System.out.println(snake.getName());
+     }
 }
