@@ -1,8 +1,7 @@
 package InheritanceExercises;
 
-import InheritanceExercises.hero.*;
-import InheritanceExercises.person.Child;
-import InheritanceExercises.zoo.*;
+import InheritanceExercises.vehicle.*;
+import InheritanceExercises.vehicle.Vehicle;
 
 import java.util.Scanner;
 
@@ -10,8 +9,10 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        DarkWizard dw = new DarkWizard("Marto", 100);
+        Vehicle raceMotorcycle = new SportCar(100, 350);
 
-        System.out.println(dw.toString());
+        raceMotorcycle.drive(5);
+
+        System.out.println(raceMotorcycle.getFuel());
      }
 }
