@@ -14,10 +14,16 @@ public class StackOfStrings {
     }
 
     public String pop() {
+        if (isEmpty()) {
+            return null;
+        }
         return data.remove(data.size() - 1);
     }
 
     public String peek() {
+        if (isEmpty()) {
+            return null;
+        }
         return data.get(data.size() - 1);
     }
 
