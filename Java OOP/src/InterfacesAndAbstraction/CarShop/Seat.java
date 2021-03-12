@@ -1,12 +1,14 @@
 package InterfacesAndAbstraction.CarShop;
 
-public class Seat implements Car {
+import java.io.Serializable;
+
+public class Seat implements Car, Serializable {
     private String model;
     private String color;
-    private int horsePower;
+    private Integer horsePower;
     private String country;
 
-    public Seat(String model, String color, int horsePower, String country) {
+    public Seat(String model, String color, Integer horsePower, String country) {
         this.model = model;
         this.color = color;
         this.horsePower = horsePower;
@@ -24,7 +26,7 @@ public class Seat implements Car {
     }
 
     @Override
-    public int getHorsePower() {
+    public Integer getHorsePower() {
         return horsePower;
     }
 
@@ -35,6 +37,6 @@ public class Seat implements Car {
 
     @Override
     public String toString() {
-        return String.format("This is %s produced in %s and have %d tires", this.model, this.country, TIRES);
+        return String.format("This is %s produced in %s and have %d tires", getModel(), countryProduced(), TIRES);
     }
 }
