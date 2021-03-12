@@ -1,26 +1,17 @@
 package InterfecesAndAbstractionExercises.person;
 
-public class Citizen
-        implements Person, Identifiable, Buyer {
+public class Citizen extends Human
+        implements Identifiable {
 
-    private String name;
-    private int age;
     private String id;
     private String birthDate;
-    private int food;
 
-    public Citizen(String name, int age, String id, String birthDate, int food) {
-        this.name = name;
-        this.age = age;
+    public Citizen(String name, int age, String id, String birthDate) {
+        super(name, age);
         this.id = id;
         this.birthDate = birthDate;
-        this.food = food;
     }
 
-    @Override
-    public int getAge() {
-        return age;
-    }
 
     @Override
     public String getId() {
@@ -28,21 +19,7 @@ public class Citizen
     }
 
     @Override
-    public String getName() {
-        return name;
-    }
-
-    private void setFood(int food) {
-        this.food = food;
-    }
-
-    @Override
-    public int getFood() {
-        return food;
-    }
-
-    @Override
     public void buyFood() {
-        setFood(food + 10);
+        setFood(super.getFood() + 10);
     }
 }
