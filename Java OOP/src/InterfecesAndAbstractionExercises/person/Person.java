@@ -1,4 +1,4 @@
-package InterfecesAndAbstractionExercises;
+package InterfecesAndAbstractionExercises.person;
 
 public interface Person {
     String getName();
