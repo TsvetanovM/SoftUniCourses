@@ -11,9 +11,4 @@ public class European implements Person{
     public String getName() {
         return name;
     }
-
-    @Override
-    public String sayHello() {
-        return "Hello";
-    }
 }
