@@ -1,26 +1,18 @@
 package InterfacesAndAbstraction;
 
-import InterfacesAndAbstraction.SayHello.*;
+import InterfacesAndAbstraction.ferrari.Car;
+import InterfacesAndAbstraction.ferrari.Ferrari;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        List<Person> persons = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
 
+        String name = scanner.nextLine();
 
-        persons.add(new Bulgarian("Pesho"));
-        persons.add(new European("Pesho"));
-        persons.add(new Chinese("Pesho"));
+        Car ferrari = new Ferrari(name);
 
-        for (Person person : persons) {
-            print(person);
-        }
+        System.out.println(ferrari.toString());
     }
-
-    private static void print(Person person) {
-        System.out.println(person.sayHello());
-    }
-
 }
