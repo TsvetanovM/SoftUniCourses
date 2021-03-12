@@ -12,10 +12,12 @@ public abstract class BasePerson implements Person {
         return name;
     }
 
+    @Override
+    public String sayHello() {
+        return "Hello";
+    }
+
     private void setName(String name) {
-        if (name == null || name.trim().isEmpty()) {
-            throw new IllegalArgumentException("Name cannot be empty.");
-        }
         this.name = name;
     }
 }
