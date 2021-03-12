@@ -1,23 +1,20 @@
 package InterfecesAndAbstractionExercises.person;
 
-public class Citizen
-        implements Person, Identifiable, Birthable {
+public class Citizen extends AnimateBeing
+        implements Person, Identifiable {
 
-    private String name;
     private int age;
     private String id;
-    private String birthDate;
 
     public Citizen(String name, int age, String id, String birthDate) {
-        this.name = name;
+        super(name, birthDate);
         this.age = age;
         this.id = id;
-        this.birthDate = birthDate;
     }
 
     @Override
     public String getName() {
-        return name;
+        return super.getName();
     }
 
     @Override
@@ -30,18 +27,14 @@ public class Citizen
         return id;
     }
 
-    @Override
-    public String getBirthDate() {
-        return birthDate;
-    }
 
-    @Override
-    public String toString() {
-        return "Citizen{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", id='" + id + '\'' +
-                ", birthDate='" + birthDate + '\'' +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Citizen{" +
+//                "name='" + name + '\'' +
+//                ", age=" + age +
+//                ", id='" + id + '\'' +
+//                ", birthDate='" + birthDate + '\'' +
+//                '}';
+//    }
 }
