@@ -21,7 +21,7 @@ public class Main {
                     double salary = Double.parseDouble(tokens[4]);
                     soldiers.add(new PrivateImpl(id, firstName, lastName, salary));
                     break;
-                case "LieutenantGeneral":
+                case "LeutenantGeneral":
                     salary = Double.parseDouble(tokens[4]);
                     LieutenantGeneralImpl lg = new LieutenantGeneralImpl(id, firstName, lastName, salary);
                     addPrivateSoldier(soldiers, tokens, lg);
