@@ -1,4 +1,4 @@
-package Military;
+package InterfecesAndAbstractionExercises.Military;
 
 public class Repair {
     private String partName;

@@ -1,4 +1,4 @@
-package Military;
+package InterfecesAndAbstractionExercises.Military;
 
 import java.util.Set;
 

@@ -1,4 +1,4 @@
-package Military;
+package InterfecesAndAbstractionExercises.Military;
 
 public class Mission {
     private String codeName;

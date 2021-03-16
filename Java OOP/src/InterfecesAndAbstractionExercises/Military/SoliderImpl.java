@@ -1,4 +1,4 @@
-package Military;
+package InterfecesAndAbstractionExercises.Military;
 
 public abstract class SoliderImpl implements Soldier{
     private int id;

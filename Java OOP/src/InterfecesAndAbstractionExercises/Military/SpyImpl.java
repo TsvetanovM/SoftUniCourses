@@ -1,4 +1,4 @@
-package Military;
+package InterfecesAndAbstractionExercises.Military;
 
 public class SpyImpl extends SoliderImpl implements Spy{
     private String codeNumber;

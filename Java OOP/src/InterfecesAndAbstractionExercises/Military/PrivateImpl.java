@@ -1,4 +1,4 @@
-package Military;
+package InterfecesAndAbstractionExercises.Military;
 
 public class PrivateImpl extends SoliderImpl implements Private{
     private double salary;
