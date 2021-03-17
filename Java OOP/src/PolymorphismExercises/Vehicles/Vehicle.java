@@ -38,7 +38,7 @@ public abstract class Vehicle {
     public void drive(double distance) {
         double requiredFuel = distance * getFuelPerKm();
         if (requiredFuel <= getFuel()) {
-            setFuel(getFuel() - requiredFuel);
+            this.fuel = getFuel() - requiredFuel;
             DecimalFormat df = new DecimalFormat("0.##");
             System.out.printf("%s travelled %s km%n", this.getClass().getSimpleName(),df.format(distance));
         } else System.out.printf("%s needs refueling%n", this.getClass().getSimpleName());

@@ -11,6 +11,6 @@ public class Truck extends Vehicle{
     public void refuel(double liters) {
         if (liters + getFuel() > getTANK_CAPACITY()) {
             System.out.println("Cannot fit fuel in tank");
-        } else setFuel(getFuel() + liters * 0.95);
+        } else setFuel(liters * 0.95);
     }
 }
