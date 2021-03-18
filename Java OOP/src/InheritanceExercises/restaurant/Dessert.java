@@ -1,8 +1,8 @@
-package restaurant;
+package InheritanceExercises.restaurant;
 
 import java.math.BigDecimal;
 
-public class Dessert extends Food{
+public class Dessert extends InheritanceExercises.restaurant.Food {
     private double calories;
 
     public Dessert(String name, BigDecimal price, double grams, double calories) {
