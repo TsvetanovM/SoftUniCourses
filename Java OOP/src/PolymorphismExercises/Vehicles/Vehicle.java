@@ -31,7 +31,7 @@ public abstract class Vehicle {
 
     protected void setFuel(double fuel) {
         if (fuel <= 0) {
-            System.out.println("Fuel must be a positive number.");
+            System.out.println("Fuel must be a positive number");
         } else this.fuel = getFuel() + fuel;
     }
 
