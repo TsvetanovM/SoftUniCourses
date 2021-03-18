@@ -1,4 +1,4 @@
-package WildFarm;
+package PolymorphismExercises.WildFarm;
 
 public abstract class Food {
     private Integer quantity;

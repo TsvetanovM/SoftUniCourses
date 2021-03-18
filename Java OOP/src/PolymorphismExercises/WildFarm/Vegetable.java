@@ -1,4 +1,4 @@
-package WildFarm;
+package PolymorphismExercises.WildFarm;
 
 public class Vegetable extends Food{
     public Vegetable(Integer quantity) {

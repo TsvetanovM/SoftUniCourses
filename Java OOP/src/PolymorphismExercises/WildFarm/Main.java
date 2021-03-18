@@ -1,4 +1,4 @@
-package WildFarm;
+package PolymorphismExercises.WildFarm;
 
 import java.util.ArrayList;
 import java.util.List;
