@@ -1,7 +1,8 @@
 package LoggingServce.Model.Loggers;
 
-import LoggingServce.API.Appender;
 import LoggingServce.API.Logger;
+import LoggingServce.Enums.ReportLevel;
+import LoggingServce.Model.Appenders.Appender;
 
 import java.util.Arrays;
 
@@ -15,30 +16,30 @@ public class MessageLogger implements Logger {
 
     @Override
     public void logInfo(String dateTime, String message) {
-        callAppenders(dateTime, "Info", message);
+        callAppenders(dateTime, ReportLevel.INFO, message);
     }
 
     @Override
     public void logWarning(String dateTime, String message) {
-        callAppenders(dateTime, "Warning", message);
+        callAppenders(dateTime, ReportLevel.WARNING, message);
     }
 
     @Override
     public void logError(String dateTime, String message) {
-        callAppenders(dateTime, "Error", message);
+        callAppenders(dateTime, ReportLevel.ERROR, message);
     }
 
     @Override
     public void logCritical(String dateTime, String message) {
-        callAppenders(dateTime, "Critical", message);
+        callAppenders(dateTime, ReportLevel.CRITICAL, message);
     }
 
     @Override
     public void logFatal(String dateTime, String message) {
-        callAppenders(dateTime, "Fatal", message);
+        callAppenders(dateTime, ReportLevel.FATAL, message);
     }
 
-    private void callAppenders(String dateTime, String reportLevel, String message) {
+    private void callAppenders(String dateTime, ReportLevel reportLevel, String message) {
         Arrays.stream(appenders).forEach(a -> a.appendMessage(dateTime, reportLevel, message));
     }
 }
