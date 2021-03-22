@@ -33,10 +33,10 @@ public class Main {
             }
         }
 
-        getters.forEach(m -> System.out.println( m.getName() + " will return class "
-                + m.getReturnType().getName()));
+        getters.forEach(m -> System.out.println( m.getName() + " will return "
+                + m.getReturnType()));
 
-        setters.forEach(m -> System.out.println( m.getName() + " and will set field of class "
+        setters.forEach(m -> System.out.println( m.getName() + " and will set field of "
                 + m.getParameterTypes()[0]));
 //        Class reflection = Reflection.class;
 //
