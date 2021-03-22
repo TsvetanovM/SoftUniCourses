@@ -4,6 +4,7 @@ import java.lang.reflect.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
+@Subject(categories = {"Test", "Annotations"})
 public class Main {
     public static class MethodComparator implements Comparator<Method> {
 
@@ -31,10 +32,10 @@ public class Main {
             }
         }
 
-        List<Field> fields = Arrays.stream(clazz.getFields()).collect(Collectors.toList());
-
-        fields.stream().filter(e -> !Modifier.isPrivate(e.getModifiers()))
-                .sorted().forEach(e -> System.out.println(e.getName() + " must be private!"));
+        Arrays.stream(clazz.getDeclaredFields())
+                .filter(e -> !Modifier.isPrivate(e.getModifiers()))
+                .sorted(Comparator.comparing(Field::getName))
+                .forEach(e -> System.out.println(e.getName() + " must be private!"));
 
         for (Method getter : getters) {
             if (!Modifier.isPublic(getter.getModifiers())) {
