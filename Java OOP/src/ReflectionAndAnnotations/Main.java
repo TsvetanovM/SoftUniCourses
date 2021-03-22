@@ -1,10 +1,8 @@
 package ReflectionAndAnnotations;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+import java.lang.reflect.*;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
     public static class MethodComparator implements Comparator<Method> {
@@ -33,11 +31,19 @@ public class Main {
             }
         }
 
-        getters.forEach(m -> System.out.println( m.getName() + " will return "
-                + m.getReturnType()));
+        List<Field> fields = Arrays.stream(clazz.getFields()).collect(Collectors.toList());
 
-        setters.forEach(m -> System.out.println( m.getName() + " and will set field of "
-                + m.getParameterTypes()[0]));
+        fields.stream().filter(e -> !Modifier.isPrivate(e.getModifiers()))
+                .sorted().forEach(e -> System.out.println(e.getName() + " must be private!"));
+
+        for (Method getter : getters) {
+            if (!Modifier.isPublic(getter.getModifiers())) {
+                System.out.println(getter.getName() + " have to be public!");
+            }
+        }
+
+        setters.stream().filter(e -> !Modifier.isPrivate(e.getModifiers()))
+                .forEach(e -> System.out.println(e.getName() + " have to be private!"));
 //        Class reflection = Reflection.class;
 //
 //        System.out.println("class " + reflection.getSimpleName());
