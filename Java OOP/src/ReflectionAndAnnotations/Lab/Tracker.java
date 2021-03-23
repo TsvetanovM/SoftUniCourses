@@ -1,4 +1,4 @@
-package ReflectionAndAnnotations;
+package ReflectionAndAnnotations.Lab;
 
 import java.lang.reflect.Method;
 import java.util.Map;
