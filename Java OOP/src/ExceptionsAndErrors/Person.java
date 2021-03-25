@@ -12,16 +12,12 @@ public class Person {
     }
 
     public void setFirstName(String firstName) {
-        if (firstName == null || firstName.isBlank()) {
-            throw new IllegalArgumentException("First name cannot be null or empty");
-        }
+        validateStringField(firstName, "first");
         this.firstName = firstName;
     }
 
     public void setLastName(String lastName) {
-        if (lastName == null || lastName.isBlank()) {
-            throw new IllegalArgumentException("Last name cannot be null or empty");
-        }
+        validateStringField(lastName, "second");
         this.lastName = lastName;
     }
 
@@ -30,5 +26,11 @@ public class Person {
             throw new IllegalArgumentException("Age must be in the rage [0 - 120]");
         }
         this.age = age;
+    }
+
+    private void validateStringField(String s, String fieldName) {
+        if (s == null || s.isBlank()) {
+            throw new IllegalArgumentException("The " + fieldName + " name cannot be null or empty");
+        }
     }
 }
