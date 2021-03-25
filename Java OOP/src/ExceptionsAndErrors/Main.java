@@ -5,19 +5,19 @@ public class Main {
 
         try {
             Person peter = new Person("Franco", "Aimee", 19);
-        } catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException | InvalidPersonNameException e) {
             System.out.println("Exception thrown: " + e.getMessage());
         }
 
         try {
             Person noName = new Person("  ", "Aimee", 19);
-        } catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException | InvalidPersonNameException e) {
             System.out.println("Exception thrown: " + e.getMessage());
         }
 
         try {
             Person noLastName = new Person("Franco", null, 19);
-        } catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException | InvalidPersonNameException e) {
             System.out.println("Exception thrown: " + e.getMessage());
         }
 

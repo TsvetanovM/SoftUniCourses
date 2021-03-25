@@ -30,7 +30,7 @@ public class Person {
 
     private void validateStringField(String s, String fieldName) {
         if (s == null || s.isBlank()) {
-            throw new IllegalArgumentException("The " + fieldName + " name cannot be null or empty");
+            throw new InvalidPersonNameException("The " + fieldName + " name cannot be null or empty");
         }
     }
 }
