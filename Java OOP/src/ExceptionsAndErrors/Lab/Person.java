@@ -1,4 +1,6 @@
-package ExceptionsAndErrors;
+package ExceptionsAndErrors.Lab;
+
+import ExceptionsAndErrors.Lab.InvalidPersonNameException;
 
 public class Person {
     private String firstName;
