@@ -1,19 +1,20 @@
 package ReflectionAndAnnotations.BarracksWars.Core.Commands;
 
+import ReflectionAndAnnotations.BarracksWars.Annotations.Inject;
 import ReflectionAndAnnotations.BarracksWars.Interfaces.Repository;
-import ReflectionAndAnnotations.BarracksWars.Interfaces.UnitFactory;
 
-public class retire extends Command{
+public class Retire extends Command{
+    @Inject
+    private Repository repository;
 
-
-    public retire(String[] data, Repository repository, UnitFactory unitFactory) {
-        super(data, repository, unitFactory);
+    public Retire(String[] data) {
+        super(data);
     }
 
     @Override
     public String execute() {
         String unitType = getData()[1];
-        if (getRepository().removeUnit(unitType) == null) {
+        if (repository.removeUnit(unitType) == null) {
             return "No such units in repository.";
         }
         return unitType + " retired!";
