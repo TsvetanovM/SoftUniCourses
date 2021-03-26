@@ -2,7 +2,6 @@ package ReflectionAndAnnotations.BarracksWars.Data;
 
 import ReflectionAndAnnotations.BarracksWars.Interfaces.Repository;
 import ReflectionAndAnnotations.BarracksWars.Interfaces.Unit;
-import jdk.jshell.spi.ExecutionControl;
 
 import java.util.Map;
 import java.util.TreeMap;
@@ -20,7 +19,6 @@ public class UnitRepository implements Repository {
 		if (!this.amountOfUnits.containsKey(unitType)) {
 			this.amountOfUnits.put(unitType, 0);
 		}
-
 		int newAmount = this.amountOfUnits.get(unitType) + 1;
 		this.amountOfUnits.put(unitType, newAmount);
 	}
@@ -28,9 +26,9 @@ public class UnitRepository implements Repository {
 	public String getStatistics() {
 		StringBuilder statBuilder = new StringBuilder();
 		for (Map.Entry<String, Integer> entry : amountOfUnits.entrySet()) {
-			String formatedEntry =
+			String formattedEntry =
 					String.format("%s -> %d%n", entry.getKey(), entry.getValue());
-			statBuilder.append(formatedEntry);
+			statBuilder.append(formattedEntry);
 		}
 		statBuilder.setLength(
 				statBuilder.length() - System.lineSeparator().length());
@@ -38,8 +36,15 @@ public class UnitRepository implements Repository {
 		return statBuilder.toString();
 	}
 
-	public void removeUnit(String unitType) throws ExecutionControl.NotImplementedException {
-		// TODO: implement for problem 4
-		throw new ExecutionControl.NotImplementedException("message");
+	public Integer removeUnit(String unitType){
+		if (!this.amountOfUnits.containsKey(unitType) || this.amountOfUnits.get(unitType) == 0) {
+			return null;
+		}
+		this.amountOfUnits.put(unitType, this.amountOfUnits.get(unitType) - 1);
+		return 1;
+	}
+
+	public Map<String, Integer> getAmountOfUnits() {
+		return amountOfUnits;
 	}
 }
