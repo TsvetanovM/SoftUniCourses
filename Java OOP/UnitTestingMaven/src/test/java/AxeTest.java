@@ -6,6 +6,9 @@ import static org.junit.Assert.*;
 
 public class AxeTest {
 
+    public static final int ATTACK = 10;
+    public static final int DURABILITY = 5;
+
     @Test
     public void testAxeConstructorSetsCorrectAttackAndDurability() {
 
@@ -14,7 +17,7 @@ public class AxeTest {
         int durability = 13;
 
         //Second A -> Act || AAA
-        Axe axe = new Axe(attack, durability);
+        Axe axe = createAxe(attack, durability);
 
         //Third A -> Assert || AAA
         assertEquals(attack, axe.getAttackPoints());
@@ -23,12 +26,29 @@ public class AxeTest {
 
     @Test(expected =  IllegalStateException.class)
     public void testAxeAttackShouldFailIfAxeHasZeroDurability() {
-        int attack = 10;
         int durability = 0;
-        Axe axe = new Axe(attack, durability);
-        Dummy dummy = new Dummy(100, 20);
+        Axe axe = createAxe(ATTACK, durability);
+        Dummy dummy = createDummy();
 
         axe.attack(dummy);
 
+    }
+
+    @Test
+    public void testAxeLosesSingleDurabilityWhenSuccessfullyAttackingADummy() {
+        Axe axe = createAxe(ATTACK, DURABILITY);
+        Dummy dummy = createDummy();
+
+        axe.attack(dummy);
+
+        assertEquals(DURABILITY - 1, axe.getDurabilityPoints());
+    }
+
+    private Axe createAxe(int attack, int durability) {
+        return new Axe(attack, durability);
+    }
+
+    private Dummy createDummy() {
+        return new Dummy(100, 50);
     }
 }
