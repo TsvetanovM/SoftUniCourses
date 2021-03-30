@@ -1,6 +1,7 @@
 import jdk.jshell.spi.ExecutionControl;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Instock implements ProductStock {
     private Map<String, Product> products;
@@ -52,7 +53,13 @@ public class Instock implements ProductStock {
 
     @Override
     public Iterable<Product> findFirstByAlphabeticalOrder(int count) {
-        return null;
+        if (count > this.getCount() || count <= 0) {
+            return new ArrayList<>();
+        }
+       return products.values().stream()
+                .sorted(Comparator.comparing(Product::getLabel))
+                .limit(count)
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -77,6 +84,6 @@ public class Instock implements ProductStock {
 
     @Override
     public Iterator<Product> iterator() {
-        return null;
+        return this.products.values().iterator();
     }
 }

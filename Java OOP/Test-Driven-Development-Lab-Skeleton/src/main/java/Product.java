@@ -36,6 +36,6 @@ public class Product implements Comparable<Product> {
 
     @Override
     public int compareTo(Product o) {
-        throw new UnsupportedOperationException();
+        return this.label.compareTo(o.label);
     }
 }
