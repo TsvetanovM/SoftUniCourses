@@ -2,8 +2,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -154,14 +152,10 @@ public class ProductStockTest {
     }
 
     private void addProducts() {
-        inStock.add(new Product("test_label_0", 5.99, 125));
-        inStock.add(new Product("test_label_1", 6.99, 85));
-        inStock.add(new Product("test_label_2", 100,  12));
-        inStock.add(new Product("test_label_3", 1.15, 760));
-        inStock.add(new Product("test_label_4", 48.69, 1866));
-        inStock.add(new Product("test_label_5", 3655, 33));
-        inStock.add(new Product("test_label_6", 0.62, 11350));
-        inStock.add(new Product("test_label_7", 77, 42));
+        List<Product> products = addProductsToLocalList();
+        for (Product product1 : products) {
+            inStock.add(product1);
+        }
     }
 
     private List<Product> addProductsToLocalList() {
