@@ -27,12 +27,10 @@ public class Instock implements ProductStock {
     }
 
     @Override
-    public void changeQuantity(String product, int quantity) {
-        if (!this.products.containsKey(product)) {
-            throw new IllegalArgumentException();
-        }
-        Product currentProduct = this.products.get(product);
-        currentProduct.setQuantity(currentProduct.getQuantity() + quantity);
+    public void changeQuantity(String label, int quantity) {
+        checkIfProductExists(label);
+        Product product = this.products.get(label);
+        product.setQuantity(product.getQuantity() + quantity);
     }
 
     @Override
@@ -42,7 +40,14 @@ public class Instock implements ProductStock {
 
     @Override
     public Product findByLabel(String label) {
-        return null;
+        checkIfProductExists(label);
+        return products.get(label);
+    }
+
+    private void checkIfProductExists(String label) {
+        if (!this.products.containsKey(label)) {
+            throw new IllegalArgumentException();
+        }
     }
 
     @Override

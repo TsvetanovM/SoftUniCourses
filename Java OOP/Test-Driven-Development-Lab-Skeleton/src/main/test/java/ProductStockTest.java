@@ -99,6 +99,21 @@ public class ProductStockTest {
         inStock.changeQuantity(product.getLabel(), 20);
     }
 
+    @Test
+    public void testFindByLabelReturnsTheCorrectProduct() {
+        addProducts();
+        inStock.add(product);
+        Product byLabel = inStock.findByLabel(product.getLabel());
+        assertNotNull(byLabel);
+        assertEquals(product, byLabel);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testFindByLabelFailsWhenProductIsMissing() {
+        addProducts();
+        inStock.findByLabel(product.getLabel());
+    }
+
     private void assertFindReturnsCorrectProduct(int index) {
         addProducts();
         assertEquals(Integer.valueOf(PRODUCTS_SIZE), inStock.getCount());
