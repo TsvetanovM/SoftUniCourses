@@ -1,22 +1,29 @@
 import jdk.jshell.spi.ExecutionControl;
 
-import java.util.Iterator;
+import java.util.*;
 
 public class Instock implements ProductStock {
+    private Map<String, Product> products;
+
+    public Instock() {
+        this.products = new LinkedHashMap<>();
+    }
 
     @Override
     public Integer getCount() {
-        return null;
+        return products.size();
     }
 
     @Override
     public Boolean contains(Product product) {
-        return null;
+        return this.products.containsKey(product.getLabel());
     }
 
     @Override
     public void add(Product product) {
-
+        if (!contains(product)) {
+            this.products.put(product.getLabel(), product);
+        }
     }
 
     @Override
@@ -26,7 +33,7 @@ public class Instock implements ProductStock {
 
     @Override
     public Product find(int index) {
-        return null;
+        return new ArrayList<>(this.products.values()).get(index);
     }
 
     @Override

@@ -1,9 +1,7 @@
 public class Product implements Comparable<Product> {
 
     public String label;
-
     public double price;
-
     public int quantity;
 
     public Product(String label, double price, int quantity) {
