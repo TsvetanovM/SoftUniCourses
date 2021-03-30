@@ -28,7 +28,11 @@ public class Instock implements ProductStock {
 
     @Override
     public void changeQuantity(String product, int quantity) {
-
+        if (!this.products.containsKey(product)) {
+            throw new IllegalArgumentException();
+        }
+        Product currentProduct = this.products.get(product);
+        currentProduct.setQuantity(currentProduct.getQuantity() + quantity);
     }
 
     @Override

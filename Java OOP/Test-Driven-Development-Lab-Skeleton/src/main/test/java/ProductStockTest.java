@@ -53,7 +53,7 @@ public class ProductStockTest {
 
     @Test
     public void testContainsReturnsFalseWhenEmpty() {
-        Boolean contains = inStock.contains(new Product("test", 1, 2));
+        Boolean contains = inStock.contains(product);
         assertNotNull(contains);
         assertFalse(contains);
     }
@@ -83,6 +83,20 @@ public class ProductStockTest {
     public void testFindShouldFailWhenIndexOutOfBoundsWhenNegativeIndex() {
         addProducts();
         inStock.find(-1);
+    }
+
+    @Test
+    public void testChangeQuantityChangesQuantityValueByGivenAmount() {
+        inStock.add(product);
+        int previousQuantity = product.getQuantity();
+        inStock.changeQuantity(product.getLabel(), 20);
+        assertEquals(previousQuantity + 20, product.getQuantity());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testChangeQuantityFailsWhenThereIsNoSuchProduct() {
+        addProducts();
+        inStock.changeQuantity(product.getLabel(), 20);
     }
 
     private void assertFindReturnsCorrectProduct(int index) {
