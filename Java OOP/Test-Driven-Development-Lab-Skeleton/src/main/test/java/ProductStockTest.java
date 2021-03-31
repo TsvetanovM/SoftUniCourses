@@ -2,6 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -121,26 +122,56 @@ public class ProductStockTest {
     @Test
     public void testFindFirstByAlphabeticalOrderReturnsTheCorrectItems() {
         addProducts();
-        Iterable<Product> byAlphabeticalOrder = inStock.findFirstByAlphabeticalOrder(3);
-        assertNotNull(byAlphabeticalOrder);
-        List<Product> sortedList = new ArrayList<>();
-        byAlphabeticalOrder.forEach(sortedList::add);
-        List<Product> products = addProductsToLocalList();
-        List<Product> manuallySortedList = products.stream().sorted().limit(3).collect(Collectors.toList());
-        assertEquals(manuallySortedList.size(), sortedList.size());
-        for (int i = 0; i < manuallySortedList.size(); i++) {
-            assertEquals(manuallySortedList.get(i).getLabel(), sortedList.get(i).getLabel());
-        }
+        List<Product> returned = getProducts(inStock.findFirstByAlphabeticalOrder(3));
+        List<Product> list = addProductsToLocalList();
+        List<Product> expected = list.stream().sorted().limit(3).collect(Collectors.toList());
+        compareListsByLabel(expected, returned);
     }
 
     @Test
     public void testFindFirstByAlphabeticalOrderReturnsEmptyCollectionIfCountIsOutOfRange() {
-        addProducts();
-        Iterable<Product> byAlphabeticalOrder = inStock.findFirstByAlphabeticalOrder(PRODUCTS_SIZE + 1);
-        assertNotNull(byAlphabeticalOrder);
-        List<Product> products = new ArrayList<>();
-        byAlphabeticalOrder.forEach(products::add);
+        List<Product> products = getProducts(inStock.findFirstByAlphabeticalOrder(PRODUCTS_SIZE + 1));
         assertTrue(products.isEmpty());
+    }
+
+    @Test
+    public void testFindAllInRangeReturnsTheCorrectProducts() {
+        double lowPrice = 1.15;
+        double highPrice = 50;
+        addProducts();
+        List<Product> returned = getProducts(inStock.findAllInRange(lowPrice, highPrice));
+        List<Product> expected = addProductsToLocalList();
+        expected = expected.stream().filter(e -> e.getPrice() > lowPrice && e.getPrice() <= highPrice)
+                .sorted((e1, e2) -> Double.compare(e2.getPrice(), e1.getPrice()))
+                .collect(Collectors.toList());
+        compareListsByPrice(expected, returned);
+    }
+
+    private void compareListsByPrice(List<Product> expected, List<Product> returned) {
+        assertEquals(expected.size(), returned.size());
+        for (int i = 0; i < expected.size(); i++) {
+            assertEquals(expected.get(i).getPrice(), returned.get(i).getPrice(), 0);
+        }
+    }
+
+    private void compareListsByLabel(List<Product> expected, List<Product> returned) {
+        assertEquals(expected.size(), returned.size());
+        for (int i = 0; i < expected.size(); i++) {
+            assertEquals(expected.get(i).getLabel(), returned.get(i).getLabel());
+        }
+    }
+
+    @Test
+    public void testFindAllInRangeReturnsEmptyCollectionWhenNoProductsInRange() {
+        List<Product> productList = getProducts(inStock.findAllInRange(4500, 6000));
+        assertTrue(productList.isEmpty());
+    }
+
+    private List<Product> getProducts(Iterable<Product> iterable) {
+        assertNotNull(iterable);
+        List<Product> returned = new ArrayList<>();
+        iterable.forEach(returned::add);
+        return returned;
     }
 
     private void assertFindReturnsCorrectProduct(int index) {
