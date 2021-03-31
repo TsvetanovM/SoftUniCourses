@@ -182,11 +182,9 @@ public class ProductStockTest {
         addProducts();
         List<Product> returned = getProducts(inStock.findFirstMostExpensiveProducts(productsCounts));
         List<Product> expected = addProductsToLocalList().stream()
-                .sorted(Comparator.comparingDouble(Product::getPrice))
+                .sorted(Comparator.comparingDouble(Product::getPrice).reversed())
+                .limit(4)
                 .collect(Collectors.toList());
-        Collections.reverse(expected);
-
-        expected = expected.stream().limit(4).collect(Collectors.toList());
         compareListsByLabel(expected, returned);
     }
 
