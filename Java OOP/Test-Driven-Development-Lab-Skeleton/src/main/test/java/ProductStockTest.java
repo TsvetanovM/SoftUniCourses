@@ -144,27 +144,35 @@ public class ProductStockTest {
         expected = expected.stream().filter(e -> e.getPrice() > lowPrice && e.getPrice() <= highPrice)
                 .sorted((e1, e2) -> Double.compare(e2.getPrice(), e1.getPrice()))
                 .collect(Collectors.toList());
-        compareListsByPrice(expected, returned);
-    }
-
-    private void compareListsByPrice(List<Product> expected, List<Product> returned) {
-        assertEquals(expected.size(), returned.size());
-        for (int i = 0; i < expected.size(); i++) {
-            assertEquals(expected.get(i).getPrice(), returned.get(i).getPrice(), 0);
-        }
-    }
-
-    private void compareListsByLabel(List<Product> expected, List<Product> returned) {
-        assertEquals(expected.size(), returned.size());
-        for (int i = 0; i < expected.size(); i++) {
-            assertEquals(expected.get(i).getLabel(), returned.get(i).getLabel());
-        }
+        compareListsByLabel(expected, returned);
     }
 
     @Test
     public void testFindAllInRangeReturnsEmptyCollectionWhenNoProductsInRange() {
+        addProducts();
         List<Product> productList = getProducts(inStock.findAllInRange(4500, 6000));
         assertTrue(productList.isEmpty());
+    }
+
+    @Test
+    public void testFindAllByPriceReturnsAllProductsWithGivenPrice() {
+        double price = product.price;
+        addProducts();
+        inStock.add(product);
+        List<Product> returned = getProducts(inStock.findAllByPrice(price));
+        List<Product> expected = addProductsToLocalList();
+        expected.add(product);
+        expected = expected.stream()
+                .filter(e -> e.getPrice() == price)
+                .collect(Collectors.toList());
+        compareListsByLabel(expected, returned);
+    }
+
+    @Test
+    public void testFindAllByPriceReturnsEmptyCollectionWhenNoProductsMatchPrice() {
+        addProducts();
+        List<Product> products = getProducts(inStock.findAllByPrice(9));
+        assertTrue(products.isEmpty());
     }
 
     private List<Product> getProducts(Iterable<Product> iterable) {
@@ -172,6 +180,13 @@ public class ProductStockTest {
         List<Product> returned = new ArrayList<>();
         iterable.forEach(returned::add);
         return returned;
+    }
+
+    private void compareListsByLabel(List<Product> expected, List<Product> returned) {
+        assertEquals(expected.size(), returned.size());
+        for (int i = 0; i < expected.size(); i++) {
+            assertEquals(expected.get(i).getLabel(), returned.get(i).getLabel());
+        }
     }
 
     private void assertFindReturnsCorrectProduct(int index) {

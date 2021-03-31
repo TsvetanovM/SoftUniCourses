@@ -75,7 +75,13 @@ public class Instock implements ProductStock {
 
     @Override
     public Iterable<Product> findAllByPrice(double price) {
-        return null;
+        List<Product> priceMatched = new ArrayList<>();
+        for (Product value : products.values()) {
+            if (value.getPrice() == price) {
+                priceMatched.add(value);
+            }
+        }
+        return priceMatched;
     }
 
     @Override
