@@ -3,6 +3,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -208,6 +209,18 @@ public class ProductStockTest {
         addProducts();
         List<Product> products = getProducts(inStock.findAllByQuantity(1));
         assertTrue(products.isEmpty());
+    }
+
+    @Test
+    public void testIteratorReturnsAllProductsInStock() {
+        List<Product> expected = addProductsToLocalList();
+        addProducts();
+        Iterator<Product> iterator = inStock.iterator();
+        List<Product> returned = new ArrayList<>();
+        while (iterator.hasNext()) {
+            returned.add(iterator.next());
+        }
+        compareListsByLabel(expected, returned);
     }
 
     private List<Product> getProducts(Iterable<Product> iterable) {

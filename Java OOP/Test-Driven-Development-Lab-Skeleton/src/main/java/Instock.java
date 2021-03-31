@@ -1,6 +1,7 @@
 import jdk.jshell.spi.ExecutionControl;
 
 import java.util.*;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Instock implements ProductStock {
@@ -75,13 +76,7 @@ public class Instock implements ProductStock {
 
     @Override
     public Iterable<Product> findAllByPrice(double price) {
-        List<Product> priceMatched = new ArrayList<>();
-        for (Product value : products.values()) {
-            if (value.getPrice() == price) {
-                priceMatched.add(value);
-            }
-        }
-        return priceMatched;
+        return findAllMatching(p -> p.getPrice() == price);
     }
 
     @Override
@@ -97,15 +92,19 @@ public class Instock implements ProductStock {
 
     @Override
     public Iterable<Product> findAllByQuantity(int quantity) {
-        return this.products.values()
-                .stream()
-                .filter(p -> p.getQuantity() == quantity)
-                .collect(Collectors.toList());
+        return findAllMatching(p -> p.getQuantity() == quantity);
 
     }
 
     @Override
     public Iterator<Product> iterator() {
         return this.products.values().iterator();
+    }
+
+    private Iterable<Product> findAllMatching(Predicate<Product> predicate) {
+        return this.products.values()
+                .stream()
+                .filter(predicate)
+                .collect(Collectors.toList());
     }
 }
