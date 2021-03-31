@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 import static org.junit.Assert.*;
@@ -35,16 +36,14 @@ public class ProductStockTest {
     @Test
     public void testAddProductStoresTheProductInTheCollectionByValidatingWithContains() {
         inStock.add(product);
-        Boolean contains = inStock.contains(product);
-        assertNotNull(contains);
+        Boolean contains = assertNotNullReturnedObject(() -> inStock.contains(product));
         assertTrue(contains);
     }
 
     @Test
     public void testContainsReturnsFalseWhenProductIsNotPresent() {
         inStock.add(product);
-        Boolean contains = inStock.contains(new Product("Leiseur Light Mayonaisse", 6.99, 85));
-        assertNotNull(contains);
+        Boolean contains = assertNotNullReturnedObject(() -> inStock.contains(new Product("Leiseur Light Mayonaisse", 6.99, 85)));
         assertFalse(contains);
     }
 
@@ -52,15 +51,13 @@ public class ProductStockTest {
     public void testAddDoesNotAddTheSameProductTwice() {
         inStock.add(product);
         inStock.add(product);
-        Integer count = inStock.getCount();
-        assertNotNull(count);
+        Integer count = assertNotNullReturnedObject(() -> inStock.getCount());
         assertEquals(Integer.valueOf(1), count);
     }
 
     @Test
     public void testContainsReturnsFalseWhenEmpty() {
-        Boolean contains = inStock.contains(product);
-        assertNotNull(contains);
+        Boolean contains = assertNotNullReturnedObject(() -> inStock.contains(product));
         assertFalse(contains);
     }
 
@@ -109,8 +106,7 @@ public class ProductStockTest {
     public void testFindByLabelReturnsTheCorrectProduct() {
         addProducts();
         inStock.add(product);
-        Product byLabel = inStock.findByLabel(product.getLabel());
-        assertNotNull(byLabel);
+        Product byLabel = assertNotNullReturnedObject(() -> inStock.findByLabel(product.getLabel()));
         assertEquals(product, byLabel);
     }
 
@@ -246,8 +242,7 @@ public class ProductStockTest {
     private void assertFindReturnsCorrectProduct(int index) {
         addProducts();
         assertEquals(Integer.valueOf(PRODUCTS_SIZE), inStock.getCount());
-        Product product = inStock.find(index);
-        assertNotNull(product);
+        Product product = assertNotNullReturnedObject(() -> inStock.find(index));
         assertEquals("test_label_" + index, product.getLabel());
     }
 
@@ -269,5 +264,11 @@ public class ProductStockTest {
         products.add(new Product("test_label_6", 0.62, 11350));
         products.add(new Product("test_label_7", 77, 42));
         return products;
+    }
+
+    private <T> T assertNotNullReturnedObject(Supplier<T> supplier) {
+        T result = supplier.get();
+        assertNotNull(result);
+        return result;
     }
 }
