@@ -2,6 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -173,6 +174,26 @@ public class ProductStockTest {
         addProducts();
         List<Product> products = getProducts(inStock.findAllByPrice(9));
         assertTrue(products.isEmpty());
+    }
+
+    @Test
+    public void testFindFirstMostExpensiveProductsReturnsTheRightProducts() {
+        int productsCounts = 4;
+        addProducts();
+        List<Product> returned = getProducts(inStock.findFirstMostExpensiveProducts(productsCounts));
+        List<Product> expected = addProductsToLocalList().stream()
+                .sorted(Comparator.comparingDouble(Product::getPrice))
+                .collect(Collectors.toList());
+        Collections.reverse(expected);
+
+        expected = expected.stream().limit(4).collect(Collectors.toList());
+        compareListsByLabel(expected, returned);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testFindFirstMostExpensiveProductsFailsWhenCountIsOutOfBounds() {
+        addProducts();
+        getProducts(inStock.findFirstMostExpensiveProducts(inStock.getCount() + 1));
     }
 
     private List<Product> getProducts(Iterable<Product> iterable) {
