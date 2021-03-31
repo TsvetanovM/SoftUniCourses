@@ -97,7 +97,11 @@ public class Instock implements ProductStock {
 
     @Override
     public Iterable<Product> findAllByQuantity(int quantity) {
-        return null;
+        return this.products.values()
+                .stream()
+                .filter(p -> p.getQuantity() == quantity)
+                .collect(Collectors.toList());
+
     }
 
     @Override

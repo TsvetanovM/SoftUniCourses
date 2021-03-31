@@ -2,7 +2,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -161,8 +160,7 @@ public class ProductStockTest {
         addProducts();
         inStock.add(product);
         List<Product> returned = getProducts(inStock.findAllByPrice(price));
-        List<Product> expected = addProductsToLocalList();
-        expected.add(product);
+        List<Product> expected = getLocalListWithProduct();
         expected = expected.stream()
                 .filter(e -> e.getPrice() == price)
                 .collect(Collectors.toList());
@@ -194,11 +192,35 @@ public class ProductStockTest {
         getProducts(inStock.findFirstMostExpensiveProducts(inStock.getCount() + 1));
     }
 
+    @Test
+    public void testFindAllByQuantityReturnsAllItemsWithMatchingQuantity() {
+        addProducts();
+        inStock.add(product);
+        List<Product> returned = getProducts(inStock.findAllByQuantity(product.getQuantity()));
+        List<Product> expected = getLocalListWithProduct().stream()
+                .filter(p -> p.getQuantity() == product.getQuantity())
+                .collect(Collectors.toList());
+        compareListsByLabel(expected, returned);
+    }
+
+    @Test
+    public void testFindAllByQuantityReturnsEmptyCollectionWhenNoProductsMatchQuantity() {
+        addProducts();
+        List<Product> products = getProducts(inStock.findAllByQuantity(1));
+        assertTrue(products.isEmpty());
+    }
+
     private List<Product> getProducts(Iterable<Product> iterable) {
         assertNotNull(iterable);
         List<Product> returned = new ArrayList<>();
         iterable.forEach(returned::add);
         return returned;
+    }
+
+    private List<Product> getLocalListWithProduct() {
+        List<Product> expected = addProductsToLocalList();
+        expected.add(product);
+        return expected;
     }
 
     private void compareListsByLabel(List<Product> expected, List<Product> returned) {
