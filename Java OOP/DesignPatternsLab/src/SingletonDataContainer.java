@@ -17,10 +17,9 @@ public class SingletonDataContainer implements SingletonContainer{
     }
 
     public static SingletonDataContainer getInstance() {
-        if (instance != null) {
-            return instance;
+        if (instance == null) {
+            instance = new SingletonDataContainer();
         }
-        instance = new SingletonDataContainer();
         return instance;
     }
 }
