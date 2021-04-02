@@ -1,6 +1,0 @@
-package ReflectionAndAnnotations.BarracksWars.Interfaces;
-
-public interface CommandInterpreter {
-
-	Executable interpretCommand(String[] data);
-}
