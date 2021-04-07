@@ -26,6 +26,7 @@ public abstract class BasePlayer implements Player {
         if (lifePoints < 0) {
             throw new IllegalArgumentException(PLAYER_LIFE_POINTS_LESS_THAN_ZERO);
         }
+        this.lifePoints = lifePoints;
     }
 
     @Override
