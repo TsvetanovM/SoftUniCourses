@@ -5,12 +5,16 @@ import viceCity.core.interfaces.Controller;
 import viceCity.models.guns.Gun;
 import viceCity.models.guns.Pistol;
 import viceCity.models.guns.Rifle;
+import viceCity.models.neighbourhood.GangNeighbourhood;
+import viceCity.models.neighbourhood.Neighbourhood;
 import viceCity.models.players.CivilPlayer;
 import viceCity.models.players.MainPlayer;
 import viceCity.models.players.Player;
 
 import java.util.ArrayDeque;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import static viceCity.common.ConstantMessages.*;
 
@@ -18,11 +22,13 @@ public class ControllerImpl implements Controller {
     private Player mainPlayer;
     private ArrayDeque<Player> civilPlayers;
     private ArrayDeque<Gun> guns;
+    private Neighbourhood neighbourhood;
 
     public ControllerImpl() {
         this.mainPlayer = new MainPlayer();
         this.civilPlayers = new ArrayDeque<>();
         this.guns = new ArrayDeque<>();
+        this.neighbourhood = new GangNeighbourhood();
     }
 
     @Override
@@ -72,6 +78,23 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String fight() {
-        return null;
+
+        neighbourhood.action(mainPlayer, civilPlayers);
+
+        if (mainPlayer.getLifePoints() == 100 && civilPlayers.stream().allMatch(p -> p.getLifePoints() == 50)) {
+            return FIGHT_HOT_HAPPENED;
+        }
+
+        List<Player> deadPlayers = civilPlayers.stream().filter(p -> !p.isAlive()).collect(Collectors.toList());
+        StringBuilder output = new StringBuilder();
+        output.append(FIGHT_HAPPENED)
+                .append(System.lineSeparator())
+                .append(String.format(MAIN_PLAYER_LIVE_POINTS_MESSAGE, mainPlayer.getLifePoints()))
+                .append(System.lineSeparator())
+                .append(String.format(MAIN_PLAYER_KILLED_CIVIL_PLAYERS_MESSAGE, deadPlayers.size()))
+                .append(System.lineSeparator())
+                .append(String.format(CIVIL_PLAYERS_LEFT_MESSAGE, civilPlayers.size() - deadPlayers.size()));
+
+        return output.toString();
     }
 }

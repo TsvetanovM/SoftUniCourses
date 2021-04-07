@@ -71,16 +71,18 @@ public abstract class BaseGun implements Gun {
     public int fire() {
         //Todo - implement what happens when we run out of bullets
         int bulletsToShoot = bulletsPerShot();
-        if (bulletsInBarrel - bulletsToShoot < 0) {
-            reload();
-        }
-        bulletsInBarrel -= bulletsToShoot;
+        totalBullets -= bulletsToShoot;
+//        if (bulletsInBarrel - bulletsToShoot < 0) {
+//            reload();
+//        }
+//        bulletsInBarrel -= bulletsToShoot;
         return bulletsToShoot;
     }
 
     private void reload() {
         if (totalBullets > 0) {
             setBulletsInBarrel();
+            totalBullets -= bulletsPerBarrel;
         }
     }
 
