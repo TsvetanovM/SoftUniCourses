@@ -3,10 +3,14 @@ package viceCity.repositories;
 import viceCity.models.guns.Gun;
 import viceCity.repositories.interfaces.Repository;
 
-import java.util.Collection;
+import java.util.*;
 
-public class GunRepository implements Repository {
-    private Collection<Gun> models;
+public class GunRepository implements Repository<Gun> {
+    private final ArrayDeque<Gun> models;
+
+    public GunRepository() {
+        models = new ArrayDeque<>();
+    }
 
     @Override
     public Collection<Gun> getModels() {
@@ -14,20 +18,24 @@ public class GunRepository implements Repository {
     }
 
     @Override
-    public void add(Object model) {
-        Gun gun = (Gun) model;
-        if (!models.contains(gun)) models.add(gun);
+    public void add(Gun model) {
+        if (!models.contains(model)) {
+            models.offer(model);
+        }
     }
 
     @Override
-    public boolean remove(Object model) {
-       return models.remove(model);
+    public boolean remove(Gun model) {
+       return this.models.remove(model);
     }
 
     @Override
-    public Object find(String name) {
-        return models.stream()
-                .filter(g -> g.getName().equals(name))
-                .limit(1);
+    public Gun find(String name) {
+        for (Gun model : models) {
+           if (model.getName().equals(name)) {
+               return model;
+           }
+        }
+        return null;
     }
 }

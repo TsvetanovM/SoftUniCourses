@@ -1,28 +1,30 @@
 package viceCity.models.players;
 
-import viceCity.models.guns.Gun;
-import viceCity.repositories.interfaces.Repository;
+import viceCity.repositories.GunRepository;
 
-public abstract class BasePlayer implements Player{
+import static viceCity.common.ExceptionMessages.*;
+
+public abstract class BasePlayer implements Player {
     private String name;
     private int lifePoints;
-    private Repository<Gun> gunRepository;
+    public GunRepository gunRepository;
 
     public BasePlayer(String name, int lifePoints) {
         setName(name);
         setLifePoints(lifePoints);
+        this.gunRepository = new GunRepository();
     }
 
     private void setName(String name) {
         if (name == null || name.trim().isEmpty()) {
-            throw new NullPointerException("Player's name cannot be null or a whitespace!");
+            throw new NullPointerException(PLAYER_NULL_USERNAME);
         }
         this.name = name;
     }
 
     private void setLifePoints(int lifePoints) {
         if (lifePoints < 0) {
-            throw new IllegalArgumentException("Player life points cannot be below zero!");
+            throw new IllegalArgumentException(PLAYER_LIFE_POINTS_LESS_THAN_ZERO);
         }
     }
 
@@ -33,7 +35,11 @@ public abstract class BasePlayer implements Player{
 
     @Override
     public void takeLifePoints(int points) {
-        setLifePoints(getLifePoints() - points);
+        int lifePoints = this.lifePoints - points;
+        if (lifePoints < 0) {
+            lifePoints = 0;
+        }
+        this.lifePoints = lifePoints;
     }
 
     @Override
@@ -47,7 +53,7 @@ public abstract class BasePlayer implements Player{
     }
 
     @Override
-    public Repository<Gun> getGunRepository() {
+    public GunRepository getGunRepository() {
         return gunRepository;
     }
 }

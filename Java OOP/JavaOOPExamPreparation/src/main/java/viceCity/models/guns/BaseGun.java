@@ -1,5 +1,7 @@
 package viceCity.models.guns;
 
+import static viceCity.common.ExceptionMessages.*;
+
 public abstract class BaseGun implements Gun {
     private String name;
     private int bulletsPerBarrel;
@@ -11,23 +13,23 @@ public abstract class BaseGun implements Gun {
         setName(name);
         setBulletsPerBarrel(bulletsPerBarrel);
         setTotalBullets(totalBullets);
-        bulletsInBarrel = this.bulletsPerBarrel;
+        setBulletsInBarrel();
     }
 
     private void setName(String name) {
         if (name == null || name.trim().isEmpty()) {
-            throw new NullPointerException("Name cannot be null or a whitespace!");
+            throw new NullPointerException(NAME_NULL);
         }
         this.name = name;
     }
 
     private void setBulletsPerBarrel(int bulletsPerBarrel) {
-        checkBulletsCountIsNotNegative(bulletsPerBarrel, "Bullets cannot be below zero!");
+        checkBulletsCountIsNotNegative(bulletsPerBarrel, BULLETS_LESS_THAN_ZERO);
         this.bulletsPerBarrel = bulletsPerBarrel;
     }
 
     private void setTotalBullets(int totalBullets) {
-        checkBulletsCountIsNotNegative(totalBullets, "Total bullets cannot be below zero!");
+        checkBulletsCountIsNotNegative(totalBullets, TOTAL_BULLETS_LESS_THAN_ZERO);
         this.totalBullets = totalBullets;
     }
 
@@ -61,12 +63,13 @@ public abstract class BaseGun implements Gun {
         return bulletsInBarrel;
     }
 
-    public void setBulletsInBarrel(int bulletsInBarrel) {
-        this.bulletsInBarrel = bulletsInBarrel;
+    public void setBulletsInBarrel() {
+        this.bulletsInBarrel = this.bulletsPerBarrel;
     }
 
     @Override
     public int fire() {
+        //Todo - implement what happens when we run out of bullets
         int bulletsToShoot = bulletsPerShot();
         if (bulletsInBarrel - bulletsToShoot < 0) {
             reload();
@@ -76,13 +79,8 @@ public abstract class BaseGun implements Gun {
     }
 
     private void reload() {
-        int bulletsForReload = bulletsPerBarrel - bulletsInBarrel;
-        if (bulletsForReload <= totalBullets) {
-            bulletsInBarrel = bulletsPerBarrel;
-            totalBullets -= bulletsForReload;
-        } else {
-            bulletsInBarrel += totalBullets;
-            totalBullets = 0;
+        if (totalBullets > 0) {
+            setBulletsInBarrel();
         }
     }
 
