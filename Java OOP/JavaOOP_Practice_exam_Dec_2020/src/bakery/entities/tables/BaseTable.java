@@ -91,7 +91,7 @@ public abstract class BaseTable implements Table {
         for (Drink drink : drinkOrders) {
             bill += drink.getPrice();
         }
-        return bill;
+        return bill + getPrice();
     }
 
     @Override
@@ -103,15 +103,13 @@ public abstract class BaseTable implements Table {
 
     @Override
     public String getFreeTableInfo() {
-        StringBuilder output = new StringBuilder();
-        output.append(String.format("Table: %d", getTableNumber()))
-                .append(System.lineSeparator())
-                .append(("Type: ")).append(this.getClass().getSimpleName())
-                .append(System.lineSeparator())
-                .append(String.format("Capacity: %d", getCapacity()))
-                .append(System.lineSeparator())
-                .append("Price per Person: ").append(getPricePerPerson());
 
-        return output.toString();
+        return String.format("Table: %d", getTableNumber()) +
+                System.lineSeparator() +
+                ("Type: ") + this.getClass().getSimpleName() +
+                System.lineSeparator() +
+                String.format("Capacity: %d", getCapacity()) +
+                System.lineSeparator() +
+                String.format("Price per Person: %.2f", getPricePerPerson());
     }
 }

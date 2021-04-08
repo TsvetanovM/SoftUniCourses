@@ -1,7 +1,5 @@
 package bakery.core;
 
-import bakery.common.ExceptionMessages;
-import bakery.common.OutputMessages;
 import bakery.core.interfaces.Controller;
 import bakery.entities.bakedFoods.*;
 import bakery.entities.bakedFoods.interfaces.BakedFood;
@@ -10,9 +8,6 @@ import bakery.entities.drinks.interfaces.Drink;
 import bakery.entities.tables.InsideTable;
 import bakery.entities.tables.OutsideTable;
 import bakery.entities.tables.interfaces.Table;
-import bakery.repositories.DrinkRepositoryImpl;
-import bakery.repositories.FoodRepositoryImpl;
-import bakery.repositories.TableRepositoryImpl;
 import bakery.repositories.interfaces.*;
 
 import static bakery.common.ExceptionMessages.*;
@@ -89,32 +84,57 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String orderFood(int tableNumber, String foodName) {
-        //TODO:
-        return null;
+        if (!tableExists(tableNumber)) {
+            return String.format(WRONG_TABLE_NUMBER, tableNumber);
+        }
+
+        if (foodRepository.getByName(foodName) == null) {
+            return String.format(NONE_EXISTENT_FOOD, foodName);
+        }
+
+        tableRepository.getByNumber(tableNumber).orderFood(foodRepository.getByName(foodName));
+        return String.format(FOOD_ORDER_SUCCESSFUL, tableNumber, foodName);
     }
 
     @Override
     public String orderDrink(int tableNumber, String drinkName, String drinkBrand) {
-        //TODO:
-        return null;
+        if (!tableExists(tableNumber)) {
+            return String.format(WRONG_TABLE_NUMBER, tableNumber);
+        }
 
+        if (drinkRepository.getByNameAndBrand(drinkName, drinkBrand) == null) {
+            return String.format(NON_EXISTENT_DRINK, drinkName, drinkBrand);
+        }
+
+        tableRepository.getByNumber(tableNumber).orderDrink(drinkRepository.getByNameAndBrand(drinkName, drinkBrand));
+        return String.format(DRINK_ORDER_SUCCESSFUL, tableNumber, drinkName, drinkBrand);
     }
 
     @Override
     public String leaveTable(int tableNumber) {
-        //TODO:
-        return null;
+        Table table = tableRepository.getByNumber(tableNumber);
+        String output = String.format(BILL, tableNumber, table.getBill());
+        table.clear();
+        return output;
     }
 
     @Override
     public String getFreeTablesInfo() {
-        //TODO:
-        return null;
+        StringBuilder output = new StringBuilder();
+        tableRepository.getAll()
+                .stream()
+                .filter(t -> !t.isReserved())
+                .forEach(t -> output.append(t.getFreeTableInfo()).append(System.lineSeparator()));
+
+        return output.toString().trim();
     }
 
     @Override
     public String getTotalIncome() {
-        //TODO:
         return null;
+    }
+
+    private boolean tableExists(int tableNumber) {
+        return tableRepository.getByNumber(tableNumber) != null;
     }
 }
