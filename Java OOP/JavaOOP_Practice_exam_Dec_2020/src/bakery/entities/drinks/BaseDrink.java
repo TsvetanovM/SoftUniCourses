@@ -11,10 +11,10 @@ public abstract class BaseDrink implements Drink {
     private String brand;
 
     public BaseDrink(String name, int portion, double price, String brand) {
-        this.name = name;
-        this.portion = portion;
-        this.price = price;
-        this.brand = brand;
+        setName(name);
+        setPortion(portion);
+        setPrice(price);
+        setBrand(brand);
     }
 
     public void setName(String name) {

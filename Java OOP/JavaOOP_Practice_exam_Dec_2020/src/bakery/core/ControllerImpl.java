@@ -17,6 +17,7 @@ public class ControllerImpl implements Controller {
     private FoodRepository<BakedFood> foodRepository;
     private DrinkRepository<Drink> drinkRepository;
     private TableRepository<Table> tableRepository;
+    private double income;
 
     public ControllerImpl(FoodRepository<BakedFood> foodRepository, DrinkRepository<Drink> drinkRepository, TableRepository<Table> tableRepository) {
         this.foodRepository = foodRepository;
@@ -74,7 +75,7 @@ public class ControllerImpl implements Controller {
     @Override
     public String reserveTable(int numberOfPeople) {
         for (Table table : tableRepository.getAll()) {
-            if (table.getCapacity() >= numberOfPeople) {
+            if (table.getCapacity() >= numberOfPeople && !table.isReserved()) {
                 table.reserve(numberOfPeople);
                 return String.format(TABLE_RESERVED, table.getTableNumber(), numberOfPeople);
             }
@@ -84,7 +85,7 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String orderFood(int tableNumber, String foodName) {
-        if (!tableExists(tableNumber)) {
+        if (tableDoesNotExist(tableNumber)) {
             return String.format(WRONG_TABLE_NUMBER, tableNumber);
         }
 
@@ -98,7 +99,7 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String orderDrink(int tableNumber, String drinkName, String drinkBrand) {
-        if (!tableExists(tableNumber)) {
+        if (tableDoesNotExist(tableNumber)) {
             return String.format(WRONG_TABLE_NUMBER, tableNumber);
         }
 
@@ -114,6 +115,7 @@ public class ControllerImpl implements Controller {
     public String leaveTable(int tableNumber) {
         Table table = tableRepository.getByNumber(tableNumber);
         String output = String.format(BILL, tableNumber, table.getBill());
+        this.income += table.getBill();
         table.clear();
         return output;
     }
@@ -131,10 +133,10 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String getTotalIncome() {
-        return null;
+        return String.format(TOTAL_INCOME, this.income);
     }
 
-    private boolean tableExists(int tableNumber) {
-        return tableRepository.getByNumber(tableNumber) != null;
+    private boolean tableDoesNotExist(int tableNumber) {
+        return tableRepository.getByNumber(tableNumber) == null || !tableRepository.getByNumber(tableNumber).isReserved();
     }
 }
