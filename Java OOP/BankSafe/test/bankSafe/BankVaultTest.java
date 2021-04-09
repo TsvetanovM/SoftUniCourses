@@ -19,7 +19,6 @@ public class BankVaultTest {
         bankVault = new BankVault();
         item = new Item("Marto", "11");
         secondItem = new Item("Ive", "21");
-        bankVault.addItem("A1", item);
 
     }
 
@@ -37,10 +36,12 @@ public class BankVaultTest {
     @Test(expected = IllegalArgumentException.class)
     public void testAddItemFailsWhenCellIsAlreadyTaken() throws OperationNotSupportedException {
         bankVault.addItem("A1", item);
+        bankVault.addItem("A1", item);
     }
 
     @Test(expected = OperationNotSupportedException.class)
     public void testAddItemFailsWhenItemAlreadyExists() throws OperationNotSupportedException {
+        bankVault.addItem("A1", item);
         bankVault.addItem("B3", item);
     }
 
@@ -54,5 +55,31 @@ public class BankVaultTest {
     public void testAddItemsReturnTheCorrectStringWhenItPutsANewItemIn() throws OperationNotSupportedException {
         String result = bankVault.addItem("C2", secondItem);
         assertEquals("Item:21 saved successfully!", result);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testRemoveItemFailsWhenCellDoesNotExist() {
+        bankVault.removeItem("C33", item);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testRemoveItemFailsWhenItemDoesNotExistInCell() throws OperationNotSupportedException {
+        bankVault.addItem("A1", item);
+        bankVault.removeItem("A1", secondItem);
+    }
+
+    @Test
+    public void testRemoveItemSetsCellValueToNullWhenItemIsRemoved() throws OperationNotSupportedException {
+        String cell = "A1";
+        bankVault.addItem(cell, item);
+        bankVault.removeItem(cell, item);
+        assertNull(bankVault.getVaultCells().get(cell));
+    }
+
+    @Test
+    public void testRemoveItemReturnsTheCorrectStringAfterItemIsRemoved() throws OperationNotSupportedException {
+        bankVault.addItem("A1", item);
+        String result = bankVault.removeItem("A1", item);
+        assertEquals("Remove item:11 successfully!", result);
     }
 }
