@@ -1,7 +1,6 @@
 package aquarium.core;
 
 import aquarium.entities.aquariums.Aquarium;
-import aquarium.entities.aquariums.BaseAquarium;
 import aquarium.entities.aquariums.FreshwaterAquarium;
 import aquarium.entities.aquariums.SaltwaterAquarium;
 import aquarium.entities.decorations.Decoration;
@@ -12,9 +11,7 @@ import aquarium.entities.fish.FreshwaterFish;
 import aquarium.entities.fish.SaltwaterFish;
 import aquarium.repositories.DecorationRepository;
 
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 import static aquarium.common.ConstantMessages.*;
@@ -70,21 +67,26 @@ public class ControllerImpl implements Controller {
     public String addFish(String aquariumName, String fishType, String fishName, String fishSpecies, double price) {
         Aquarium aquarium = this.aquariums.get(aquariumName);
         String type = fishType.replace("Fish", "");
-        if (!aquarium.getClass().getSimpleName().contains(type)) {
-            return WATER_NOT_SUITABLE;
-        }
         switch (fishType) {
             case "FreshwaterFish":
+                if (isWaterUnsuitable(aquarium, type)) return WATER_NOT_SUITABLE;
                 aquarium.addFish(new FreshwaterFish(fishName, fishSpecies, price));
                 break;
             case "SaltwaterFish":
+                if (isWaterUnsuitable(aquarium, type)) return WATER_NOT_SUITABLE;
                 aquarium.addFish(new SaltwaterFish(fishName, fishSpecies, price));
                 break;
             default:
                 throw new IllegalArgumentException(INVALID_FISH_TYPE);
         }
-
         return String.format(SUCCESSFULLY_ADDED_FISH_IN_AQUARIUM, fishType, aquariumName);
+    }
+
+    private boolean isWaterUnsuitable(Aquarium aquarium, String type) {
+        if (!aquarium.getClass().getSimpleName().contains(type)) {
+            return true;
+        }
+        return false;
     }
 
     @Override
