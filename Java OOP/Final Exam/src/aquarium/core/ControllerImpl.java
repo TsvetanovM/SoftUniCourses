@@ -7,6 +7,9 @@ import aquarium.entities.aquariums.SaltwaterAquarium;
 import aquarium.entities.decorations.Decoration;
 import aquarium.entities.decorations.Ornament;
 import aquarium.entities.decorations.Plant;
+import aquarium.entities.fish.Fish;
+import aquarium.entities.fish.FreshwaterFish;
+import aquarium.entities.fish.SaltwaterFish;
 import aquarium.repositories.DecorationRepository;
 
 import java.util.ArrayList;
@@ -65,21 +68,48 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String addFish(String aquariumName, String fishType, String fishName, String fishSpecies, double price) {
-        return null;
+        Aquarium aquarium = this.aquariums.get(aquariumName);
+        String type = fishType.replace("Fish", "");
+        if (!aquarium.getClass().getSimpleName().contains(type)) {
+            return WATER_NOT_SUITABLE;
+        }
+        switch (fishType) {
+            case "FreshwaterFish":
+                aquarium.addFish(new FreshwaterFish(fishName, fishSpecies, price));
+                break;
+            case "SaltwaterFish":
+                aquarium.addFish(new SaltwaterFish(fishName, fishSpecies, price));
+                break;
+            default:
+                throw new IllegalArgumentException(INVALID_FISH_TYPE);
+        }
+
+        return String.format(SUCCESSFULLY_ADDED_FISH_IN_AQUARIUM, fishType, aquariumName);
     }
 
     @Override
     public String feedFish(String aquariumName) {
-        return null;
+        this.aquariums.get(aquariumName).feed();
+        return String.format(FISH_FED, this.aquariums.get(aquariumName).getFish().size());
     }
 
     @Override
     public String calculateValue(String aquariumName) {
-        return null;
+        double value = 0;
+        Aquarium aquarium = this.aquariums.get(aquariumName);
+        for (Fish fish : aquarium.getFish()) {
+            value += fish.getPrice();
+        }
+        for (Decoration decoration : aquarium.getDecorations()) {
+            value += decoration.getPrice();
+        }
+        return String.format(VALUE_AQUARIUM, aquariumName, value);
     }
 
     @Override
     public String report() {
-        return null;
+        StringBuilder output = new StringBuilder();
+        aquariums.values().forEach(a -> output.append(a.getInfo()).append(System.lineSeparator()));
+        return output.toString().trim();
     }
 }

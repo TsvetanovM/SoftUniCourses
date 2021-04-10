@@ -86,6 +86,7 @@ public class BaseAquarium implements Aquarium{
         sb.append(System.lineSeparator())
                 .append("Decorations: ")
                 .append(getDecorations().size())
+                .append(System.lineSeparator())
                 .append("Comfort: ")
                 .append(calculateComfort());
         return sb.toString();

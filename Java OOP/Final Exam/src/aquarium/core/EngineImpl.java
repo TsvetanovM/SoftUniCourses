@@ -85,22 +85,19 @@ public class EngineImpl implements Engine {
 
     private String addFish(String[] data) {
         //{aquariumName} {fishType} {fishName} {fishSpecies} {price}
-        //TODO
-        return null;
+        return controller.addFish(data[0], data[1], data[2], data[3], Double.parseDouble(data[4]));
     }
 
     private String feedFish(String[] data) {
-        //TODO
-        return null;
+        return controller.feedFish(data[0]);
     }
 
     private String calculateValue(String[] data) {
-        //TODO
-        return null;
+        return controller.calculateValue(data[0]);
     }
 
     private String report() {
-        return null;
+        return controller.report();
     }
 }
 
