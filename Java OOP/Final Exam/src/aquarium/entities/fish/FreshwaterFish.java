@@ -7,4 +7,9 @@ public class FreshwaterFish extends BaseFish {
     public FreshwaterFish(String name, String species, double price) {
         super(name, species, price);
     }
+
+    @Override
+    public void eat() {
+        this.setSize(this.getSize() + 3);
+    }
 }

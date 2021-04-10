@@ -14,7 +14,7 @@ public class EngineImpl implements Engine {
     private BufferedReader reader;
 
     public EngineImpl() {
-       // this.controller = new ControllerImpl(); //TODO implement first
+        this.controller = new ControllerImpl();
         this.reader = new BufferedReader(new InputStreamReader(System.in));
     }
 
@@ -72,18 +72,15 @@ public class EngineImpl implements Engine {
         return result;
     }
     private String addAquarium(String[] data) {
-      //TODO
-        return null;
+        return controller.addAquarium(data [0], data[1]);
     }
 
     private String addDecoration(String[] data) {
-        //TODO
-        return null;
+        return controller.addDecoration(data[0]);
     }
 
     private String insertDecoration(String[] data) {
-        //TODO
-        return null;
+        return controller.insertDecoration(data[0], data[1]);
     }
 
     private String addFish(String[] data) {
