@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="45dd8872-5a86-4f8b-9d6a-9b0d64161536" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chainblock/Chainblock.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DeckOfCards/Card.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DeckOfCards/CardRank.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DeckOfCards/CardSuit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DeckOfCards/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Encapsulation/Geometry/GeometryFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Encapsulation/Geometry/Point.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Encapsulation/Geometry/Rectangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Encapsulation/Holiday/Discount.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Encapsulation/Holiday/Holiday.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Encapsulation/Holiday/PriceCalculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Encapsulation/Holiday/Season.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Encapsulation/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Encapsulation/Team.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EncapsulationExercises/Box.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EncapsulationExercises/Chicken.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EncapsulationExercises/Dough.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EncapsulationExercises/DoughTypes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EncapsulationExercises/FootballTeam.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EncapsulationExercises/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EncapsulationExercises/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EncapsulationExercises/Pizza.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EncapsulationExercises/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EncapsulationExercises/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EncapsulationExercises/Stats.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EncapsulationExercises/Topping.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EncapsulationExercises/ToppingTypes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ExceptionsAndErrors/Lab/EnterNumbers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ExceptionsAndErrors/Lab/InvalidPersonNameException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ExceptionsAndErrors/Lab/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ExceptionsAndErrors/Lab/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ExceptionsAndErrors/Lab/SquareRoot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inheritance/Animal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inheritance/Cat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inheritance/Dog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inheritance/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inheritance/Puppy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inheritance/RandomArrayList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inheritance/StackOfStrings.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/animals/Animal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/animals/Cat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/animals/Dog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/animals/Frog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/animals/Kitten.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/animals/Tomcat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/hero/BladeKnight.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/hero/DarkKnight.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/hero/DarkWizard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/hero/Elf.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/hero/Hero.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/hero/Knight.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/hero/MuseElf.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/hero/SoulMaster.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/hero/Wizard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/person/Child.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/person/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/restaurant/Beverage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/restaurant/Cake.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/restaurant/Coffee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/restaurant/ColdBeverage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/restaurant/Dessert.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/restaurant/Food.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/restaurant/HotBeverage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/restaurant/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/restaurant/MainDish.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/restaurant/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/restaurant/Salmon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/restaurant/Soup.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/restaurant/Starter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/restaurant/Tea.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/vehicle/Car.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/vehicle/CrossMotorcycle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/vehicle/FamilyCar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/vehicle/Motorcycle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/vehicle/RaceMotorcycle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/vehicle/SportCar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/vehicle/Vehicle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/zoo/Animal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/zoo/Bear.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/zoo/Gorilla.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/zoo/Lizard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/zoo/Mammal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/zoo/Reptile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InheritanceExercises/zoo/Snake.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfacesAndAbstraction/BorderControl/Citizen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfacesAndAbstraction/BorderControl/Identifiable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfacesAndAbstraction/BorderControl/Robot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfacesAndAbstraction/CarShop/Audi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfacesAndAbstraction/CarShop/Car.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfacesAndAbstraction/CarShop/CarImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfacesAndAbstraction/CarShop/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfacesAndAbstraction/CarShop/Rentable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfacesAndAbstraction/CarShop/Seat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfacesAndAbstraction/CarShop/Sellable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfacesAndAbstraction/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfacesAndAbstraction/SayHello/BasePerson.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfacesAndAbstraction/SayHello/Bulgarian.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfacesAndAbstraction/SayHello/Chinese.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfacesAndAbstraction/SayHello/European.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfacesAndAbstraction/SayHello/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfacesAndAbstraction/ferrari/Car.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfacesAndAbstraction/ferrari/Ferrari.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/Military/Commando.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/Military/CommandoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/Military/Corps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/Military/Engineer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/Military/EngineerImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/Military/LieutenantGeneral.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/Military/LieutenantGeneralImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/Military/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/Military/Mission.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/Military/Private.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/Military/PrivateImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/Military/Repair.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/Military/Soldier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/Military/SoliderImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/Military/SpecialisedSoldier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/Military/SpecialisedSoldierImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/Military/Spy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/Military/SpyImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/Military/State.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/Telephony/Browsable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/Telephony/Callable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/Telephony/Smartphone.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/person/AnimateBeing.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/person/Birthable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/person/Buyer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/person/Citizen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/person/Human.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/person/Identifiable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/person/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/person/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/person/Pet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/person/Rebel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfecesAndAbstractionExercises/person/Robot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoggingServce/API/File.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoggingServce/API/Layout.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoggingServce/API/Logger.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoggingServce/Enums/ReportLevel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoggingServce/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoggingServce/Model/Appenders/Appender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoggingServce/Model/Appenders/ConsoleAppender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoggingServce/Model/Appenders/FileAppender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoggingServce/Model/Files/LogFile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoggingServce/Model/Layouts/SimpleLayout.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoggingServce/Model/Layouts/XmlLayout.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoggingServce/Model/Loggers/MessageLogger.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Polymorphism/Animals/Animal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Polymorphism/Animals/Cat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Polymorphism/Animals/Dog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Polymorphism/Animals/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Polymorphism/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Polymorphism/MathOperation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Polymorphism/Shapes/Circle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Polymorphism/Shapes/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Polymorphism/Shapes/Rectangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Polymorphism/Shapes/Shape.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PolymorphismExercises/Vehicles/Bus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PolymorphismExercises/Vehicles/Car.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PolymorphismExercises/Vehicles/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PolymorphismExercises/Vehicles/Truck.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PolymorphismExercises/Vehicles/Vehicle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PolymorphismExercises/WildFarm/Animal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PolymorphismExercises/WildFarm/Cat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PolymorphismExercises/WildFarm/Felime.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PolymorphismExercises/WildFarm/Food.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PolymorphismExercises/WildFarm/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PolymorphismExercises/WildFarm/Mammal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PolymorphismExercises/WildFarm/Meat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PolymorphismExercises/WildFarm/Mouse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PolymorphismExercises/WildFarm/Tiger.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PolymorphismExercises/WildFarm/Vegetable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PolymorphismExercises/WildFarm/Zebra.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/BarracksWars/Annotations/Inject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/BarracksWars/Core/CommandInterpreterImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/BarracksWars/Core/Commands/Add.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/BarracksWars/Core/Commands/Command.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/BarracksWars/Core/Commands/Fight.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/BarracksWars/Core/Commands/Report.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/BarracksWars/Core/Commands/Retire.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/BarracksWars/Core/Engine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/BarracksWars/Core/Factories/UnitFactoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/BarracksWars/Data/UnitRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/BarracksWars/Interfaces/Attacker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/BarracksWars/Interfaces/CommandInterpreter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/BarracksWars/Interfaces/Destroyable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/BarracksWars/Interfaces/Executable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/BarracksWars/Interfaces/Repository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/BarracksWars/Interfaces/Runnable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/BarracksWars/Interfaces/Unit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/BarracksWars/Interfaces/UnitFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/BarracksWars/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/BarracksWars/Models/Units/AbstractUnit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/BarracksWars/Models/Units/Archer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/BarracksWars/Models/Units/Gunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/BarracksWars/Models/Units/Horseman.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/BarracksWars/Models/Units/Pikeman.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/BarracksWars/Models/Units/Swordsman.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/BlackBoxInteger/BlackBoxInt.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/BlackBoxInteger/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/HarvestingFields/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/HarvestingFields/RichSoilLand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/Lab/Author.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/Lab/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/Lab/Reflection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/Lab/Subject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReflectionAndAnnotations/Lab/Tracker.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1qbURY9NqYV9ATD1DPHpUG7gg2q" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="45dd8872-5a86-4f8b-9d6a-9b0d64161536" name="Default Changelist" comment="" />
+      <created>1617347776124</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617347776124</updated>
+      <workItem from="1617347779224" duration="197000" />
+      <workItem from="1617348001225" duration="87000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
