@@ -1,4 +1,6 @@
-package softuni.hibernate.entities;
+package softuni.hibernate;
+
+import softuni.hibernate.entities.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
