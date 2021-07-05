@@ -1,11 +1,12 @@
 package softuni.vehicles.entities;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "trucks")
+@DiscriminatorValue(value = "Truck")
 public class Truck extends Vehicle{
 
     private Double loadCapacity;
@@ -17,4 +18,12 @@ public class Truck extends Vehicle{
     }
 
     public Truck() { }
+
+    public Double getLoadCapacity() {
+        return loadCapacity;
+    }
+
+    public void setLoadCapacity(Double loadCapacity) {
+        this.loadCapacity = loadCapacity;
+    }
 }
