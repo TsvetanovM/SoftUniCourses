@@ -2,6 +2,7 @@ package softuni.vehicles.entities;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 
 @Entity
 @Table(name = "vehicles")
@@ -18,7 +19,7 @@ public abstract class Vehicle {
 
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
-    private long id;
+    private BigInteger id;
 
     @Basic
     @Column(insertable = false, updatable = false)
@@ -31,11 +32,11 @@ public abstract class Vehicle {
 
     }
 
-    public long getId() {
+    public BigInteger getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(BigInteger id) {
         this.id = id;
     }
 
