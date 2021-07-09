@@ -5,7 +5,7 @@ import Base.BaseEntity;
 import javax.persistence.*;
 import java.util.Set;
 
-//@Entity
+@Entity
 @Table(name = "store_location")
 public class StoreLocation extends BaseEntity {
 

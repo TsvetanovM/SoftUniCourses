@@ -1,13 +1,14 @@
 package university.entities;
 
-import Base.Person;
+import university.Person;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.Set;
 
-//@Entity
+@Entity
 @Table(name = "teachers")
 public class Teacher extends Person {
 

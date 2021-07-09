@@ -1,9 +1,9 @@
 package paymentSystem.entities;
 
 import Base.BaseEntity;
+import paymentSystem.BillingDetail;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.Set;

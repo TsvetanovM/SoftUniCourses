@@ -1,4 +1,6 @@
-package paymentSystem.entities;
+package paymentSystem;
+
+import paymentSystem.entities.User;
 
 import javax.persistence.*;
 

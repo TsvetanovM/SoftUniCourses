@@ -7,7 +7,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import java.util.Set;
 
-//@Entity
+@Entity
 @Table(name = "medicaments")
 public class Medicament extends BaseEntity {
 

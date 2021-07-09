@@ -4,22 +4,31 @@
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
              version="2.0">
 
-    <persistence-unit name="University">
+    <persistence-unit name="Gringotts - Exercise 01">
+        <class>Base.BaseEntity</class>
+        <class>gringotts.entities.WizardDeposits</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.connection.url"
-                      value="jdbc:mysql://localhost:3306/university?createDatabaseIfNotExist=true"/>
+                      value="jdbc:mysql://localhost:3306/gringotts?createDatabaseIfNotExist=true"/>
             <property name="hibernate.connection.driver_class"
                       value="com.mysql.cj.jdbc.Driver"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.connection.username" value="root"/>
-            <property name="hibernate.connection.password" value="12345"/>
+            <property name="hibernate.connection.password" value=""/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
             <property name="hibernate.show_sql" value="false"/>
             <property name="hibernate.format_sql" value="true"/>
         </properties>
     </persistence-unit>
 
-    <persistence-unit name="Sales">
+    <persistence-unit name="Sales - Exercise 02">
+        <class>Base.BaseEntity</class>
+        <class>sales.entities.Customer</class>
+        <class>sales.entities.Product</class>
+        <class>sales.entities.Sale</class>
+        <class>sales.entities.StoreLocation</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.connection.url"
                       value="jdbc:mysql://localhost:3306/sales?createDatabaseIfNotExist=true"/>
@@ -27,14 +36,41 @@
                       value="com.mysql.cj.jdbc.Driver"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.connection.username" value="root"/>
-            <property name="hibernate.connection.password" value="12345"/>
+            <property name="hibernate.connection.password" value=""/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
             <property name="hibernate.show_sql" value="false"/>
             <property name="hibernate.format_sql" value="true"/>
         </properties>
     </persistence-unit>
 
-    <persistence-unit name="Hospital">
+    <persistence-unit name="University - Exercise 03">
+        <class>Base.BaseEntity</class>
+        <class>university.entities.Course</class>
+        <class>university.entities.Student</class>
+        <class>university.entities.Teacher</class>
+        <class>university.Person</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="hibernate.connection.url"
+                      value="jdbc:mysql://localhost:3306/university?createDatabaseIfNotExist=true"/>
+            <property name="hibernate.connection.driver_class"
+                      value="com.mysql.cj.jdbc.Driver"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.connection.username" value="root"/>
+            <property name="hibernate.connection.password" value=""/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="hibernate.show_sql" value="false"/>
+            <property name="hibernate.format_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+
+    <persistence-unit name="Hospital - Exercise 04">
+        <class>Base.BaseEntity</class>
+        <class>hospital.entities.Diagnose</class>
+        <class>hospital.entities.Medicament</class>
+        <class>hospital.entities.Patient</class>
+        <class>hospital.entities.Visitation</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.connection.url"
                       value="jdbc:mysql://localhost:3306/hospital?createDatabaseIfNotExist=true"/>
@@ -42,17 +78,57 @@
                       value="com.mysql.cj.jdbc.Driver"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.connection.username" value="root"/>
-            <property name="hibernate.connection.password" value="12345"/>
+            <property name="hibernate.connection.password" value=""/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
             <property name="hibernate.show_sql" value="false"/>
             <property name="hibernate.format_sql" value="true"/>
         </properties>
     </persistence-unit>
 
-    <persistence-unit name="BillsPaymentSystem">
+    <persistence-unit name="Bills Payment System - Exercise 05">
+        <class>paymentSystem.BillingDetail</class>
+        <class>paymentSystem.entities.User</class>
+        <class>paymentSystem.entities.BankAccount</class>
+        <class>paymentSystem.entities.CreditCard</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.connection.url"
                       value="jdbc:mysql://localhost:3306/bills_payment_system?createDatabaseIfNotExist=true"/>
+            <property name="hibernate.connection.driver_class"
+                      value="com.mysql.cj.jdbc.Driver"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.connection.username" value="root"/>
+            <property name="hibernate.connection.password" value=""/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="hibernate.show_sql" value="false"/>
+            <property name="hibernate.format_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+
+    <persistence-unit name="Football Betting - Exercise 06">
+        <class>Base.BaseEntity</class>
+        <class>Base.BaseNamedEntity</class>
+        <class>footballBetting.enums.Prediction</class>
+        <class>footballBetting.entities.Bet</class>
+        <class>footballBetting.entities.BetGame</class>
+        <class>footballBetting.entities.Color</class>
+        <class>footballBetting.entities.Competition</class>
+        <class>footballBetting.entities.CompetitionType</class>
+        <class>footballBetting.entities.Continent</class>
+        <class>footballBetting.entities.Country</class>
+        <class>footballBetting.entities.Game</class>
+        <class>footballBetting.entities.Player</class>
+        <class>footballBetting.entities.PlayerStatistic</class>
+        <class>footballBetting.entities.Position</class>
+        <class>footballBetting.entities.ResultPrediction</class>
+        <class>footballBetting.entities.Round</class>
+        <class>footballBetting.entities.Team</class>
+        <class>footballBetting.entities.Town</class>
+        <class>footballBetting.entities.User</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="hibernate.connection.url"
+                      value="jdbc:mysql://localhost:3306/football_betting?createDatabaseIfNotExist=true"/>
             <property name="hibernate.connection.driver_class"
                       value="com.mysql.cj.jdbc.Driver"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>

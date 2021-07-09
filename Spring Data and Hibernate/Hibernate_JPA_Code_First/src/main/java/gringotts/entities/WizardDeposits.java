@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-//@Entity
+@Entity
 @Table(name = "wizard_deposits")
 public class WizardDeposits {
 

@@ -5,7 +5,7 @@ import Base.BaseEntity;
 import javax.persistence.*;
 import java.util.Set;
 
-//@Entity
+@Entity
 @Table(name = "diagnoses")
 public class Diagnose extends BaseEntity {
 

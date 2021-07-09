@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import java.time.LocalDate;
 import java.util.Set;
 
-//@Entity
+@Entity
 @Table(name = "patients")
 public class Patient extends BaseEntity {
 

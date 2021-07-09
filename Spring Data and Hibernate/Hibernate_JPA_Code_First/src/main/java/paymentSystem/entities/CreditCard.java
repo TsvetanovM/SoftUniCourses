@@ -1,5 +1,7 @@
 package paymentSystem.entities;
 
+import paymentSystem.BillingDetail;
+
 import javax.persistence.Entity;
 import javax.persistence.Table;
 

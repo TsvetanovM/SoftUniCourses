@@ -1,11 +1,11 @@
 package university.entities;
 
-import Base.Person;
+import university.Person;
 
 import javax.persistence.*;
 import java.util.Set;
 
-//@Entity
+@Entity
 @Table(name = "students")
 public class Student extends Person {
 
