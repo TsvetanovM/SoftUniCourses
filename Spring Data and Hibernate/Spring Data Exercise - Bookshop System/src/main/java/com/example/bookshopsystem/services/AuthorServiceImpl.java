@@ -20,7 +20,7 @@ public class AuthorServiceImpl implements AuthorService {
         double randomNumber = Math.random() * 100;
         int random = (int) randomNumber;
         if (random >= authors.size()) {
-            getRandomAuthor();
+           return getRandomAuthor();
         }
         return authors.get(random);
     }

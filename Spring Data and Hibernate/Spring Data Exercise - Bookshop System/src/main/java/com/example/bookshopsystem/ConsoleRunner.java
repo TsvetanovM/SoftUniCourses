@@ -48,8 +48,8 @@ public class ConsoleRunner implements CommandLineRunner {
     @Override
     public void run(String... args) {
         try {
-//            seedAuthors();
-//            seedCategories();
+            seedAuthors();
+            seedCategories();
             seedBooks();
         } catch (IOException e) {
             System.out.println("File path not found");
