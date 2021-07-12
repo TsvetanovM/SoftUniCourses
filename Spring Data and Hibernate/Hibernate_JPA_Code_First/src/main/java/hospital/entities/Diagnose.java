@@ -18,8 +18,8 @@ public class Diagnose extends BaseEntity {
 
     @ManyToMany
     @JoinTable(name = "diagnoses_medicaments",
-    joinColumns = @JoinColumn(name = "medicament_id", referencedColumnName = "id"),
-    inverseJoinColumns = @JoinColumn(name = "diagnose_id", referencedColumnName = "id"))
+            joinColumns = @JoinColumn(name = "medicament_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "diagnose_id", referencedColumnName = "id"))
     private Set<Medicament> medicaments;
 
 }

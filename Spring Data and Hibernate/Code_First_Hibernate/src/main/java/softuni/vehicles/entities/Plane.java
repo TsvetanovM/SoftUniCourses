@@ -17,9 +17,9 @@ public class Plane {
     private BigDecimal price;
     private String fuelType;
 
-    @ManyToOne (optional = false)
+    @ManyToOne(optional = false)
     @JoinColumn(name = "company_id",
-    referencedColumnName = "id")
+            referencedColumnName = "id")
     private Company company;
 
     public Plane(Integer passengerCapacity, String airline, String type, String model, BigDecimal price, String fuelType) {
@@ -31,7 +31,8 @@ public class Plane {
         this.fuelType = fuelType;
     }
 
-    public Plane() { }
+    public Plane() {
+    }
 
     public long getId() {
         return id;

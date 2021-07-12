@@ -12,7 +12,7 @@ public class Driver {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String full_name;
-    @ManyToMany (mappedBy = "drivers")
+    @ManyToMany(mappedBy = "drivers")
     private Set<Truck> trucks = new HashSet<>();
 
     public long getId() {

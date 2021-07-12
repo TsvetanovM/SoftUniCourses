@@ -14,8 +14,8 @@ public class Student extends Person {
     private double attendance;
     @ManyToMany
     @JoinTable(name = "students_courses",
-    joinColumns = @JoinColumn(name = "student_id", referencedColumnName = "id"),
-    inverseJoinColumns = @JoinColumn(name = "course_id", referencedColumnName = "id"))
+            joinColumns = @JoinColumn(name = "student_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "course_id", referencedColumnName = "id"))
     private Set<Course> courses;
 
     public double getAverageGrade() {

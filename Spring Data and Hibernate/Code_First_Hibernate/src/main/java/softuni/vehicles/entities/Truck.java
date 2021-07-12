@@ -19,11 +19,12 @@ public class Truck {
     private Double loadCapacity;
     @ManyToMany
     @JoinTable(name = "drivers_trucks",
-    joinColumns = @JoinColumn(name = "truck_id", referencedColumnName = "id"),
-    inverseJoinColumns = @JoinColumn(name = "driver_id", referencedColumnName = "id"))
+            joinColumns = @JoinColumn(name = "truck_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "driver_id", referencedColumnName = "id"))
     private Set<Driver> drivers;
 
-    public Truck() { }
+    public Truck() {
+    }
 
     public Truck(String type, String model, BigDecimal price, String fuelType, Double loadCapacity) {
 

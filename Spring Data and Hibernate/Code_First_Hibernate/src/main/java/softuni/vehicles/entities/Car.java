@@ -6,7 +6,7 @@ import java.math.BigInteger;
 
 @Entity
 @Table(name = "cars")
-public class Car{
+public class Car {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,7 +28,8 @@ public class Car{
         this.seats = seats;
     }
 
-    public Car() { }
+    public Car() {
+    }
 
     public long getId() {
         return id;
