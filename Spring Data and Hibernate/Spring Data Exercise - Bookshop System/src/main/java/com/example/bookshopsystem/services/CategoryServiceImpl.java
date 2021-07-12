@@ -1,12 +1,12 @@
 package com.example.bookshopsystem.services;
 
-import com.example.bookshopsystem.exceptions.NoSuchCategoriesFoundException;
 import com.example.bookshopsystem.models.Category;
 import com.example.bookshopsystem.repositories.CategoryRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
@@ -17,15 +17,20 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public Set<Category> getRandomCategories() throws NoSuchCategoriesFoundException {
-        Set<Category> categories = categoryRepository.findCategoriesByNameIsLike("%")
-                .stream()
-                .limit(3)
-                .collect(Collectors.toSet());
+    public Set<Category> getRandomCategories() {
+        long start = getRandomNumber(categoryRepository.count()-1);
+        long end = start + 1;
+        List<Long> range = new ArrayList<>();
+        range.add(start);
+        range.add(end);
+        return categoryRepository.findCategoriesByIdIn(range);
+    }
 
-        if (categories.isEmpty()) {
-            throw new NoSuchCategoriesFoundException();
+    private long getRandomNumber(long maxNumber) {
+        long number = (long) (Math.random() * 100);
+        if (number > maxNumber) {
+            return getRandomNumber(maxNumber);
         }
-        return categories;
+        return number;
     }
 }

@@ -92,14 +92,12 @@ public class ConsoleRunner implements CommandLineRunner {
                     String title = Arrays.stream(data)
                             .skip(5)
                             .collect(Collectors.joining(" "));
-                    try {
-                        Set<Category> categories = categoryService.getRandomCategories();
-                        var book = new Book(title, edition, price, releaseDate,
+
+                    Set<Category> categories = categoryService.getRandomCategories();
+
+                    var book = new Book(title, edition, price, releaseDate,
                                 ageRestriction, author, categories, copies);
                         bookRepository.save(book);
-                    } catch (NoSuchCategoriesFoundException e) {
-                        System.out.println(e.getClass().getSimpleName());
-                    }
                 });
     }
 }

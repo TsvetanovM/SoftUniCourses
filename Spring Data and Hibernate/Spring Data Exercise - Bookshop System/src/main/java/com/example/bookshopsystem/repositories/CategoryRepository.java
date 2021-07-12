@@ -9,4 +9,5 @@ import java.util.Set;
 
 public interface CategoryRepository extends JpaRepository<Category, Long> {
     Set<Category> findCategoriesByNameIsLike(String name);
+    Set<Category> findCategoriesByIdIn(List<Long> range);
 }
