@@ -15,6 +15,7 @@ import java.nio.file.Path;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -66,5 +67,13 @@ public class BookServiceImpl implements BookService {
                             ageRestriction, author, categories, copies);
                     bookRepository.save(book);
                 });
+    }
+
+    @Override
+    public void findAllBooksByAuthorNameOrderByReleaseDateDescTitleAsc(String firstName, String lastName) {
+        List<Book> books = bookRepository
+                .findAllByAuthor_FirstNameAndAuthor_LastNameOrderByReleaseDateDescTitleAsc(firstName, lastName);
+
+        books.forEach(book -> System.out.printf("%s %s %d%n", book.getTitle(), book.getReleaseDate(), book.getCopies()));
     }
 }

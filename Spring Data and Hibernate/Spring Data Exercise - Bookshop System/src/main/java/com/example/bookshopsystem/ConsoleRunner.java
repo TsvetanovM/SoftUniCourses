@@ -38,10 +38,20 @@ public class ConsoleRunner implements CommandLineRunner {
     @Override
     public void run(String... args) {
         try {
+//            Data Insertion
             seedData();
+
+//            Query01
 //            bookService.findBooksAfter2000_1();
+
+//            Query02
 //            authorService.findAuthorsWithABookBefore1990_2();
-            authorService.findAuthorsByNumberOfBooksDesc_3();
+
+//            Query03
+//            authorService.findAuthorsByNumberOfBooksDesc_3();
+
+//            Query04
+//            bookService.findAllBooksByAuthorNameOrderByReleaseDateDescTitleAsc("George", "Powell");
         } catch (IOException e) {
             System.out.println("File path not found");
         }
