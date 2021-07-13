@@ -16,6 +16,14 @@ public class Author extends BaseEntity {
     @OneToMany(mappedBy = "author")
     private Set<Book> books;
 
+    public Set<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(Set<Book> books) {
+        this.books = books;
+    }
+
     @Column(name = "first_name")
     public String getFirstName() {
         return firstName;

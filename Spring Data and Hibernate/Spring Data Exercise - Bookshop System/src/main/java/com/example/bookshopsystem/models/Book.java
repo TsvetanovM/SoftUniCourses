@@ -65,7 +65,7 @@ public class Book extends BaseEntity{
         this.description = description;
     }
 
-    @Column(nullable = false)
+    @Enumerated
     public Edition getEdition() {
         return edition;
     }
@@ -100,12 +100,28 @@ public class Book extends BaseEntity{
         this.releaseDate = releaseDate;
     }
 
-    @Column(name = "age_restriction", nullable = false)
+    @Enumerated
     public AgeRestriction getAgeRestriction() {
         return ageRestriction;
     }
 
     public void setAgeRestriction(AgeRestriction ageRestriction) {
         this.ageRestriction = ageRestriction;
+    }
+
+    public Set<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(Set<Category> categories) {
+        this.categories = categories;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 }
