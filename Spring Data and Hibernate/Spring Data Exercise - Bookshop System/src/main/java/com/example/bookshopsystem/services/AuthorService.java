@@ -8,4 +8,5 @@ public interface AuthorService {
     Author getRandomAuthor();
     void seedAuthors() throws IOException;
     void findAuthorsWithABookBefore1990_2();
+    void findAuthorsByNumberOfBooksDesc_3();
 }
