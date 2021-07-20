@@ -1,6 +1,6 @@
 package data.spring.automappingobjects;
 
-import data.spring.automappingobjects.dto.EmployeeDTO;
+import data.spring.automappingobjects.models.dto.EmployeeDTO;
 import data.spring.automappingobjects.models.entities.Employee;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.CommandLineRunner;

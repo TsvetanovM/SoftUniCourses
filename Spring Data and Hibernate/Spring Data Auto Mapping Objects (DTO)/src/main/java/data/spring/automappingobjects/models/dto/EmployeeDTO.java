@@ -1,4 +1,4 @@
-package data.spring.automappingobjects.dto;
+package data.spring.automappingobjects.models.dto;
 
 import java.math.BigDecimal;
 
