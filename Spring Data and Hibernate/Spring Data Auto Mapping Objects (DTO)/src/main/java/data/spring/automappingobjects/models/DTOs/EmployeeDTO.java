@@ -4,13 +4,13 @@ import java.math.BigDecimal;
 
 public class EmployeeDTO extends BasicEmployeeDTO{
 
-    private BigDecimal salary;
+    private BigDecimal income;
 
-    public BigDecimal getSalary() {
-        return salary;
+    public BigDecimal getIncome() {
+        return income;
     }
 
-    public void setSalary(BigDecimal salary) {
-        this.salary = salary;
+    public void setIncome(BigDecimal income) {
+        this.income = income;
     }
 }

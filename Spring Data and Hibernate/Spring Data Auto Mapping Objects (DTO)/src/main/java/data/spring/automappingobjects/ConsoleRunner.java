@@ -1,6 +1,5 @@
 package data.spring.automappingobjects;
 
-import data.spring.automappingobjects.models.DTOs.EmployeeDTO;
 import data.spring.automappingobjects.models.DTOs.ManagerDTO;
 import data.spring.automappingobjects.services.EmployeeService;
 import org.springframework.boot.CommandLineRunner;
@@ -22,6 +21,6 @@ public class ConsoleRunner implements CommandLineRunner {
         System.out.printf("%s %s | Employees: %d%n", dto.getFirstName(), dto.getLastName(), dto.getSubordinates().size());
 
                 dto.getSubordinates().forEach(EmployeeDTO -> System.out.printf("\t - " +
-                        "%s %s %.2f%n", EmployeeDTO.getFirstName(), EmployeeDTO.getLastName(), EmployeeDTO.getSalary()));
+                        "%s %s %.2f%n", EmployeeDTO.getFirstName(), EmployeeDTO.getLastName(), EmployeeDTO.getIncome()));
     }
 }

@@ -10,14 +10,15 @@ import org.springframework.stereotype.Service;
 public class EmployeeServiceImpl implements EmployeeService {
 
     private final EmployeeRepository employeeRepository;
+    private final ModelMapper mapper;
 
-    public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
+    public EmployeeServiceImpl(EmployeeRepository employeeRepository, ModelMapper mapper) {
         this.employeeRepository = employeeRepository;
+        this.mapper = mapper;
     }
 
     @Override
     public ManagerDTO findOne(Long id) {
-        ModelMapper mapper = new ModelMapper();
         return mapper.map(this.employeeRepository.findById(id).orElseThrow(), ManagerDTO.class);
 
 
