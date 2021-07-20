@@ -1,5 +1,8 @@
 package bg.softuni.gamestore.services;
 
+import bg.softuni.gamestore.models.dto.UserRegister;
+
 public interface UserService {
-    void registerUser(String email, String password, String confirmPassowrd, String fullName);
+
+    void registerUser(UserRegister userRegister);
 }
