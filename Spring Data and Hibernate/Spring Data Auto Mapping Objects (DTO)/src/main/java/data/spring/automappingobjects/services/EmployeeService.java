@@ -1,8 +1,8 @@
 package data.spring.automappingobjects.services;
 
-import data.spring.automappingobjects.models.DTOs.EmployeeDTO;
+import data.spring.automappingobjects.models.DTOs.ManagerDTO;
 
 public interface EmployeeService {
 
-    EmployeeDTO findOne(Long id);
+    ManagerDTO findOne(Long id);
 }

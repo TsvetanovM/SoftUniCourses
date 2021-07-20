@@ -3,30 +3,24 @@ package data.spring.automappingobjects.models.entities;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "employees")
 public class Employee {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String firstName;
     private String lastName;
     private BigDecimal salary;
     private LocalDate birthday;
     private String address;
+    private boolean isOnHoliday;
+    private Employee manager;
+    private List<Employee> subordinates;
 
-    public Employee(String firstName, String lastName, BigDecimal salary, LocalDate birthday, String address) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.salary = salary;
-        this.birthday = birthday;
-        this.address = address;
-    }
-
-    public Employee(){}
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long getId() {
         return id;
     }
@@ -73,5 +67,31 @@ public class Employee {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public boolean isOnHoliday() {
+        return isOnHoliday;
+    }
+
+    public void setOnHoliday(boolean onHoliday) {
+        isOnHoliday = onHoliday;
+    }
+
+    @ManyToOne
+    public Employee getManager() {
+        return manager;
+    }
+
+    public void setManager(Employee manager) {
+        this.manager = manager;
+    }
+
+    @OneToMany(mappedBy = "manager", fetch = FetchType.EAGER)
+    public List<Employee> getSubordinates() {
+        return subordinates;
+    }
+
+    public void setSubordinates(List<Employee> subordinates) {
+        this.subordinates = subordinates;
     }
 }

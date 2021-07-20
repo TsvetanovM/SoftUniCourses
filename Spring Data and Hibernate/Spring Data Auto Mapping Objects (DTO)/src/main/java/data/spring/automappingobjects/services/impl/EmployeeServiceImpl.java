@@ -1,12 +1,10 @@
 package data.spring.automappingobjects.services.impl;
 
-import data.spring.automappingobjects.models.DTOs.EmployeeDTO;
-import data.spring.automappingobjects.models.entities.Employee;
+import data.spring.automappingobjects.models.DTOs.ManagerDTO;
 import data.spring.automappingobjects.repositories.EmployeeRepository;
 import data.spring.automappingobjects.services.EmployeeService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.ModelMap;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -18,9 +16,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public EmployeeDTO findOne(Long id) {
+    public ManagerDTO findOne(Long id) {
         ModelMapper mapper = new ModelMapper();
-        return mapper.map(this.employeeRepository.findById(id).orElseThrow(), EmployeeDTO.class);
+        return mapper.map(this.employeeRepository.findById(id).orElseThrow(), ManagerDTO.class);
 
 
 //        Employee employee = this.employeeRepository.findById(id).orElseThrow();
