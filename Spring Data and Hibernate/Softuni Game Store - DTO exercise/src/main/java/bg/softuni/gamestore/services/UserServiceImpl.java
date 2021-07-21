@@ -7,6 +7,7 @@ import bg.softuni.gamestore.models.entities.User;
 import bg.softuni.gamestore.repositories.UserRepository;
 import bg.softuni.gamestore.utils.ValidationUtil;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import javax.validation.ConstraintViolation;
@@ -20,7 +21,7 @@ public class UserServiceImpl implements UserService {
     private final ModelMapper mapper;
     private final ValidationUtil validation;
 
-    public UserServiceImpl(UserRepository userRepository, ModelMapper mapper, ValidationUtil validation) {
+    public UserServiceImpl(UserRepository userRepository, @Qualifier("general") ModelMapper mapper, ValidationUtil validation) {
         this.userRepository = userRepository;
         this.mapper = mapper;
         this.validation = validation;

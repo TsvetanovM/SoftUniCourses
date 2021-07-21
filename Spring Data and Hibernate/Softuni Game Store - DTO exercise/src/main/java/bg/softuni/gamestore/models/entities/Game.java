@@ -4,8 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.math.BigDecimal;
-import java.net.URL;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "games")
@@ -13,11 +12,11 @@ public class Game extends BaseEntity {
 
     private String title;
     private String trailer;
-    private URL imageThumbnail;
+    private String imageThumbnail;
     private long size;
     private BigDecimal price;
     private String description;
-    private Date releaseDate;
+    private LocalDate releaseDate;
 
     public String getTitle() {
         return title;
@@ -35,11 +34,11 @@ public class Game extends BaseEntity {
         this.trailer = trailer;
     }
 
-    public URL getImageThumbnail() {
+    public String getImageThumbnail() {
         return imageThumbnail;
     }
 
-    public void setImageThumbnail(URL imageThumbnail) {
+    public void setImageThumbnail(String imageThumbnail) {
         this.imageThumbnail = imageThumbnail;
     }
 
@@ -68,11 +67,11 @@ public class Game extends BaseEntity {
         this.description = description;
     }
 
-    public Date getReleaseDate() {
+    public LocalDate getReleaseDate() {
         return releaseDate;
     }
 
-    public void setReleaseDate(Date releaseDate) {
+    public void setReleaseDate(LocalDate releaseDate) {
         this.releaseDate = releaseDate;
     }
 }
