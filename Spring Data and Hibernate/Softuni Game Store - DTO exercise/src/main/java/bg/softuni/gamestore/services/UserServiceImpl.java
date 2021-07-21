@@ -1,5 +1,6 @@
 package bg.softuni.gamestore.services;
 
+import bg.softuni.gamestore.models.dto.UserLogin;
 import bg.softuni.gamestore.models.dto.UserRegister;
 import bg.softuni.gamestore.models.dto.UserRegisterAdmin;
 import bg.softuni.gamestore.models.entities.User;
@@ -9,6 +10,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import javax.validation.ConstraintViolation;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 @Service
@@ -30,13 +32,15 @@ public class UserServiceImpl implements UserService {
             System.out.println("Passwords do not match!");
             return;
         }
-            Set<ConstraintViolation<UserRegister>> violations = this.validation.violation(userRegister);
-            if (!violations.isEmpty()) {
-                violations.stream()
-                        .map(ConstraintViolation::getMessage)
-                        .forEach(System.out::println);
-                return;
-            }
+
+        Set<ConstraintViolation<UserRegister>> violations = this.validation.violation(userRegister);
+
+        if (!violations.isEmpty()) {
+            violations.stream()
+                    .map(ConstraintViolation::getMessage)
+                    .forEach(System.out::println);
+            return;
+        }
 
         if (userRepository.count() == 0) {
             var userAdmin = mapper.map(userRegister, UserRegisterAdmin.class);
@@ -44,6 +48,25 @@ public class UserServiceImpl implements UserService {
             return;
         }
 
+        System.out.println(userRegister.getFullName() + " was registered!");
         userRepository.save(mapper.map(userRegister, User.class));
     }
+
+    @Override
+    public void loginUser(UserLogin userLogin) {
+        try {
+            User user = userRepository.findByEmailAndPassword(userLogin.getEmail(), userLogin.getPassword()).orElseThrow();
+            if (user.isLoggedIn()) {
+                System.out.println("User is already logged in!");
+                return;
+            }
+            user.setLoggedIn(true);
+            userRepository.save(user);
+            System.out.println("Successfully logged in " + user.getFullName());
+        } catch (NoSuchElementException e) {
+            System.out.println("Incorrect username or password!");
+        }
+    }
+
+
 }

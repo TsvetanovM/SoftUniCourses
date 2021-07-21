@@ -14,6 +14,7 @@ public class User extends BaseEntity{
     private String email;
     private String password;
     private String fullName;
+    private boolean isLoggedIn;
     private boolean isAdmin;
     private List<Game> games;
     private List<Order> orders;
@@ -66,5 +67,13 @@ public class User extends BaseEntity{
 
     public void setOrders(List<Order> orders) {
         this.orders = orders;
+    }
+
+    public boolean isLoggedIn() {
+        return isLoggedIn;
+    }
+
+    public void setLoggedIn(boolean loggedIn) {
+        isLoggedIn = loggedIn;
     }
 }
