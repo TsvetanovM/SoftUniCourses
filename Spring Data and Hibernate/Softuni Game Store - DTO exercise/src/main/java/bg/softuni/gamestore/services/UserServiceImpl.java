@@ -68,5 +68,20 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    @Override
+    public void logout() {
+        Set<User> users = userRepository.findAllByLoggedInIsTrue();
+
+        if (users.isEmpty()) {
+            System.out.println("No user was logged in.");
+            return;
+        }
+
+        users.forEach(user -> {
+            user.setLoggedIn(false);
+            userRepository.save(user);
+            System.out.println("User " + user.getFullName() + " has been logged out!");
+        });
+    }
 
 }

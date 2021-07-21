@@ -36,7 +36,7 @@ public class ConsoleRunner implements CommandLineRunner {
 
                 case "LoginUser" -> userService.loginUser(new UserLogin(input[1], input[2]));
 
-
+                case "Logout" -> userService.logout();
 
                 default -> System.out.println("Please enter the input in a valid format!");
             }
