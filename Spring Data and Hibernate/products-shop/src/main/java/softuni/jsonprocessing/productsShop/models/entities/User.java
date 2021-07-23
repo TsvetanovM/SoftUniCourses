@@ -15,7 +15,6 @@ public class User extends BaseEntity {
     private Set<Product> productsBought;
     private Set<Product> productsSold;
     private Set<User> friends;
-    private Set<User> befriended;
 
 
     public String getFirstName() {
@@ -43,7 +42,7 @@ public class User extends BaseEntity {
         this.age = age;
     }
 
-    @OneToMany(mappedBy = "buyerId")
+    @OneToMany(mappedBy = "buyer")
     public Set<Product> getProductsBought() {
         return productsBought;
     }
@@ -52,7 +51,7 @@ public class User extends BaseEntity {
         this.productsBought = productsBought;
     }
 
-    @OneToMany(mappedBy = "sellerId")
+    @OneToMany(mappedBy = "seller")
     public Set<Product> getProductsSold() {
         return productsSold;
     }
@@ -61,7 +60,7 @@ public class User extends BaseEntity {
         this.productsSold = productsForSale;
     }
 
-    @ManyToMany
+    @ManyToMany(targetEntity = User.class)
     public Set<User> getFriends() {
         return friends;
     }
@@ -70,12 +69,4 @@ public class User extends BaseEntity {
         this.friends = friends;
     }
 
-    @ManyToMany(mappedBy = "friends")
-    public Set<User> getBefriended() {
-        return befriended;
-    }
-
-    public void setBefriended(Set<User> befriended) {
-        this.befriended = befriended;
-    }
 }

@@ -1,5 +1,6 @@
 package softuni.jsonprocessing.productsShop.models.entities;
 
+import org.hibernate.annotations.Cascade;
 import softuni.jsonprocessing.productsShop.models.BaseEntity;
 
 import javax.persistence.*;
@@ -12,8 +13,8 @@ public class Product extends BaseEntity {
 
     private String name;
     private BigDecimal price;
-    private User buyerId;
-    private User sellerId;
+    private User buyer;
+    private User seller;
     private Set<Category> categories;
 
     @Column(nullable = false)
@@ -34,23 +35,22 @@ public class Product extends BaseEntity {
         this.price = price;
     }
 
-    @ManyToOne
-    public User getBuyerId() {
-        return buyerId;
+    @ManyToOne(fetch = FetchType.EAGER)
+    public User getBuyer() {
+        return buyer;
     }
 
-    public void setBuyerId(User buyerId) {
-        this.buyerId = buyerId;
+    public void setBuyer(User buyerId) {
+        this.buyer = buyerId;
     }
 
-    @Column(nullable = false)
-    @ManyToOne
-    public User getSellerId() {
-        return sellerId;
+    @ManyToOne(optional = false, fetch = FetchType.EAGER)
+    public User getSeller() {
+        return seller;
     }
 
-    public void setSellerId(User sellerId) {
-        this.sellerId = sellerId;
+    public void setSeller(User sellerId) {
+        this.seller = sellerId;
     }
 
     @ManyToMany(mappedBy = "products")
