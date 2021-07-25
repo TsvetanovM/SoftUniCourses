@@ -1,6 +1,5 @@
 package softuni.jsonprocessing.productsShop.models.entities;
 
-import org.hibernate.annotations.Cascade;
 import softuni.jsonprocessing.productsShop.models.BaseEntity;
 
 import javax.persistence.*;
@@ -53,7 +52,10 @@ public class Product extends BaseEntity {
         this.seller = sellerId;
     }
 
-    @ManyToMany(mappedBy = "products")
+    @ManyToMany
+    @JoinTable(name = "products_categories",
+    joinColumns = @JoinColumn (name = "category_id", referencedColumnName = "id"),
+    inverseJoinColumns = @JoinColumn(name = "product_id", referencedColumnName = "id"))
     public Set<Category> getCategories() {
         return categories;
     }

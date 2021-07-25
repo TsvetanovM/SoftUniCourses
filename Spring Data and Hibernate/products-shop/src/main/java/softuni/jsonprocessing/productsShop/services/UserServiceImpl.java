@@ -1,7 +1,7 @@
 package softuni.jsonprocessing.productsShop.services;
 
-import com.google.gson.Gson;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import softuni.jsonprocessing.productsShop.models.dtos.UserSeed;
 import softuni.jsonprocessing.productsShop.models.entities.User;
@@ -15,13 +15,11 @@ import java.util.Set;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
-    private final Gson gson;
     private final ModelMapper mapper;
     private final ValidationUtil validationUtil;
 
-    public UserServiceImpl(UserRepository userRepository, Gson gson, ModelMapper mapper, ValidationUtil validationUtil) {
+    public UserServiceImpl(UserRepository userRepository, @Qualifier("General") ModelMapper mapper, ValidationUtil validationUtil) {
         this.userRepository = userRepository;
-        this.gson = gson;
         this.mapper = mapper;
         this.validationUtil = validationUtil;
     }

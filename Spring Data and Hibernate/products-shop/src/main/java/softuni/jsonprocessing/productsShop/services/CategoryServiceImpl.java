@@ -1,7 +1,7 @@
 package softuni.jsonprocessing.productsShop.services;
 
-import com.google.gson.Gson;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import softuni.jsonprocessing.productsShop.models.dtos.CategorySeed;
 import softuni.jsonprocessing.productsShop.models.entities.Category;
@@ -15,13 +15,11 @@ import java.util.Set;
 public class CategoryServiceImpl implements CategoryService {
 
     private final CategoryRepository categoryRepository;
-    private final Gson gson;
     private final ModelMapper mapper;
     private final ValidationUtil validationUtil;
 
-    public CategoryServiceImpl(CategoryRepository categoryRepository, Gson gson, ModelMapper mapper, ValidationUtil validationUtil) {
+    public CategoryServiceImpl(CategoryRepository categoryRepository, @Qualifier("General") ModelMapper mapper, ValidationUtil validationUtil) {
         this.categoryRepository = categoryRepository;
-        this.gson = gson;
         this.mapper = mapper;
         this.validationUtil = validationUtil;
     }

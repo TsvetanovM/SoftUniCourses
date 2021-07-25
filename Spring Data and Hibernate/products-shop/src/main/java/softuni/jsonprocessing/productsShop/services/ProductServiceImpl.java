@@ -1,8 +1,9 @@
 package softuni.jsonprocessing.productsShop.services;
 
-import com.google.gson.Gson;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import softuni.jsonprocessing.productsShop.models.dtos.ProductNoBuyer;
 import softuni.jsonprocessing.productsShop.models.dtos.ProductSeed;
 import softuni.jsonprocessing.productsShop.models.entities.Category;
 import softuni.jsonprocessing.productsShop.models.entities.Product;
@@ -13,8 +14,12 @@ import softuni.jsonprocessing.productsShop.repositories.UserRepository;
 import softuni.jsonprocessing.productsShop.utils.ValidationUtil;
 
 import javax.validation.ConstraintViolation;
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+import java.util.concurrent.ThreadLocalRandom;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -22,17 +27,19 @@ public class ProductServiceImpl implements ProductService {
     private final ProductRepository productRepository;
     private final UserRepository userRepository;
     private final CategoryRepository categoryRepository;
-    private final Gson gson;
-    private final ModelMapper mapper;
+    private final ModelMapper generalMapper;
+    private final ModelMapper mapperProductNoBuyer;
     private final ValidationUtil validationUtil;
 
-    public ProductServiceImpl(ProductRepository productRepository, UserRepository userRepository, CategoryRepository categoryRepository, Gson gson, ModelMapper mapper, ValidationUtil validationUtil) {
+    public ProductServiceImpl(ProductRepository productRepository, UserRepository userRepository,
+                              CategoryRepository categoryRepository, @Qualifier("General") ModelMapper generalMapper,
+                              ValidationUtil validationUtil, @Qualifier("productNoBuyerDTO") ModelMapper mapperProductNoBuyer) {
         this.productRepository = productRepository;
         this.userRepository = userRepository;
         this.categoryRepository = categoryRepository;
-        this.gson = gson;
-        this.mapper = mapper;
+        this.generalMapper = generalMapper;
         this.validationUtil = validationUtil;
+        this.mapperProductNoBuyer = mapperProductNoBuyer;
     }
 
 
@@ -51,7 +58,7 @@ public class ProductServiceImpl implements ProductService {
                 continue;
             }
 
-            Product product = mapper.map(productSeed, Product.class);
+            Product product = generalMapper.map(productSeed, Product.class);
 
             User buyer = getRandomBuyer();
             product.setBuyer(buyer);
@@ -59,12 +66,28 @@ public class ProductServiceImpl implements ProductService {
             User seller = getRandomSeller();
             product.setSeller(seller);
 
+            productRepository.save(product);
+        }
+    }
+
+    @Override
+    public void assignCategories() {
+        List<Product> all = productRepository.findAll();
+
+        for (Product product : all) {
             Set<Category> categories = new HashSet<>();
             getRandomCategories(categories);
             product.setCategories(categories);
-
             productRepository.save(product);
         }
+    }
+
+    @Override
+    public List<ProductNoBuyer> exportProductsInAPriceRangeWithNoBuyer(BigDecimal lowPrice, BigDecimal highPrice) {
+        Set<Product> all = productRepository.findAllByPriceBetweenAndBuyerIsNullOrderByPrice(lowPrice, highPrice);
+        List<ProductNoBuyer> productsToExport = new ArrayList<>();
+        all.forEach(product -> productsToExport.add(mapperProductNoBuyer.map(product, ProductNoBuyer.class)));
+        return productsToExport;
     }
 
     private User getRandomBuyer() {
@@ -72,13 +95,13 @@ public class ProductServiceImpl implements ProductService {
     }
 
     private User getRandomSeller() {
-        long sellerId = (long) ((Math.random() * (userRepository.count() - 1)) + 1);
+        long sellerId = ThreadLocalRandom.current().nextInt(1, 57);
         return userRepository.findById(sellerId).orElseThrow();
     }
 
     private void getRandomCategories(Set<Category> categories) {
-        for (int i = 0; i < (int) ((Math.random() * (3 - 1)) + 1); i++) {
-            long categoryId = (long) ((Math.random() * (categoryRepository.count() - 1)) + 1);
+        for (int i = 0; i < ThreadLocalRandom.current().nextInt(1, 4); i++) {
+            long categoryId = ThreadLocalRandom.current().nextInt(1, 12);
             Category category = categoryRepository.findById(categoryId).orElseThrow();
             categories.add(category);
         }

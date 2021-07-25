@@ -24,7 +24,7 @@ public class Category extends BaseEntity {
         this.name = name;
     }
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "categories")
     public List<Product> getProducts() {
         return products;
     }
