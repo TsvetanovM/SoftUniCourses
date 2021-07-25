@@ -59,6 +59,8 @@ public class ConsoleRunner implements CommandLineRunner {
         writeToJsonFile(OUTPUT_PATH + PRODUCTS_NO_BUYER_PATH, toJson);
     }
 
+
+
     private void writeToJsonFile(String path, String toJson) throws IOException {
         Files.write(Path.of(path), Collections.singleton(toJson));
     }
