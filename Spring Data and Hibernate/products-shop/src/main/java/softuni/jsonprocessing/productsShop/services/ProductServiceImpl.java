@@ -15,11 +15,11 @@ import softuni.jsonprocessing.productsShop.utils.ValidationUtil;
 
 import javax.validation.ConstraintViolation;
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -28,18 +28,16 @@ public class ProductServiceImpl implements ProductService {
     private final UserRepository userRepository;
     private final CategoryRepository categoryRepository;
     private final ModelMapper generalMapper;
-    private final ModelMapper mapperProductNoBuyer;
     private final ValidationUtil validationUtil;
 
     public ProductServiceImpl(ProductRepository productRepository, UserRepository userRepository,
                               CategoryRepository categoryRepository, @Qualifier("General") ModelMapper generalMapper,
-                              ValidationUtil validationUtil, @Qualifier("productNoBuyerDTO") ModelMapper mapperProductNoBuyer) {
+                              ValidationUtil validationUtil) {
         this.productRepository = productRepository;
         this.userRepository = userRepository;
         this.categoryRepository = categoryRepository;
         this.generalMapper = generalMapper;
         this.validationUtil = validationUtil;
-        this.mapperProductNoBuyer = mapperProductNoBuyer;
     }
 
 
@@ -84,10 +82,15 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductNoBuyer> exportProductsInAPriceRangeWithNoBuyer(BigDecimal lowPrice, BigDecimal highPrice) {
-        Set<Product> all = productRepository.findAllByPriceBetweenAndBuyerIsNullOrderByPrice(lowPrice, highPrice);
-        List<ProductNoBuyer> productsToExport = new ArrayList<>();
-        all.forEach(product -> productsToExport.add(mapperProductNoBuyer.map(product, ProductNoBuyer.class)));
-        return productsToExport;
+        return productRepository.findAllByPriceBetweenAndBuyerIsNullOrderByPrice(lowPrice, highPrice)
+                .stream()
+                .map(product -> {
+                    ProductNoBuyer productNoBuyer = generalMapper.map(product, ProductNoBuyer.class);
+                    productNoBuyer.setSellerInfo(String.format("%s %s",
+                            product.getSeller().getFirstName(), product.getSeller().getLastName()));
+                    return productNoBuyer;
+                })
+                .collect(Collectors.toList());
     }
 
     private User getRandomBuyer() {

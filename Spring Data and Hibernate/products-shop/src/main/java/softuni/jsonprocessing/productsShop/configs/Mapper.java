@@ -15,16 +15,4 @@ public class Mapper {
     public ModelMapper modelMapper() {
         return new ModelMapper();
     }
-    
-    @Bean
-    @Qualifier(value = "productNoBuyerDTO")
-    public ModelMapper modelMapperProductNoBuyer() {
-        var mapper = new ModelMapper();
-        mapper.createTypeMap(Product.class, ProductNoBuyer.class)
-                .addMappings(mapping -> mapping.
-                        map(src -> src.getSeller().getFirstName() +
-                                        " " + src.getSeller().getFirstName(),
-                                ProductNoBuyer::setSeller));
-        return mapper;
-    }
 }
