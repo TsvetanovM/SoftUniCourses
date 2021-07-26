@@ -25,7 +25,16 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public boolean userTableIsEmpty() {
+        return userRepository.count() == 0;
+    }
+
+    @Override
     public void seedUsers(UserSeed[] userSeeds) {
+        validateUsersAndPersist(userSeeds);
+    }
+
+    private void validateUsersAndPersist(UserSeed[] userSeeds) {
         for (UserSeed userSeed : userSeeds) {
             Set<ConstraintViolation<UserSeed>> violations = validationUtil.getViolations(userSeed);
 
@@ -34,13 +43,9 @@ public class UserServiceImpl implements UserService {
                 continue;
             }
 
-            User user = mapper.map(userSeed, User.class);
-            userRepository.save(user);
+            User map = mapper.map(userSeed, User.class);
+            userRepository.save(map);
         }
     }
 
-    @Override
-    public boolean userTableIsEmpty() {
-        return userRepository.count() == 0;
-    }
 }

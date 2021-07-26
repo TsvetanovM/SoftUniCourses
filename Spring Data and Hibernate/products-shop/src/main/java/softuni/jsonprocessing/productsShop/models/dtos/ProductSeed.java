@@ -4,8 +4,10 @@ import com.google.gson.annotations.Expose;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
 
+@XmlRootElement
 public class ProductSeed {
 
     @Expose
