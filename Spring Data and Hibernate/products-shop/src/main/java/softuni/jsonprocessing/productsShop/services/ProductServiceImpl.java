@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import softuni.jsonprocessing.productsShop.models.dtos.ProductNoBuyer;
 import softuni.jsonprocessing.productsShop.models.dtos.ProductSeed;
+import softuni.jsonprocessing.productsShop.models.dtos.ProductsSeed;
 import softuni.jsonprocessing.productsShop.models.entities.Category;
 import softuni.jsonprocessing.productsShop.models.entities.Product;
 import softuni.jsonprocessing.productsShop.models.entities.User;
@@ -49,22 +50,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void seedProducts(ProductSeed[] productSeeds) {
         for (ProductSeed productSeed : productSeeds) {
-            Set<ConstraintViolation<ProductSeed>> violations = validationUtil.getViolations(productSeed);
-
-            if (!violations.isEmpty()) {
-                violations.stream().map(ConstraintViolation::getMessage).forEach(System.out::println);
-                continue;
-            }
-
-            Product product = generalMapper.map(productSeed, Product.class);
-
-            User buyer = getRandomBuyer();
-            product.setBuyer(buyer);
-
-            User seller = getRandomSeller();
-            product.setSeller(seller);
-
-            productRepository.save(product);
+            validateProductAndPersist(productSeed);
         }
     }
 
@@ -91,6 +77,32 @@ public class ProductServiceImpl implements ProductService {
                     return productNoBuyer;
                 })
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public void seedProducts(ProductsSeed productsSeed) {
+        for (ProductSeed productSeed : productsSeed.getProducts()) {
+            validateProductAndPersist(productSeed);
+        }
+    }
+
+    private void validateProductAndPersist(ProductSeed productSeed) {
+        Set<ConstraintViolation<ProductSeed>> violations = validationUtil.getViolations(productSeed);
+
+        if (!violations.isEmpty()) {
+            violations.stream().map(ConstraintViolation::getMessage).forEach(System.out::println);
+            return;
+        }
+
+        Product product = generalMapper.map(productSeed, Product.class);
+
+        User buyer = getRandomBuyer();
+        product.setBuyer(buyer);
+
+        User seller = getRandomSeller();
+        product.setSeller(seller);
+
+        productRepository.save(product);
     }
 
     private User getRandomBuyer() {

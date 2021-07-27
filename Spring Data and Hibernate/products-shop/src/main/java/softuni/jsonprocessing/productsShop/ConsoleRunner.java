@@ -46,8 +46,7 @@ public class ConsoleRunner implements CommandLineRunner {
     public void run(String... args) throws Exception {
 //        try {
             seedDataFromXML();
-//            query1();
-//            assignCategoriesToProducts();
+            assignCategoriesToProducts();
 //        } catch (FileNotFoundException e) {
 //            System.out.println("No such file found in the provided path!");
 //        } catch (IOException e) {
@@ -59,8 +58,17 @@ public class ConsoleRunner implements CommandLineRunner {
         try {
             seedUsersDataFromXML();
             seedCategoriesDataFromXML();
+            seedProductsDataFromXML();
         } catch (FileCouldNotBeSerialized e) {
             e.printStackTrace();
+        }
+    }
+
+    private void seedProductsDataFromXML() throws FileCouldNotBeSerialized {
+        if (productService.productTableIsEmpty()) {
+            ProductsSeed productsSeed = formatConverter
+                    .deserializeFromFile(BASE_INPUT_PATH_XML + "products.xml", ProductsSeed.class);
+            productService.seedProducts(productsSeed);
         }
     }
 
