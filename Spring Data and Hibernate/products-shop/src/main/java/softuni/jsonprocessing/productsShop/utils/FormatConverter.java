@@ -1,5 +1,7 @@
 package softuni.jsonprocessing.productsShop.utils;
 
+import softuni.jsonprocessing.productsShop.exceptions.FileCouldNotBeSerialized;
+
 import java.io.FileReader;
 
 public interface FormatConverter {
@@ -8,5 +10,5 @@ public interface FormatConverter {
 
     void serialize(Object o, String fileName);
 
-    <T> T deserializeFromFile(String fileName, Class<T> toClass);
+    <T> T deserializeFromFile(String fileName, Class<T> toClass) throws FileCouldNotBeSerialized;
 }

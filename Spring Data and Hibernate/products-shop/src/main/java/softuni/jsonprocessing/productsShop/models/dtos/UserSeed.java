@@ -4,16 +4,19 @@ import com.google.gson.annotations.Expose;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class UserSeed {
 
-    @XmlAttribute
+    @XmlAttribute(name = "first-name")
     @Expose
     private String firstName;
-    @XmlAttribute
+    @XmlAttribute(name = "last-name")
     @Expose
     @Size(min = 3, message = "Last name has to contain at least 3 letters!")
     @NotNull

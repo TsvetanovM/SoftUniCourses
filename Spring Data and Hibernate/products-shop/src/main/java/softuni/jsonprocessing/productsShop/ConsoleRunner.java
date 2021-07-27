@@ -3,10 +3,8 @@ package softuni.jsonprocessing.productsShop;
 import com.google.gson.Gson;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Controller;
-import softuni.jsonprocessing.productsShop.models.dtos.CategorySeed;
-import softuni.jsonprocessing.productsShop.models.dtos.ProductNoBuyer;
-import softuni.jsonprocessing.productsShop.models.dtos.ProductSeed;
-import softuni.jsonprocessing.productsShop.models.dtos.UserSeed;
+import softuni.jsonprocessing.productsShop.exceptions.FileCouldNotBeSerialized;
+import softuni.jsonprocessing.productsShop.models.dtos.*;
 import softuni.jsonprocessing.productsShop.services.CategoryService;
 import softuni.jsonprocessing.productsShop.services.ProductService;
 import softuni.jsonprocessing.productsShop.services.UserService;
@@ -46,29 +44,30 @@ public class ConsoleRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        JAXBContext jaxbContext = JAXBContext.newInstance(UserSeed.class);
-        Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-
-        try {
+//        try {
             seedDataFromXML();
 //            query1();
 //            assignCategoriesToProducts();
-        } catch (FileNotFoundException e) {
-            System.out.println("No such file found in the provided path!");
-        } catch (IOException e) {
+//        } catch (FileNotFoundException e) {
+//            System.out.println("No such file found in the provided path!");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+    }
+
+    private void seedDataFromXML() {
+        try {
+            seedUsersDataFromXML();
+        } catch (FileCouldNotBeSerialized e) {
             e.printStackTrace();
         }
     }
 
-    private void seedDataFromXML() {
-        seedUsersDataFromXML();
-    }
-
-    private void seedUsersDataFromXML() {
+    private void seedUsersDataFromXML() throws FileCouldNotBeSerialized {
         if (userService.userTableIsEmpty()) {
-            UserSeed[] userSeeds = formatConverter
-                    .deserializeFromFile(BASE_INPUT_PATH_XML + "users.xml", UserSeed[].class);
-            userService.seedUsers(userSeeds);
+            UsersSeed usersSeed = formatConverter
+                    .deserializeFromFile(BASE_INPUT_PATH_XML + "users.xml", UsersSeed.class);
+            userService.seedUsers(usersSeed);
         }
     }
 

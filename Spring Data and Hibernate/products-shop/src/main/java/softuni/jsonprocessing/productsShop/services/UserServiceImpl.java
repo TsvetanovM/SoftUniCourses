@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import softuni.jsonprocessing.productsShop.models.dtos.UserSeed;
+import softuni.jsonprocessing.productsShop.models.dtos.UsersSeed;
 import softuni.jsonprocessing.productsShop.models.entities.User;
 import softuni.jsonprocessing.productsShop.repositories.UserRepository;
 import softuni.jsonprocessing.productsShop.utils.ValidationUtil;
@@ -31,21 +32,28 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void seedUsers(UserSeed[] userSeeds) {
-        validateUsersAndPersist(userSeeds);
+        for (UserSeed userSeed : userSeeds) {
+            validateAndMapToEntity(userSeed);
+        }
     }
 
-    private void validateUsersAndPersist(UserSeed[] userSeeds) {
-        for (UserSeed userSeed : userSeeds) {
-            Set<ConstraintViolation<UserSeed>> violations = validationUtil.getViolations(userSeed);
-
-            if (!violations.isEmpty()) {
-                violations.stream().map(ConstraintViolation::getMessage).forEach(System.out::println);
-                continue;
-            }
-
-            User map = mapper.map(userSeed, User.class);
-            userRepository.save(map);
+    @Override
+    public void seedUsers(UsersSeed usersSeed) {
+        for (UserSeed userSeed : usersSeed.getUsers())  {
+            validateAndMapToEntity(userSeed);
         }
+    }
+
+    private void validateAndMapToEntity(UserSeed userSeed) {
+        Set<ConstraintViolation<UserSeed>> violations = validationUtil.getViolations(userSeed);
+
+        if (!violations.isEmpty()) {
+            violations.stream().map(ConstraintViolation::getMessage).forEach(System.out::println);
+            return;
+        }
+
+        User map = mapper.map(userSeed, User.class);
+        userRepository.save(map);
     }
 
 }
