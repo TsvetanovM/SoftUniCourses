@@ -40,29 +40,10 @@ public class ConsoleRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-//        Scanner scanner = new Scanner(System.in);
-
-//        while (true) {
-//            System.out.print("Please enter the desired action: ");
-//            String command = scanner.nextLine();
-//            switch (command) {
-//                case "SeedData" -> {
-//                    seedDataFromXML();
-//                    assignCategoriesToProducts();
-//                }
-//                case ""
-//            }
-//        }
         seedDataFromXML();
         assignCategoriesToProducts();
-//        queryOne_ProductsInRange();
+        queryOne_ProductsInRange();
         queryTwo_SuccessfullySoldProducts();
-//        try {
-//        } catch (FileNotFoundException e) {
-//            System.out.println("No such file found in the provided path!");
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
     }
 
     private void queryTwo_SuccessfullySoldProducts() {
