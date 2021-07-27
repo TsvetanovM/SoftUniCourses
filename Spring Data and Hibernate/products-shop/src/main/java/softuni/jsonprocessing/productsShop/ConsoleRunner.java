@@ -58,8 +58,17 @@ public class ConsoleRunner implements CommandLineRunner {
     private void seedDataFromXML() {
         try {
             seedUsersDataFromXML();
+            seedCategoriesDataFromXML();
         } catch (FileCouldNotBeSerialized e) {
             e.printStackTrace();
+        }
+    }
+
+    private void seedCategoriesDataFromXML() throws FileCouldNotBeSerialized {
+        if (categoryService.categoryTableIsEmpty()) {
+            CategoriesSeed categoriesSeed = formatConverter
+                    .deserializeFromFile(BASE_INPUT_PATH_XML + "categories.xml", CategoriesSeed.class);
+            categoryService.seedCategories(categoriesSeed);
         }
     }
 

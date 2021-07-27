@@ -6,18 +6,18 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
-@XmlRootElement(name = "users")
+@XmlRootElement(name = "categories")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class UsersSeed {
+public class CategoriesSeed {
 
-    @XmlElement(name = "user")
-    private List<UserSeed> users;
+    @XmlElement(name = "category")
+    private List<CategorySeed> categories;
 
-    public List<UserSeed> getUsers() {
-        return users;
+    public List<CategorySeed> getCategories() {
+        return categories;
     }
 
-    public void setUsers(List<UserSeed> users) {
-        this.users = users;
+    public void setCategories(List<CategorySeed> categories) {
+        this.categories = categories;
     }
 }

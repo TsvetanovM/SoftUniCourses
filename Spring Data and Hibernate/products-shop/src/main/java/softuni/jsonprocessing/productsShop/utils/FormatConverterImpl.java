@@ -5,9 +5,9 @@ import softuni.jsonprocessing.productsShop.exceptions.FileCouldNotBeSerialized;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
-import java.io.*;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 
 @Component
 public class FormatConverterImpl implements FormatConverter {
