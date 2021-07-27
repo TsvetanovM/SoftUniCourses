@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import softuni.jsonprocessing.productsShop.models.dtos.ProductNoBuyer;
 import softuni.jsonprocessing.productsShop.models.dtos.ProductSeed;
+import softuni.jsonprocessing.productsShop.models.dtos.ProductsNoBuyer;
 import softuni.jsonprocessing.productsShop.models.dtos.ProductsSeed;
 import softuni.jsonprocessing.productsShop.models.entities.Category;
 import softuni.jsonprocessing.productsShop.models.entities.Product;
@@ -67,8 +68,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<ProductNoBuyer> exportProductsInAPriceRangeWithNoBuyer(BigDecimal lowPrice, BigDecimal highPrice) {
-        return productRepository.findAllByPriceBetweenAndBuyerIsNullOrderByPrice(lowPrice, highPrice)
+    public ProductsNoBuyer exportProductsInAPriceRangeWithNoBuyer(BigDecimal lowPrice, BigDecimal highPrice) {
+        List<ProductNoBuyer> productNoBuyers = productRepository.findAllByPriceBetweenAndBuyerIsNullOrderByPrice(lowPrice, highPrice)
                 .stream()
                 .map(product -> {
                     ProductNoBuyer productNoBuyer = generalMapper.map(product, ProductNoBuyer.class);
@@ -77,6 +78,10 @@ public class ProductServiceImpl implements ProductService {
                     return productNoBuyer;
                 })
                 .collect(Collectors.toList());
+
+        ProductsNoBuyer productsNoBuyer = new ProductsNoBuyer();
+        productsNoBuyer.setProducts(productNoBuyers);
+        return productsNoBuyer;
     }
 
     @Override

@@ -1,18 +1,24 @@
 package softuni.jsonprocessing.productsShop.models.dtos;
 
 import com.google.gson.annotations.Expose;
-import softuni.jsonprocessing.productsShop.models.entities.User;
 
+import javax.xml.bind.annotation.*;
 import java.math.BigDecimal;
 
+@XmlRootElement(name = "product")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class ProductNoBuyer {
 
+    @XmlAttribute
     @Expose
     private String name;
+    @XmlAttribute
     @Expose
     private BigDecimal price;
+    @XmlAttribute(name = "seller")
     @Expose
     private String sellerInfo;
+
 
     public String getName() {
         return name;

@@ -5,7 +5,9 @@ import softuni.jsonprocessing.productsShop.exceptions.FileCouldNotBeSerialized;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
@@ -13,13 +15,15 @@ import java.io.FileReader;
 public class FormatConverterImpl implements FormatConverter {
 
     @Override
-    public String serialize(Object obj) {
-        return null;
-    }
-
-    @Override
-    public void serialize(Object o, String fileName) {
-
+    public <T> void serializeToFile(T entity, String fileName) {
+        try {
+            JAXBContext jaxbContext = JAXBContext.newInstance(entity.getClass());
+            Marshaller marshaller = jaxbContext.createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            marshaller.marshal(entity, new File(fileName));
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

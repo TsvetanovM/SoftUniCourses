@@ -1,7 +1,5 @@
 package softuni.jsonprocessing.productsShop.models.entities;
 
-import softuni.jsonprocessing.productsShop.models.BaseEntity;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;

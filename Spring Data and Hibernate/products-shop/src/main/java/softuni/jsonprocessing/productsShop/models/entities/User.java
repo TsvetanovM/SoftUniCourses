@@ -1,7 +1,5 @@
 package softuni.jsonprocessing.productsShop.models.entities;
 
-import softuni.jsonprocessing.productsShop.models.BaseEntity;
-
 import javax.persistence.*;
 import java.util.Set;
 
@@ -42,7 +40,7 @@ public class User extends BaseEntity {
         this.age = age;
     }
 
-    @OneToMany(mappedBy = "buyer")
+    @OneToMany(mappedBy = "buyer", fetch = FetchType.EAGER)
     public Set<Product> getProductsBought() {
         return productsBought;
     }
@@ -51,7 +49,7 @@ public class User extends BaseEntity {
         this.productsBought = productsBought;
     }
 
-    @OneToMany(mappedBy = "seller")
+    @OneToMany(mappedBy = "seller", fetch = FetchType.EAGER)
     public Set<Product> getProductsSold() {
         return productsSold;
     }

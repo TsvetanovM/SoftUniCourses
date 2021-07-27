@@ -2,6 +2,7 @@ package softuni.jsonprocessing.productsShop.services;
 
 import softuni.jsonprocessing.productsShop.models.dtos.ProductNoBuyer;
 import softuni.jsonprocessing.productsShop.models.dtos.ProductSeed;
+import softuni.jsonprocessing.productsShop.models.dtos.ProductsNoBuyer;
 import softuni.jsonprocessing.productsShop.models.dtos.ProductsSeed;
 
 import java.math.BigDecimal;
@@ -14,7 +15,7 @@ public interface ProductService {
 
     void assignCategories();
 
-    List<ProductNoBuyer> exportProductsInAPriceRangeWithNoBuyer(BigDecimal lowPrice, BigDecimal highPrice);
+    ProductsNoBuyer exportProductsInAPriceRangeWithNoBuyer(BigDecimal lowPrice, BigDecimal highPrice);
 
     void seedProducts(ProductsSeed productsSeed);
 }

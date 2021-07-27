@@ -1,4 +1,4 @@
-package softuni.jsonprocessing.productsShop.models;
+package softuni.jsonprocessing.productsShop.models.entities;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
