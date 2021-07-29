@@ -40,7 +40,7 @@ public class Seller extends BaseEntity {
         this.email = email;
     }
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     public Rating getRating() {
         return rating;
     }

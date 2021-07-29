@@ -12,7 +12,7 @@ public class Car  extends BaseEntity {
 
     private String make;
     private String model;
-    private double kilometers;
+    private int kilometers;
     private LocalDate registeredOn;
     private Set<Picture> pictures;
     private Set<Offer> offers;
@@ -33,11 +33,11 @@ public class Car  extends BaseEntity {
         this.model = model;
     }
 
-    public double getKilometers() {
+    public int getKilometers() {
         return kilometers;
     }
 
-    public void setKilometers(double kilometers) {
+    public void setKilometers(int kilometers) {
         this.kilometers = kilometers;
     }
 
