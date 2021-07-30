@@ -10,6 +10,7 @@ import softuni.exam.service.CarService;
 import softuni.exam.util.ValidationUtil;
 
 import javax.validation.ConstraintViolation;
+import javax.xml.transform.sax.SAXResult;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -63,6 +64,14 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public String getCarsOrderByPicturesCountThenByMake() {
-        return null;
+        StringBuilder sb = new StringBuilder();
+
+        carRepository.findAllByPicturesCountDesc()
+                .forEach(car -> sb.append(String.format("Car make - %s, model - %s%n\tKilometers - %d%n" +
+                        "\tRegistered on - %s%n\tNumber of pictures - %d%n",
+                        car.getMake(), car.getModel(), car.getKilometers(),
+                        car.getRegisteredOn(), car.getPictures().size())));
+
+        return sb.toString();
     }
 }
