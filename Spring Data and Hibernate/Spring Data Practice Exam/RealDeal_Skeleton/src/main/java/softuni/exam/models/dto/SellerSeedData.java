@@ -15,19 +15,19 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class SellerSeedData {
 
     @XmlElement(name = "first-name")
-    @Size(min = 2, max = 19, message = "First name must be between 2 and 19 letters!")
+    @Size(min = 2, max = 19)
     private String firstName;
     @XmlElement(name = "last-name")
-    @Size(min = 2, max = 19, message = "Last name must be between 2 and 19 letters!")
+    @Size(min = 2, max = 19)
     private String lastName;
     @XmlElement
-    @Email(message = "Please enter a valid e-mail address!")
+    @Email
     private String email;
     @XmlElement
-    @NotNull(message = "You must enter a rating!")
+    @NotNull
     private Rating rating;
     @XmlElement
-    @NotNull(message = "Please enter a town name!")
+    @NotNull
     private String town;
 
     public String getFirstName() {

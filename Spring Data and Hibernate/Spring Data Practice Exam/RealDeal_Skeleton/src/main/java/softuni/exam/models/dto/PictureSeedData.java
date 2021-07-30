@@ -9,14 +9,14 @@ import javax.validation.constraints.Size;
 public class PictureSeedData {
 
     @Expose
-    @Size(min = 2, max = 19, message = "Picture name should be between 2 and 19 symbols!")
+    @Size(min = 2, max = 19)
     private String name;
     @Expose
     @DateTimeFormat
     private String dateAndTime;
     @Expose
-    @Positive(message = "Please enter a valid car id!")
-    private int carId;
+    @Positive
+    private Long car;
 
     public String getName() {
         return name;
@@ -34,11 +34,11 @@ public class PictureSeedData {
         this.dateAndTime = dateAndTime;
     }
 
-    public int getCarId() {
-        return carId;
+    public Long getCarId() {
+        return car;
     }
 
-    public void setCarId(int carId) {
-        this.carId = carId;
+    public void setCarId(Long carId) {
+        this.car = carId;
     }
 }

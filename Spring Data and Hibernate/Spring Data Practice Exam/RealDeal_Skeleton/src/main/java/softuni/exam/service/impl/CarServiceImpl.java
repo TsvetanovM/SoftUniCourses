@@ -12,6 +12,8 @@ import softuni.exam.util.ValidationUtil;
 import javax.validation.ConstraintViolation;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Set;
 
 @Service
@@ -38,24 +40,25 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public String readCarsFileContent() throws IOException {
-        StringBuilder output = new StringBuilder();
-        CarSeedData[] carSeedData = gson.fromJson(new FileReader(JSON_INPUT_CARS), CarSeedData[].class);
-        for (CarSeedData seedData : carSeedData) {
+        return Files.readString(Path.of(JSON_INPUT_CARS));
+    }
+
+    @Override
+    public String importCars() throws IOException {
+                StringBuilder output = new StringBuilder();
+
+        CarSeedData[] carSeedData = gson.fromJson(readCarsFileContent(), CarSeedData[].class);
+                for (CarSeedData seedData : carSeedData) {
             Set<ConstraintViolation<CarSeedData>> violations = validator.getViolations(seedData);
             if (!violations.isEmpty()) {
                 output.append("Invalid car").append(System.lineSeparator());
                 continue;
             }
-            Car car = mapper.map(carSeedData, Car.class);
+            Car car = mapper.map(seedData, Car.class);
             carRepository.save(car);
             output.append(String.format("Successfully imported car - %s - %s%n", car.getMake(), car.getModel()));
         }
         return output.toString();
-    }
-
-    @Override
-    public String importCars() throws IOException {
-        return null;
     }
 
     @Override

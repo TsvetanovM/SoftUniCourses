@@ -1,11 +1,14 @@
 package softuni.exam.models.dto;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.w3c.dom.stylesheets.LinkStyle;
 
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.*;
 import java.math.BigDecimal;
+import java.util.List;
 
 @XmlRootElement(name = "offer")
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -17,17 +20,17 @@ public class OfferDataSeed {
     @XmlElement
     @Positive
     private BigDecimal price;
-    @XmlElement
-    @DateTimeFormat
+    @XmlElement(name = "added-on")
+    @NotNull
     private String addedOn;
-    @XmlElement
+    @XmlElement(name = "has-gold-status")
     private boolean hasGoldStatus;
     @XmlElementWrapper(name = "car")
     @XmlElement(name = "id")
-    private int carId;
+    private List<Long> car;
     @XmlElementWrapper(name = "seller")
     @XmlElement(name = "id")
-    private int sellerId;
+    private List<Long> seller;
 
     public String getDescription() {
         return description;
@@ -61,11 +64,19 @@ public class OfferDataSeed {
         this.hasGoldStatus = hasGoldStatus;
     }
 
-    public int getCarId() {
-        return carId;
+    public Long getCar() {
+        return car.get(0);
     }
 
-    public void setCarId(int carId) {
-        this.carId = carId;
+    public void setCar(Long car) {
+        this.car.set(0, car);
+    }
+
+    public Long getSeller() {
+        return seller.get(0);
+    }
+
+    public void setSeller(Long seller) {
+        this.car.set(0, seller);
     }
 }

@@ -1,5 +1,6 @@
 package softuni.exam.models.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -17,6 +18,7 @@ public class Car  extends BaseEntity {
     private Set<Picture> pictures;
     private Set<Offer> offers;
 
+
     public String getMake() {
         return make;
     }
@@ -24,6 +26,7 @@ public class Car  extends BaseEntity {
     public void setMake(String make) {
         this.make = make;
     }
+
 
     public String getModel() {
         return model;
@@ -33,6 +36,7 @@ public class Car  extends BaseEntity {
         this.model = model;
     }
 
+
     public int getKilometers() {
         return kilometers;
     }
@@ -40,6 +44,7 @@ public class Car  extends BaseEntity {
     public void setKilometers(int kilometers) {
         this.kilometers = kilometers;
     }
+
 
     public LocalDate getRegisteredOn() {
         return registeredOn;
