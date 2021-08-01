@@ -1,9 +1,6 @@
 package com.example.football.models.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Enumerated;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -15,6 +12,9 @@ public class Player extends BaseEntity {
     private String email;
     private LocalDate birthDate;
     private Position position;
+    private Team team;
+    private Town town;
+    private Stat stat;
 
     public String getFirstName() {
         return firstName;
@@ -56,5 +56,32 @@ public class Player extends BaseEntity {
 
     public void setPosition(Position position) {
         this.position = position;
+    }
+
+    @ManyToOne
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
+    }
+
+    @ManyToOne
+    public Town getTown() {
+        return town;
+    }
+
+    public void setTown(Town town) {
+        this.town = town;
+    }
+
+    @ManyToOne
+    public Stat getStat() {
+        return stat;
+    }
+
+    public void setStat(Stat stat) {
+        this.stat = stat;
     }
 }
