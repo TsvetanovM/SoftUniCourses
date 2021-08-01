@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 @Service
 public class PlayerServiceImpl implements PlayerService {
@@ -73,12 +74,12 @@ public class PlayerServiceImpl implements PlayerService {
                     continue;
                 }
                 Player player = mapper.map(playerImport, Player.class);
-                player.setBirthDate(LocalDate.parse(playerImport.getBirthDate()));
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
                 player.setStat(statRepository.findById(playerImport.getStat().getId()).orElse(null));
                 player.setTeam(teamRepository.findByName(playerImport.getTeam().getName()));
                 player.setTown(townRepository.findByName(playerImport.getTown().getName()));
                 playerRepository.save(player);
-                output.append(String.format("Successfully imported Player %s - %s - %s%n",
+                output.append(String.format("Successfully imported Player %s %s - %s%n",
                         player.getFirstName(), player.getLastName(), player.getPosition()));
             }
 
@@ -90,6 +91,17 @@ public class PlayerServiceImpl implements PlayerService {
 
     @Override
     public String exportBestPlayers() {
-        return null;
+        StringBuilder output = new StringBuilder();
+        playerRepository.findTheBestPlayersInABirthDateRange(LocalDate.of(1995, 1, 1),
+                LocalDate.of(2003, 1 ,1))
+                .forEach(player -> {
+                    output.append(String.format("Player - %s %s%n\tPosition - %s%n\tTeam - %s%n\tStadium - %s%n",
+                            player.getFirstName(), player.getLastName(),
+                            player.getPosition().name(),
+                            player.getTeam().getName(),
+                            player.getTeam().getStadiumName()));
+                });
+
+        return output.toString();
     }
 }
