@@ -1,18 +1,28 @@
 package com.example.football.models.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "stats")
-public class Stat extends BaseEntity {
+public class Stat {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "1")
+    private long id;
     private double shooting;
     private double passing;
     private double endurance;
 
     public double getShooting() {
         return shooting;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public void setShooting(double shooting) {
