@@ -11,6 +11,6 @@ public interface PlayerRepository extends JpaRepository<Player, Long> {
     boolean existsByEmail(String email);
 
     @Query("SELECT p FROM Player p WHERE p.birthDate > :dateBefore AND p.birthDate < :dateAfter" +
-            " ORDER BY p.stat.shooting DESC, p.stat.passing DESC, p.stat.endurance DESC" )
+            " ORDER BY p.stat.shooting DESC, p.stat.passing DESC, p.stat.endurance DESC, p.lastName" )
     List<Player> findTheBestPlayersInABirthDateRange(LocalDate dateBefore, LocalDate dateAfter);
 }
