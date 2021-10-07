@@ -1,2 +1,23 @@
-{
-    }
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: "jdbc:mysql://localhost:3306/mobilelele?useSSL=false&CreateDatabaseIfNotExist=true"
+    username: root
+    password: 12345
+  sql:
+    init:
+      mode: always
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+    defer-datasource-initialization: true
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
