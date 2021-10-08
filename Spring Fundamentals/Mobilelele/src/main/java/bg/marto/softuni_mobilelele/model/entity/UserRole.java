@@ -22,6 +22,7 @@ public class UserRole {
         Id = id;
     }
 
+    @Enumerated
     public Role getRole() {
         return role;
     }

@@ -1,5 +1,6 @@
 package bg.marto.softuni_mobilelele.model.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import java.util.List;
@@ -19,7 +20,7 @@ public class Brand extends BaseEntity {
         return this;
     }
 
-    @OneToMany(mappedBy = "brand")
+    @OneToMany(mappedBy = "brand", cascade = CascadeType.ALL)
     public List<Model> getModel() {
         return model;
     }

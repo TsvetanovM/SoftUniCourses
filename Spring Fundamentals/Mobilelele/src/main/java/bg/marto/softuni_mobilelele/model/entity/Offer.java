@@ -3,9 +3,7 @@ package bg.marto.softuni_mobilelele.model.entity;
 import bg.marto.softuni_mobilelele.model.enums.Engine;
 import bg.marto.softuni_mobilelele.model.enums.Transmission;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
@@ -30,6 +28,7 @@ public class Offer extends BaseEntity{
         this.description = description;
     }
 
+    @Enumerated(EnumType.STRING)
     public Engine getEngine() {
         return engine;
     }
@@ -62,6 +61,7 @@ public class Offer extends BaseEntity{
         this.price = price;
     }
 
+    @Enumerated(EnumType.STRING)
     public Transmission getTransmission() {
         return transmission;
     }

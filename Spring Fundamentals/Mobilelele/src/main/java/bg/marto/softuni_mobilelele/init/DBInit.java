@@ -40,8 +40,8 @@ public class DBInit implements CommandLineRunner {
             ford.setModel(List.of(fiesta, mondeo));
 
             brandRepository.save(ford);
-            modelRepository.save(fiesta);
-            modelRepository.save(mondeo);
+//            modelRepository.save(fiesta);
+//            modelRepository.save(mondeo);
         }
     }
 }
