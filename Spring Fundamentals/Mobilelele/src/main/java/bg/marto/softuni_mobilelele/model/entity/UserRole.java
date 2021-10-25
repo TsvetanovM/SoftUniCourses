@@ -18,8 +18,9 @@ public class UserRole {
         return Id;
     }
 
-    public void setId(long id) {
+    public UserRole setId(long id) {
         Id = id;
+        return this;
     }
 
     @Enumerated
